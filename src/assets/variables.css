@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
+
+:root{
+    --primary: #0F0D15;
+    --secondary: rgb(11, 99, 150);
+
+    --success: #157866;
+    --warning: #b2bd1a;
+    --danger: #a7505b;
+
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #D1D5DB;
+    
+    --ff-bebas: 'Bebas Neue', sans-serif;
+    --ff-open : 'Open Sans', sans-serif;
+  }

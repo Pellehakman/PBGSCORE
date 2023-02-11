@@ -34,7 +34,7 @@
 
   /* MENU START */
 .menu-item-lg{
-  @apply px-16 py-4 font-bebas text-white flex items-center
+  @apply relative px-16 py-4 font-bebas text-3xl text-white flex items-center border-r border-stone-900 hover:bg-stone-900 transition-all duration-300
 }
 
   /* MENU END */

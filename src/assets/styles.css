@@ -7,6 +7,42 @@
 .main-bg-linear{
   background: linear-gradient(140deg, rgba(48,45,60,1) 0%, rgb(15, 11, 23) 100%);
 }
+.active-menu{
+  background-color: rgb(43, 43, 43);
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  
+  
+}
+
+
+
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: black;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @layer base {
@@ -35,6 +71,12 @@
   /* MENU START */
 .menu-item-lg{
   @apply relative px-16 py-4 font-bebas text-3xl text-white flex items-center border-r border-stone-900 hover:bg-stone-900 transition-all duration-300
+}
+.dropdown{
+  @apply block relative hover:bg-rose-900 ;
+}
+.dropdown-content{
+  @apply absolute hidden bg-blue-800
 }
 
   /* MENU END */

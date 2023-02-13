@@ -7,28 +7,43 @@
         <img class="logo" :src="logo" alt="logo" />
       </figure>
     </div>
-    <nav class="border border-x-transparent border-stone-900">
-      <div class="bg-black flex max-w-7xl m-auto justify-between">
-        <ul class="flex">
-          <RouterLink class="menu-item-lg border-l" to="/statistics">
-            HOME
-          </RouterLink>
-          <RouterLink class="menu-item-lg" to="/statistics">
-            STATISTICS
-            <img class="absolute bottom-0.5 right-0.5" :src="triangle" alt="" />
-          </RouterLink>
-          <RouterLink class="menu-item-lg" to="/statistics">
-            TEAMS
-            <img class="absolute bottom-0.5 right-0.5" :src="triangle" alt="" />
-          </RouterLink>
+    <div>
+      <nav class="text-white">
+        <ul>
+          <li>
+            <Router-link class="dropdown" to="/home">
+              <span>HOME</span>
+            </Router-link>
+          </li>
+          <li>
+            <Router-link class="statistics" to="/statistics">
+              <span>STATISTICS</span>
+            </Router-link>
+          </li>
+          <li>
+            <Router-link class="teams" to="/teams">
+              <span>TEAMS</span>
+            </Router-link>
+          </li>
+
+          <div class="dropdown">
+            <button class="dropbtn">
+              Dropdown
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <h3>Login</h3>
+              <label>email</label>
+              <input />
+              <label>password</label>
+              <input />
+              <button>LOGIN</button>
+              <span>forgot password?</span>
+              <span>No login? Sign up here</span>
+            </div>
+          </div>
         </ul>
-        <ul class="flex">
-          <RouterLink class="menu-item-lg border-l" to="/statistics">
-            ACCOUNT
-            <img class="absolute bottom-0.5 right-0.5" :src="triangle" alt="" />
-          </RouterLink>
-        </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 </template>

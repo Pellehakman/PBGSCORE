@@ -8,49 +8,33 @@
   background: linear-gradient(140deg, rgba(48,45,60,1) 0%, rgb(15, 11, 23) 100%);
 }
 .active-menu{
-  background-color: rgb(43, 43, 43);
+  background-color: rgb(24, 24, 24);
 }
 
-
-.dropdown-content {
+/* .dropdown-content {
   display: none;
   position: absolute;
-  
-  
 }
-
-
-
-
 .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  color: black;
-  
+} */
+.drop{
+  animation: dropper ease-in-out .2s
+}
+@keyframes dropper {
+  0% {
+    opacity: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+100% {
+  opacity: 100;
+}
+}
 @layer base {
-
   body{
     @apply main-bg-linear h-screen
   }
- 
 }
 
 @layer components {
@@ -68,18 +52,42 @@
   }
   /* GENERAL STYLING END */
 
-  /* MENU START */
-.menu-item-lg{
-  @apply relative px-16 py-4 font-bebas text-3xl text-white flex items-center border-r border-stone-900 hover:bg-stone-900 transition-all duration-300
-}
-.dropdown{
-  @apply block relative hover:bg-rose-900 ;
-}
-.dropdown-content{
-  @apply absolute hidden bg-blue-800
-}
+  /* HEADER START */
+  .header-container{
+    @apply bg-black
+  }
+  .header-logo-container{
+    @apply py-4 flex justify-center items-center
+  }
+  .menu-container{
+    @apply border border-stone-900
+  }
+  .menu-nav{
+    @apply text-white max-w-7xl mx-auto
+  }
+  .menu-nav-container{
+    @apply flex justify-between
+  }
+  .nav-col-1{
+    @apply flex
+  }
+  .nav-col-2{
+    @apply flex
+  }
+  .menu-item-lg{
+    @apply relative px-16 py-4 font-bebas text-3xl text-white flex items-center border-r border-stone-900 hover:bg-stone-900 transition-all duration-300
+  }
+  .dropdown{
+    @apply block relative 
+  }
+  .dropdown-content{
+    @apply absolute transition-all flex flex-col drop
+  }
+  .dropdown:hover .dropdown-content{
+    @apply transition-all flex flex-col drop
+  }
 
-  /* MENU END */
+  /* HEADER END */
 
 
 

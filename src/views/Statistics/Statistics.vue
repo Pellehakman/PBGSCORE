@@ -1,6 +1,6 @@
 <script src="./Statistics.ts"></script>
 
 <template>
-  <MenuBar />
+  <!-- <MenuBar /> -->
   <div>hej</div>
 </template>

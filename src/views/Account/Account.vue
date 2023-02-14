@@ -1,5 +1,5 @@
 <script src="./Account.ts"></script>
 
 <template>
-  <MenuBar />
+  <!-- <MenuBar /> -->
 </template>

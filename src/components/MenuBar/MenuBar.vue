@@ -24,19 +24,21 @@
             </Router-link>
           </div>
           <div
-            class="dropdown"
-            @click="handleLoginActive"
-            :class="{ ['active-menu']: loginActive }"
+            class="menu-account-container"
+            @click="handleDropdownAccount"
+            :class="{ ['active-menu']: dropdownAccount }"
           >
             <Button
               @click="showLoginForm = !showLoginForm"
               to="/account"
               class="menu-item-lg"
-              >LOGIN</Button
+              >ACCOUNT</Button
             >
-            <div class="dropdown-content" v-if="showLoginForm">
-              <div @click.stop="">
-                <h3>Login</h3>
+            <div class="menu-account-content" v-if="showLoginForm">
+              <button @click="handleLoginForm" class="menu-account-item" to="#">
+                LOGIN
+              </button>
+              <form class="bg-black py-4" v-if="loginForm">
                 <label>email</label>
                 <input />
                 <label>password</label>
@@ -44,10 +46,13 @@
                 <button>LOGIN</button>
                 <span>forgot password?</span>
                 <span>No login? Sign up here</span>
-                <Router-link class="menu-item-lg" to="/account">
-                  <span>SETTINGS</span>
-                </Router-link>
-              </div>
+              </form>
+              <button v-if="hideButtons" class="menu-account-item">
+                ACCOUNT SETTINGS
+              </button>
+              <button v-if="hideButtons" class="menu-account-item">
+                LOGOUT
+              </button>
             </div>
           </div>
         </ul>

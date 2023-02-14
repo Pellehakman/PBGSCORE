@@ -10,7 +10,9 @@
 .active-menu{
   background-color: rgb(24, 24, 24);
 }
-
+.inherit{
+  width: inherit;
+}
 /* .dropdown-content {
   display: none;
   position: absolute;
@@ -33,7 +35,7 @@
 }
 @layer base {
   body{
-    @apply main-bg-linear h-screen
+    @apply main-bg-linear h-screen font-open
   }
 }
 
@@ -77,11 +79,15 @@
   .menu-item-lg{
     @apply relative px-16 py-4 font-bebas text-3xl text-white flex items-center border-r border-stone-900 hover:bg-stone-900 transition-all duration-300
   }
-  .dropdown{
+  .menu-account-container{
     @apply block relative 
   }
-  .dropdown-content{
-    @apply absolute transition-all flex flex-col drop
+
+  .menu-account-content{
+    @apply absolute transition-all flex flex-col items-start drop bg-stone-900 border border-stone-900 gap-0.5 w-full
+  }
+  .menu-account-item{
+    @apply  bg-black  py-6 pl-4 flex w-full
   }
   .dropdown:hover .dropdown-content{
     @apply transition-all flex flex-col drop

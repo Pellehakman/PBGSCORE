@@ -3,15 +3,19 @@
 :root{
     --primary: #0F0D15;
     --secondary: rgb(11, 99, 150);
+    --borderColor: rgb(28, 28, 28);
+    --inputDark: #171717;
 
     --success: #157866;
     --warning: #b2bd1a;
     --danger: #a7505b;
 
-    --black: #000000;
+    --black: #0e0e0e;
     --white: #ffffff;
-    --gray: #D1D5DB;
+    --gray: #606060;
     
+    --bg-menu-primary: #0c0c0c;
+    --bg-menu-secondary: #000000;
     --ff-bebas: 'Bebas Neue', sans-serif;
     --ff-open : 'Open Sans', sans-serif;
   }

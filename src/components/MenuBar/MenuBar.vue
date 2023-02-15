@@ -3,59 +3,33 @@
 <template>
   <header class="header-container">
     <div class="header-logo-container">
-      <figure>
-        <img id="logo" class="logo" :src="logo" alt="" />
-      </figure>
+      <img id="logo" class="logo" :src="logo" alt="" />
     </div>
+
     <div class="menu-container">
       <nav class="menu-nav">
-        <ul class="menu-nav-container">
-          <div class="flex">
-            <Router-link class="menu-item-lg" to="/home">
-              <span>HOME</span>
-            </Router-link>
+        <div class="menu-nav-container">
+          <ul class="flex">
+            <li>
+              <Router-link to="/home" class="menu-item-lg extra-border">
+                <span>HOME</span>
+              </Router-link>
+            </li>
 
-            <Router-link class="menu-item-lg" to="/statistics">
-              <span>STATISTICS</span>
-            </Router-link>
+            <li>
+              <Router-link to="/statistics" class="menu-item-lg">
+                <span>STATISTICS</span>
+              </Router-link>
+            </li>
 
-            <Router-link class="menu-item-lg" to="/teams">
-              <span>TEAMS</span>
-            </Router-link>
-          </div>
-          <div
-            class="menu-account-container"
-            @click="handleDropdownAccount"
-            :class="{ ['active-menu']: dropdownAccount }"
-          >
-            <Button
-              @click="showLoginForm = !showLoginForm"
-              to="/account"
-              class="menu-item-lg"
-              >ACCOUNT</Button
-            >
-            <div class="menu-account-content" v-if="showLoginForm">
-              <button @click="handleLoginForm" class="menu-account-item" to="#">
-                LOGIN
-              </button>
-              <form class="bg-black py-4" v-if="loginForm">
-                <label>email</label>
-                <input />
-                <label>password</label>
-                <input />
-                <button>LOGIN</button>
-                <span>forgot password?</span>
-                <span>No login? Sign up here</span>
-              </form>
-              <button v-if="hideButtons" class="menu-account-item">
-                ACCOUNT SETTINGS
-              </button>
-              <button v-if="hideButtons" class="menu-account-item">
-                LOGOUT
-              </button>
-            </div>
-          </div>
-        </ul>
+            <li>
+              <Router-link to="/teams" class="menu-item-lg">
+                <span>TEAMS</span>
+              </Router-link>
+            </li>
+          </ul>
+          <MenuLogin />
+        </div>
       </nav>
     </div>
   </header>

@@ -22,9 +22,15 @@ module.exports = {
         white: "var(--white)",
         gray: "var(--gray)",
 
+        borderColor: "var(--borderColor)",
+        inputDark: "var(--inputDark)",
+
         success: "var(--success)",
         warning: "var(--warning)",
         danger: "var(--danger)",
+
+        menuPrimary: "var(--bg-menu-primary)",
+        menuSecondary: "var(--bg-menu-secondary)",
       },
       fontFamily: {
         bebas: ["var(--ff-bebas)"],

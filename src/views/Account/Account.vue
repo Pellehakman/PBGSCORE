@@ -2,7 +2,7 @@
 
 <template>
   <MenuBar />
-  <div>
+  <!-- <div>
     <input
       @change="toggleTheme"
       id="checkbox"
@@ -15,5 +15,5 @@
         :class="{ 'switch-toggle-checked': userTheme === 'dark-theme' }"
       ></div>
     </label>
-  </div>
+  </div> -->
 </template>

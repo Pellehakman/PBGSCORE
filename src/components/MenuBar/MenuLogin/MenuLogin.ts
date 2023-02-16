@@ -1,5 +1,5 @@
 import { defineComponent, ref } from "vue";
-import triangle from "../../../assets/triangle.svg";
+import triangle from "../../../assets/triangleOpacity.svg";
 export default defineComponent({
   name: "menu-login",
   setup() {

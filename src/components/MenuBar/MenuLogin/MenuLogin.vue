@@ -42,7 +42,7 @@
             <input
               type="email"
               name="email"
-              class="standard-input-field peer"
+              class="standard-input-field bg-inputDark peer"
               placeholder=" "
             />
             <label for="email" class="standard-input-label">EMAIL ADRESS</label>
@@ -51,19 +51,23 @@
             <input
               type="password"
               name="email"
-              class="standard-input-field peer"
+              class="standard-input-field bg-inputDark peer"
               placeholder=" "
             />
             <label for="email" class="standard-input-label">PASSWORD</label>
           </div>
 
-          <div class="flex justify-end">
-            <span class="text-xs">Forgot password?</span>
-          </div>
+          <!-- <div class="flex justify-end">
+            <span class="text-xs">FORGOT PASSWORD?</span>
+          </div> -->
 
           <div class="flex flex-col items-center justify-center gap-2 mt-6">
-            <button class="btn-m bg-success">LOGIN</button>
-            <span class="text-xs">No login? Sign up here</span>
+            <button
+              class="btn-m bg-success hover:brightness-125 active:brightness-75 transition-all"
+            >
+              LOGIN
+            </button>
+            <span class="text-xs">NO LOGIN? SIGN UP HERE</span>
           </div>
         </form>
       </ul>

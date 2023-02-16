@@ -9,25 +9,19 @@
     <div class="menu-container">
       <nav class="menu-nav">
         <div class="menu-nav-container">
-          <ul class="flex">
-            <li>
-              <Router-link to="/home" class="menu-item-lg extra-border">
-                <span>HOME</span>
-              </Router-link>
-            </li>
+          <div class="flex">
+            <Router-link to="/home" class="menu-item-lg extra-border">
+              <span>HOME</span>
+            </Router-link>
 
-            <li>
-              <Router-link to="/statistics" class="menu-item-lg">
-                <span>STATISTICS</span>
-              </Router-link>
-            </li>
+            <Router-link to="/statistics" class="menu-item-lg">
+              <span>STATISTICS</span>
+            </Router-link>
 
-            <li>
-              <Router-link to="/teams" class="menu-item-lg">
-                <span>TEAMS</span>
-              </Router-link>
-            </li>
-          </ul>
+            <Router-link to="/teams" class="menu-item-lg">
+              <span>TEAMS</span>
+            </Router-link>
+          </div>
           <MenuLogin />
         </div>
       </nav>

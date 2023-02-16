@@ -26,15 +26,24 @@
       </p>
     </div>
 
-    <div class="flex relative">
-      <input
-        type="text"
-        name="username"
-        placeholder="Enter your in game player name"
-        class="block w-full font-open appearance-none focus:outline-none py-4 pl-2"
-      />
-
-      <button @click="redirect()" class="landing-search big-btn">SEARCH</button>
+    <div class="flex">
+      <div class="relative w-full">
+        <input
+          type="text"
+          name="playerSearch"
+          class="standard-input-field peer text-black"
+          placeholder=" "
+          value="TGLTN"
+        />
+        <label for="playerSearch" class="standard-input-label"
+          >PLAYER NAME</label
+        >
+      </div>
+      <button
+        class="bg-success hover:brightness-125 rounded-r-lg font-bebas text-white px-8 text-2xl"
+      >
+        SEARCH
+      </button>
     </div>
   </main>
 </template>

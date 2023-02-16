@@ -1,3 +1,4 @@
+
 import MenuBar from "@/components/menu/menuBar/MenuBar.vue";
 import { defineComponent } from "vue";
 

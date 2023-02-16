@@ -31,7 +31,7 @@
         <input
           type="text"
           name="playerSearch"
-          class="standard-input-field peer text-black"
+          class="standard-input-field rounded-r-none peer text-black"
           placeholder=" "
           value="TGLTN"
         />
@@ -40,7 +40,7 @@
         >
       </div>
       <button
-        class="bg-success hover:brightness-125 rounded-r-lg font-bebas text-white px-8 text-2xl"
+        class="bg-success hover:brightness-125 rounded-r-sm font-bebas text-white px-8 text-2xl"
       >
         SEARCH
       </button>

@@ -28,3 +28,30 @@
     </div>
   </header>
 </template>
+
+<style>
+.logo {
+  @apply w-16;
+}
+.header-container {
+  @apply bg-menuPrimary;
+}
+.header-logo-container {
+  @apply py-4 flex justify-center items-center max-w-7xl mx-auto;
+}
+.menu-container {
+  @apply border border-borderColor border-l-0 border-r-0;
+}
+.menu-nav {
+  @apply text-white max-w-7xl mx-auto;
+}
+.menu-nav-container {
+  @apply flex justify-between;
+}
+.nav-col-1 {
+  @apply flex;
+}
+.nav-col-2 {
+  @apply flex;
+}
+</style>

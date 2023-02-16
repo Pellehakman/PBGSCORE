@@ -2,5 +2,5 @@
 
 <template>
   <MenuBar />
-  <div>hej</div>
+  <div>hfej</div>
 </template>

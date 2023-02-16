@@ -7,7 +7,10 @@ export default defineComponent({
     const loginForm = ref(false);
     const dropdownAccount = ref(false);
 
-    window.addEventListener("click", function (event: any) {
+
+
+    // KANASKE INTE HA CLICK UP HÄR? issue när man markerar i input fältet på login i menyn
+    document.addEventListener("mousedown", function (event: any) {
       if (!event.target.closest(".menu-account-container")) {
         showLoginForm.value = false;
         loginForm.value = false;
@@ -16,10 +19,7 @@ export default defineComponent({
     });
 
     const handleDropdownAccount = () => {
-      console.log(dropdownAccount.value);
-      if (dropdownAccount.value === true && loginForm.value === true) {
-        dropdownAccount.value = false;
-      }
+      dropdownAccount.value = !dropdownAccount.value;
     };
 
     const handleLoginForm = () => {

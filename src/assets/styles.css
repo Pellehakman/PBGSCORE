@@ -3,52 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .main-bg-linear{
   background: linear-gradient(140deg, rgba(48,45,60,1) 0%, rgb(15, 11, 23) 100%);
 }
 .active-menu{
   background-color: var(--bg-menu-secondary)
 }
-.inherit{
-  width: inherit;
-}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* .dropdown-content {
-  display: none;
-  position: absolute;
-}
-.dropdown:hover .dropdown-content {
-  display: flex;
-  flex-direction: column;
-} */
-.drop{
-  animation: dropper ease-in-out .2s
-}
 
+.drop{
+  animation: dropper ease-in-out 150ms
+}
 @keyframes dropper {
   0% {
     opacity: 0;
 }
-
-
-100% {
-  opacity: 100;
+  100% {
+    opacity: 100;
+  }
 }
-}
+
 .loginDrop{
-  animation: loginDrop ease-in-out .2s
+  animation: loginDrop ease-in-out 150ms
 }
 @keyframes loginDrop {
   from {
     opacity: 0%;
     height: 0rem
 }
-70% {
+  70% {
   opacity: 0%;
 }
   to {
@@ -74,14 +62,24 @@
   .btn-m{
     @apply px-16 py-4 rounded-sm text-xl font-semibold
   }
-  .input-basic-login{
-    @apply
-    relative py-4 rounded-sm bg-inputDark w-full
-  }
+ 
   .input-basic-xl{
     @apply
     relative py-4 rounded-sm w-screen 
   }
+
+
+  .standard-input-field{
+    @apply block pt-8 pb-4 pl-4 w-full bg-inputDark rounded-lg appearance-none text-white focus:outline-none focus:ring-0 
+  }
+  .standard-input-label{
+    @apply absolute text-base duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75  z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-4 top-2 peer-focus:top-2
+  }
+
+
+
+
+
 
   .logo{
     @apply w-24 
@@ -124,7 +122,7 @@
     @apply absolute transition-all flex flex-col items-start drop bg-menuPrimary border border-b-0 border-borderColor gap-0.5 w-full
   }
   .menu-account-item{
-    @apply  bg-menuPrimary hover:bg-menuSecondary border-t border-t-borderColor py-6 px-4 flex w-full 
+    @apply  bg-menuPrimary hover:bg-menuSecondary border-t border-t-borderColor py-6 px-4 flex w-full cursor-pointer
   }
   .dropdown:hover .dropdown-content{
     @apply transition-all flex flex-col drop

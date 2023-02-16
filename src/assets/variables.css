@@ -6,6 +6,8 @@
     --borderColor: rgb(28, 28, 28);
     --inputDark: #171717;
 
+
+
     --success: #157866;
     --warning: #b2bd1a;
     --danger: #a7505b;
@@ -14,8 +16,31 @@
     --white: #ffffff;
     --gray: #606060;
     
+
     --bg-menu-primary: #0c0c0c;
     --bg-menu-secondary: #000000;
+    
     --ff-bebas: 'Bebas Neue', sans-serif;
     --ff-open : 'Open Sans', sans-serif;
   }
+
+  
+:root.dark-theme{
+  --primary: #a8a8a8;
+  --secondary: rgb(179, 227, 255);
+  --borderColor: rgb(227, 227, 227);
+  --inputDark: #171717;
+
+  --success: #157866;
+  --warning: #b2bd1a;
+  --danger: #a7505b;
+
+  --black: #0e0e0e;
+  --white: #000000;
+  --gray: #606060;
+  
+  --bg-menu-primary: #f7f7f7;
+  --bg-menu-secondary: #efefef;
+  --ff-bebas: 'Bebas Neue', sans-serif;
+  --ff-open : 'Open Sans', sans-serif;
+}

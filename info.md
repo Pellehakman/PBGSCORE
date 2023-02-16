@@ -32,3 +32,10 @@
     </nav>
   </header>
 </template> -->
+
+<img
+        v-if="dropdownAccount === false"
+        class="absolute bottom-0.5 right-0.5 w-2"
+        :src="triangle"
+        alt=""
+      />

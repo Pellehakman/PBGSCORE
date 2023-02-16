@@ -1,12 +1,12 @@
 <script src="./MenuLogin.ts"></script>
 
 <template>
-  <ul class="menu-account-container" @click="handleDropdownAccount">
+  <ul class="menu-account-container">
     <li
-      @click="showLoginForm = !showLoginForm"
+      @click="handleDropdownAccount"
       class="menu-item-lg extra-border relative px-24 cursor-pointer"
       :class="{
-        'bg-red-700': dropdownAccount === true,
+        'bg-menuSecondary': dropdownAccount === true,
       }"
     >
       <span>ACCOUNT</span>
@@ -18,9 +18,9 @@
         alt=""
       />
     </li>
-    <div class="menu-account-content" v-if="showLoginForm">
-      <div class="flex flex-col w-full">
-        <button
+    <div class="menu-account-content" v-if="dropdownAccount">
+      <ul class="flex flex-col w-full">
+        <li
           @click="handleLoginForm"
           class="menu-account-item border-t-0 relative items-center justify-between"
           to="#"
@@ -33,37 +33,48 @@
             width="16px"
             icon="fa-solid fa-chevron-down"
           />
-        </button>
+        </li>
         <form
           class="newbox bg-MenuPrimary p-2 font-semibold gap-2"
           v-if="loginForm"
         >
           <div class="relative">
-            <label class="absolute top-2 left-2 z-10">EMAIL</label>
-            <input class="input-basic-login" />
+            <input
+              type="email"
+              name="email"
+              class="standard-input-field peer"
+              placeholder=" "
+            />
+            <label for="email" class="standard-input-label">EMAIL ADRESS</label>
+          </div>
+          <div class="relative">
+            <input
+              type="password"
+              name="email"
+              class="standard-input-field peer"
+              placeholder=" "
+            />
+            <label for="email" class="standard-input-label">PASSWORD</label>
           </div>
 
-          <div class="relative">
-            <label class="absolute top-2 left-2 z-10">PASSWORD</label>
-            <input class="input-basic-login" />
-          </div>
           <div class="flex justify-end">
-            <span>FORGOT PASSWORD?</span>
+            <span class="text-xs">Forgot password?</span>
           </div>
 
           <div class="flex flex-col items-center justify-center gap-2 mt-6">
             <button class="btn-m bg-success">LOGIN</button>
-            <span>No login? Sign up here</span>
+            <span class="text-xs">No login? Sign up here</span>
           </div>
         </form>
-      </div>
+      </ul>
 
-      <button class="menu-account-item">
-        <span>ACCOUNT SETTINGS</span>
-      </button>
-      <button class="menu-account-item">
+      <Router-link class="menu-account-item" to="/account"
+        >ACCOUNT SETTINGS</Router-link
+      >
+
+      <li class="menu-account-item">
         <span>LOGOUT</span>
-      </button>
+      </li>
     </div>
   </ul>
 </template>

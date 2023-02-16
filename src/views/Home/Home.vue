@@ -1,5 +1,5 @@
 <script src="./Home.ts"></script>
 
 <template>
-  <!-- <MenuBar /> -->
+  <MenuBar />
 </template>

@@ -1,4 +1,4 @@
-<script src="./menuBar.ts"></script>
+<script src="./MenuBar.ts"></script>
 
 <template>
   <header class="header-container">

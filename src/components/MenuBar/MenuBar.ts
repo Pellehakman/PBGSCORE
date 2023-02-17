@@ -1,6 +1,6 @@
 import { computed, defineComponent, onMounted, ref } from "vue";
-import logo from "../../../assets/logo.svg";
-import MenuLogin from "../menuLogin/MenuLogin.vue";
+import logo from "../../assets/logo.svg";
+import MenuLogin from "../MenuLogin/MenuLogin.vue";
 
 export default defineComponent({
   name: "menu-component",

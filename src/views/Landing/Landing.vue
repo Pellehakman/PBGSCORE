@@ -20,7 +20,7 @@
         READY TO GO PRO?
       </h1>
       <p class="text-white text-m font-open">
-        In this application you can build your team and compare it against the
+        In this applicatiodn you can build your team and compare it against the
         top teams. Is your squad ready to go pro? You can also see detailed
         general statistics of every season you played.
       </p>

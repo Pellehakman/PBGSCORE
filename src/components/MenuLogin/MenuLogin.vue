@@ -4,7 +4,7 @@
   <ul class="menu-account-container">
     <li
       @click="handleDropdownAccount"
-      class="menu-item-account"
+      class="menu-item-account sm-m:px-2"
       :class="{
         'bg-menuSecondary': dropdownAccount === true,
       }"
@@ -61,7 +61,7 @@
 
           <div class="flex flex-col items-center justify-center gap-2 mt-6">
             <button
-              class="btn-lg bg-success hover:brightness-12 active:brightness-75 transition-all"
+              class="btn bg-success hover:brightness-12 active:brightness-75 transition-all"
             >
               LOGIN
             </button>
@@ -82,10 +82,10 @@
 </template>
 
 <style>
-.drop {
-  animation: dropper ease-in-out 150ms;
+.accountDrop {
+  animation: accountDrop ease-in-out 150ms;
 }
-@keyframes dropper {
+@keyframes accountDrop {
   0% {
     opacity: 0;
   }
@@ -125,26 +125,31 @@
 .activeMenu {
   @apply flex absolute bg-menuPrimary w-full;
 }
+.menu-item-size {
+  @apply /* mobile view */  sm-m:p-4 
+  lg-m:px-8 px-16 py-3;
+}
 .menu-item-lg {
-  @apply relative sm-m:p-4 sm-m:border-b sm-m:border-r-0 lg-m:px-10 px-16 py-3 font-bebas text-3xl text-white flex items-center border-r border-borderColor hover:bg-menuSecondary transition-all cursor-pointer;
+  @apply relative sm-m:border-b sm-m:border-r-0 font-bebas text-3xl text-white flex items-center border-r border-borderColor hover:bg-menuSecondary transition-all cursor-pointer;
 }
 .menu-item-home {
   @apply menu-item-lg extra-border sm-m:border-t;
 }
 .menu-item-account {
-  @apply px-20 menu-item-lg extra-border sm-m:border-b-0;
+  @apply /* mobile view */  sm-m:p-4 
+  lg-m:px-14 px-24 py-3 menu-item-lg extra-border sm-m:border-b-0;
 }
 .menu-account-container {
   @apply block relative;
 }
 .menu-account-content {
-  @apply absolute transition-all flex flex-col items-start drop bg-menuPrimary border border-b-0 border-borderColor gap-0.5 w-full;
+  @apply absolute transition-all flex flex-col items-start accountDrop bg-menuPrimary border border-b-0 border-borderColor gap-0.5 w-full;
 }
 .menu-account-item {
   @apply bg-menuPrimary hover:bg-menuSecondary border-t border-t-borderColor py-3 px-4 flex w-full cursor-pointer;
 }
 .dropdown:hover .dropdown-content {
-  @apply transition-all flex flex-col drop;
+  @apply transition-all flex flex-col accountDrop;
 }
 .extra-border {
   @apply border-l border-l-borderColor sm-m:border-l-0;

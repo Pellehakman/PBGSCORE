@@ -2,87 +2,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.main-bg-linear{
-  background: linear-gradient(140deg, rgba(48,45,60,1) 0%, rgb(15, 11, 23) 100%);
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-secondary);
+  -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
-.active-menu{
-  
-  background-color: var(--bg-menu-secondary)
-}
-
-
-
-
-
-
 
 
 @layer base {
   body{
-    @apply main-bg-linear h-screen font-open 
+    @apply main-bg-linear h-screen w-screen font-open 
   }
 }
 
 @layer components {
   /* GENERAL STYLING START */
-  .big-btn{
-    @apply  px-16 py-4 rounded-sm hover:scale-105 hover:backdrop-brightness-90 transition ease-in-out duration-300 hover:-translate-y-1
-  }
-  .btn-lg{
-    @apply px-16 py-4 rounded-sm text-xl font-semibold
-  }
- 
-  .input-basic-xl{
-    @apply
-    relative py-2 rounded-sm w-screen 
-  }
 
-
+  .btn{
+    @apply 
+    /* xl */ px-12 py-4
+    /* lg */ lg-m:px-10 lg-m:py-2
+    /* general */ rounded-sm text-xl font-semibold
+  }
   .standard-input-field{
-    @apply flex text-sm pt-6 pb-2 pl-2 w-full rounded-sm appearance-none text-white focus:outline-none focus:ring-0 
+    @apply 
+    /* xl */ pt-6 pb-2 pl-2
+    /* general */ flex text-sm w-full rounded-sm appearance-none text-white focus:outline-none focus:ring-0 
   }
   .standard-input-label{
     @apply absolute text-base duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-2 top-0 peer-focus:top-0
   }
-
-
-
-
-
-
-
   /* GENERAL STYLING END */
 
-  /* HEADER START */
 
 
 
-  /* HEADER END */
 
-
-
-  /* LANDING START */
-
-  .landing-heading{
-    @apply flex justify-between items-center mx-16 pt-16
+  /* CUSTOM STYLING START */
+  .main-bg-linear{
+    background: linear-gradient(140deg, rgba(48,45,60,1) 0%, rgb(15, 11, 23) 100%);
   }
-  .landing-sign{
-    @apply big-btn text-white font-open font-semibold text-lg 
+  .active-menu{
+    background-color: var(--bg-menu-secondary)
   }
-  .landing-main{
-    @apply  mx-32 mt-32 flex flex-col justify-between gap-8 max-w-3xl
-  }
-  .landing-hero-text{
-    @apply  text-8xl font-bebas text-white 
-  }
-  .landing-search-block{
-    @apply flex 
-  }
-  .landing-search{
-    @apply bg-success font-bebas text-3xl px-6 text-white flex-1 flex flex-col flex-grow
-  }
-
-  /* LANDING END */
-  
+  /* CUSTOM STYLING END */
 }

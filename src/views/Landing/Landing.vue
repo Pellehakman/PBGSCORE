@@ -47,3 +47,27 @@
     </div>
   </main>
 </template>
+
+<style>
+.big-btn {
+  @apply px-16 py-4 rounded-sm hover:scale-105 hover:backdrop-brightness-90 transition ease-in-out duration-300 hover:-translate-y-1;
+}
+.landing-heading {
+  @apply flex justify-between items-center mx-16 pt-16;
+}
+.landing-sign {
+  @apply big-btn text-white font-open font-semibold text-lg;
+}
+.landing-main {
+  @apply mx-32 mt-32 flex flex-col justify-between gap-8 max-w-3xl;
+}
+.landing-hero-text {
+  @apply text-8xl font-bebas text-white;
+}
+.landing-search-block {
+  @apply flex;
+}
+.landing-search {
+  @apply bg-success font-bebas text-3xl px-6 text-white flex-1 flex flex-col flex-grow;
+}
+</style>

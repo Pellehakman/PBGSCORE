@@ -38,6 +38,8 @@ module.exports = {
         warning: "var(--warning)",
         danger: "var(--danger)",
 
+        textPrimary: "var(--text-primary)",
+        textSecondary: "var(--text-secondary)",
         menuPrimary: "var(--bg-menu-primary)",
         menuSecondary: "var(--bg-menu-secondary)",
       },

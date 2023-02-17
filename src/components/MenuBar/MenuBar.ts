@@ -1,4 +1,4 @@
-import { computed, defineComponent, onMounted, ref } from "vue";
+import { defineComponent, ref } from "vue";
 import logo from "../../assets/logo.svg";
 import MenuLogin from "../MenuLogin/MenuLogin.vue";
 
@@ -8,13 +8,12 @@ export default defineComponent({
 
   setup() {
     const toggleMenu = ref(false);
-    const bredd = ref(2);
 
-    const vid = computed(() => window.innerWidth < 640);
-    console.log(vid);
-    if (bredd.value < 639) {
-      toggleMenu.value = false;
-    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 640) {
+        toggleMenu.value = false;
+      }
+    });
 
     const handleMenu = () => {
       toggleMenu.value = !toggleMenu.value;
@@ -23,7 +22,6 @@ export default defineComponent({
       logo,
       toggleMenu,
       handleMenu,
-      bredd,
     };
   },
 });

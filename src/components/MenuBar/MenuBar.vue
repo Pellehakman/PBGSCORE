@@ -4,7 +4,6 @@
   <header class="header-container">
     <div class="header-logo-container">
       <img id="logo" class="logo" :src="logo" alt="" />
-      <div class="text-white">{{ bredd }}</div>
       <button @click="handleMenu" class="xl:hidden lg:hidden sm:hidden p-2">
         <font-awesome-icon width="16px" icon="fa-bars" style="color: white" />
       </button>

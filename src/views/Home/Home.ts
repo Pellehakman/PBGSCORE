@@ -6,6 +6,7 @@ export default defineComponent({
   components: { MenuBar },
 
   setup() {
+    
     return {};
   },
 });

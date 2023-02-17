@@ -17,10 +17,11 @@ import {
   faUserSecret,
   faChevronDown,
   faCaretRight,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faUserSecret, faChevronDown, faCaretRight);
+library.add(faUserSecret, faChevronDown, faCaretRight, faBars);
 
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);
 

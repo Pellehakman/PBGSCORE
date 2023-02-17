@@ -15,6 +15,15 @@ module.exports = {
 
         desktop: "1280px",
         // => @media (min-width: 1280px) { ... }
+
+        "xl-m": { max: "1279px" },
+        // => @media (max-width: 1279px) { ... }
+
+        "lg-m": { max: "1023px" },
+        // => @media (max-width: 1023px) { ... }
+
+        "sm-m": { max: "639px" },
+        // => @media (max-width: 639px) { ... }
       },
       colors: {
         primary: "var(--primary)",

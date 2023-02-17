@@ -4,7 +4,7 @@
   <ul class="menu-account-container">
     <li
       @click="handleDropdownAccount"
-      class="menu-item-lg extra-border relative px-24 cursor-pointer"
+      class="menu-item-account"
       :class="{
         'bg-menuSecondary': dropdownAccount === true,
       }"
@@ -40,8 +40,10 @@
         >
           <div class="relative">
             <input
+              autofocus
+              ref="emailInput"
               type="email"
-              name="email"
+              id="email"
               class="standard-input-field bg-inputDark peer"
               placeholder=" "
             />
@@ -50,16 +52,12 @@
           <div class="relative">
             <input
               type="password"
-              name="email"
+              id="password"
               class="standard-input-field bg-inputDark peer"
               placeholder=" "
             />
-            <label for="email" class="standard-input-label">PASSWORD</label>
+            <label for="password" class="standard-input-label">PASSWORD</label>
           </div>
-
-          <!-- <div class="flex justify-end">
-            <span class="text-xs">FORGOT PASSWORD?</span>
-          </div> -->
 
           <div class="flex flex-col items-center justify-center gap-2 mt-6">
             <button
@@ -112,6 +110,30 @@
   }
 }
 
+.header-logo-container {
+  @apply p-4 flex justify-center sm-m:justify-between items-center max-w-7xl mx-auto;
+}
+.menu-container {
+  @apply border border-borderColor border-l-0 border-r-0 sm-m:border-0;
+}
+.menu-nav {
+  @apply text-white max-w-7xl mx-auto;
+}
+.menu-nav-container {
+  @apply flex justify-between sm-m:hidden sm-m:flex-col;
+}
+.activeMenu {
+  @apply flex absolute bg-menuPrimary w-full;
+}
+.menu-item-lg {
+  @apply relative sm-m:p-4 sm-m:border-b sm-m:border-r-0 lg-m:px-10 px-16 py-3 font-bebas text-3xl text-white flex items-center border-r border-borderColor hover:bg-menuSecondary transition-all cursor-pointer;
+}
+.menu-item-home {
+  @apply menu-item-lg extra-border sm-m:border-t;
+}
+.menu-item-account {
+  @apply px-20 menu-item-lg extra-border sm-m:border-b-0;
+}
 .menu-account-container {
   @apply block relative;
 }
@@ -119,18 +141,14 @@
   @apply absolute transition-all flex flex-col items-start drop bg-menuPrimary border border-b-0 border-borderColor gap-0.5 w-full;
 }
 .menu-account-item {
-  @apply bg-menuPrimary hover:bg-menuSecondary border-t border-t-borderColor py-6 px-4 flex w-full cursor-pointer;
+  @apply bg-menuPrimary hover:bg-menuSecondary border-t border-t-borderColor py-3 px-4 flex w-full cursor-pointer;
 }
 .dropdown:hover .dropdown-content {
   @apply transition-all flex flex-col drop;
 }
-.menu-item-lg {
-  @apply relative px-6 sm:px-10 py-4 font-bebas text-3xl text-white flex items-center border-r border-borderColor hover:bg-menuSecondary transition-all;
-}
 .extra-border {
-  @apply border-l border-l-borderColor;
+  @apply border-l border-l-borderColor sm-m:border-l-0;
 }
-
 .menu-login-form {
   @apply flex flex-col loginDrop h-80 w-full;
 }

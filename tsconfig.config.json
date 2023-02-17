@@ -4,6 +4,7 @@
   "compilerOptions": {
     "composite": true,
     "types": ["node"],
+    "allowJs": true,
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,

@@ -1,4 +1,4 @@
-<script src="./Account.ts"></script>
+<script lang="ts" src="./Account.ts"></script>
 
 <template>
   <MenuBar />

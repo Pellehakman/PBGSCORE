@@ -1,4 +1,4 @@
-<script src="./MenuLogin.ts"></script>
+<script lang="ts" src="./MenuLogin.ts"></script>
 
 <template>
   <ul class="menu-account-container">

@@ -1,4 +1,4 @@
-<script src="./Teams.ts"></script>
+<script lang="ts" src="./Teams.ts"></script>
 
 <template>
   <MenuBar />

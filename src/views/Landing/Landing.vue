@@ -1,4 +1,4 @@
-<script src="./Landing.ts"></script>
+<script lang="ts" src="./Landing.ts"></script>
 
 <template>
   <header class="landing-heading">

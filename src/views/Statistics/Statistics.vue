@@ -1,4 +1,4 @@
-<script src="./Statistics.ts"></script>
+<script lang="ts" src="./Statistics.ts"></script>
 
 <template>
   <MenuBar />

@@ -32,8 +32,8 @@
         >
           <div class="relative">
             <input
+              v-model="email"
               autofocus
-              ref="emailInput"
               type="email"
               id="email"
               class="standard-input-field bg-input peer"
@@ -44,13 +44,14 @@
           <div class="relative">
             <div class="icons">
               <font-awesome-icon
-                v-if="displayPassword === 'password'"
+                v-if="displayPassword === showEyeIcon.yes"
                 @click="handleDisplayPassword"
                 class="standard-input-show peer"
+                :class="{ hidden: password.length < 1 }"
                 icon="fa-solid fa-eye-slash"
               />
               <font-awesome-icon
-                v-if="displayPassword === 'text'"
+                v-if="displayPassword === showEyeIcon.no"
                 @click="handleDisplayPassword"
                 class="standard-input-show peer"
                 icon="fa-solid fa-eye"
@@ -58,6 +59,7 @@
             </div>
 
             <input
+              v-model="password"
               :type="displayPassword"
               id="password"
               class="standard-input-field bg-input peer"

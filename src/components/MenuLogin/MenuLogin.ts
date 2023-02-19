@@ -1,3 +1,4 @@
+import { showEyeIcon } from "@/models/enums";
 import { defineComponent, ref } from "vue";
 import triangle from "../../assets/triangle.svg";
 
@@ -6,7 +7,10 @@ export default defineComponent({
   setup() {
     const dropdownChild = ref(false);
     const dropdownParent = ref(false);
-    const displayPassword = ref("password");
+    const displayPassword = ref(showEyeIcon.yes);
+
+    const email = ref("");
+    const password = ref("");
 
     document.addEventListener("mousedown", function (event: any) {
       if (!event.target.closest(".menu-dropdown-container")) {
@@ -16,10 +20,10 @@ export default defineComponent({
     });
 
     const handleDisplayPassword = () => {
-      if (displayPassword.value === "password") {
-        displayPassword.value = "text";
+      if (displayPassword.value === showEyeIcon.yes) {
+        displayPassword.value = showEyeIcon.no;
       } else {
-        displayPassword.value = "password";
+        displayPassword.value = showEyeIcon.yes;
       }
     };
 
@@ -31,6 +35,8 @@ export default defineComponent({
       dropdownChild.value = !dropdownChild.value;
     };
     return {
+      email,
+      password,
       displayPassword,
       handleDisplayPassword,
       triangle,
@@ -38,6 +44,7 @@ export default defineComponent({
       dropdownChild,
       handleDropdownParent,
       dropdownParent,
+      showEyeIcon,
     };
   },
 });

@@ -25,17 +25,29 @@ select:-webkit-autofill:focus {
 
 @layer components {
   /* GENERAL STYLING START */
-
-  .btn{
+ 
+  .btn-sm{
+    @apply px-2 py-2
+  }
+  .btn-lg{
+    @apply px-2 py-2
+  }
+  .btn-xl{
+    @apply px-2 py-2
+  }
+  .btn-all{
     @apply 
-    /* xl */ px-12 py-4
-    /* lg */ lg-m:px-10 lg-m:py-2
-    /* general */ rounded-sm text-xl font-semibold
+    /* desktop */ px-12 py-4
+    /* tablet */ lg-max:px-10 lg-max:py-2
+    /* mobile */
+    /* general design */ rounded-sm text-xl font-semibold
   }
   .standard-input-field{
     @apply 
-    /* xl */ pt-6 pb-2 pl-2
-    /* general */ flex text-sm w-full rounded-sm appearance-none text-white focus:outline-none focus:ring-0 
+    /* desktop */ pt-6 pb-2 pl-2
+    /* tablet */
+    /* mobile */
+    /* general design */ flex text-sm w-full rounded-sm appearance-none text-white focus:outline-none focus:ring-0 
   }
   .standard-input-label{
     @apply absolute text-base duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-2 top-0 peer-focus:top-0
@@ -54,4 +66,20 @@ select:-webkit-autofill:focus {
     background-color: var(--bg-menu-secondary)
   }
   /* CUSTOM STYLING END */
+}
+
+
+
+
+/* desktop */ 
+/* tablet */ 
+/* mobile */
+/* general design */ 
+
+.NAME {
+  @apply /* --------------------- */
+  /* desktop */ px-16
+  /* tablet */ lg-max:px-8 
+  /* mobile */ sm-max:px-4 
+  /* general design */;
 }

@@ -18,8 +18,18 @@
 
     <div class="menu-dropdown-content" v-if="dropdownParent">
       <ul class="flex flex-col w-full">
-        <li @click="handleDropdownChild" class="menu-dropdown-item" to="#">
-          <span>LOGIN</span>
+        <li
+          @click="handleDropdownChild"
+          class="menu-dropdown-item justify-between"
+          to="#"
+        >
+          <div>
+            <font-awesome-icon
+              class="pr-4"
+              icon="fa-solid fa-right-from-bracket"
+            />
+            <span>LOGIN</span>
+          </div>
           <font-awesome-icon
             :class="{ ['rotate-180 transition-all']: dropdownChild }"
             width="16px"
@@ -80,12 +90,15 @@
       </ul>
 
       <Router-link class="menu-dropdown-item" to="/account">
+        <font-awesome-icon class="pr-4" icon="fa-solid fa-gear" />
         <span>ACCOUNT SETTINGS</span>
-        <font-awesome-icon icon="fa-solid fa-gear" />
       </Router-link>
       <li class="menu-dropdown-item">
+        <font-awesome-icon
+          class="pl-4 rotate-180"
+          icon="fa-solid fa-right-from-bracket"
+        />
         <span>LOGOUT</span>
-        <font-awesome-icon width="16px" icon="fa-solid fa-right-from-bracket" />
       </li>
     </div>
   </ul>
@@ -116,7 +129,7 @@
   }
   to {
     opacity: 100%;
-    height: 20rem;
+    height: 16rem;
   }
 }
 .header-logo-container {
@@ -145,7 +158,7 @@
 .menu-item-size {
   @apply /* --------------------- */
   /* desktop */ px-16 py-3
-  /* tablet */ lg-max:px-8 
+  /* tablet */ lg-max:px-6 
   /* mobile */ sm-max:p-4;
 }
 .menu-item {
@@ -170,7 +183,7 @@
 .menu-item-dropdown {
   @apply /* --------------------- */
   /* mobile */ sm-max:p-4 
-  /* tablet */ lg-max:px-16 
+  /* tablet */ lg-max:px-20 
   /* desktop */ px-24 py-3
   /* general design */;
 }
@@ -191,7 +204,7 @@
   /* mobile */ sm-max:border-0
   /* tablet */ 
   /* desktop */ border-y-0 border-borderColor
-  /* general design */ items-center justify-between relative bg-menuPrimary hover:bg-menuSecondary py-3 px-4 flex w-full cursor-pointer border;
+  /* general design */ items-center relative bg-menuPrimary hover:bg-menuSecondary py-3 px-4 flex w-full cursor-pointer border;
 }
 
 .dropdown:hover .dropdown-content {
@@ -203,6 +216,6 @@
   /* mobile */ sm-max:border-0
   /* tablet */ 
   /* desktop */ border-x border-borderColor 
-  /* general design */ flex flex-col dropdownChild-animation h-80 w-full;
+  /* general design */ flex flex-col dropdownChild-animation h-64 w-full;
 }
 </style>

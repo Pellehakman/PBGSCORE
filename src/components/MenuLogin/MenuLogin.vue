@@ -4,13 +4,10 @@
   <ul class="menu-dropdown-container">
     <li
       @click="handleDropdownParent"
-      class="menu-item-dropdown"
-      :class="{
-        'bg-menuSecondary': dropdownParent === true,
-      }"
+      class="menu-item-dropdown menu-item-last"
+      :class="{ 'bg-menuSecondary': dropdownParent === true }"
     >
       <span>ACCOUNT</span>
-
       <img
         v-if="dropdownParent === false"
         class="absolute bottom-0.5 right-0.5 w-2 opacity-10"
@@ -18,21 +15,20 @@
         alt=""
       />
     </li>
+
     <div class="menu-dropdown-content" v-if="dropdownParent">
       <ul class="flex flex-col w-full">
         <li @click="handleDropdownChild" class="menu-dropdown-item" to="#">
           <span>LOGIN</span>
           <font-awesome-icon
-            :class="{
-              ['rotate-180 transition-all']: dropdownChild,
-            }"
+            :class="{ ['rotate-180 transition-all']: dropdownChild }"
             width="16px"
             icon="fa-solid fa-chevron-down"
           />
         </li>
         <form
-          class="menu-login-form bg-MenuPrimary p-2 font-semibold gap-2"
           v-if="dropdownChild"
+          class="menu-login-form bg-MenuPrimary p-2 font-semibold gap-2"
         >
           <div class="relative">
             <input
@@ -40,16 +36,31 @@
               ref="emailInput"
               type="email"
               id="email"
-              class="standard-input-field bg-inputDark peer"
+              class="standard-input-field bg-input peer"
               placeholder=" "
             />
             <label for="email" class="standard-input-label">EMAIL ADRESS</label>
           </div>
           <div class="relative">
+            <div class="icons">
+              <font-awesome-icon
+                v-if="displayPassword === 'password'"
+                @click="handleDisplayPassword"
+                class="standard-input-show peer"
+                icon="fa-solid fa-eye-slash"
+              />
+              <font-awesome-icon
+                v-if="displayPassword === 'text'"
+                @click="handleDisplayPassword"
+                class="standard-input-show peer"
+                icon="fa-solid fa-eye"
+              />
+            </div>
+
             <input
-              type="password"
+              :type="displayPassword"
               id="password"
-              class="standard-input-field bg-inputDark peer"
+              class="standard-input-field bg-input peer"
               placeholder=" "
             />
             <label for="password" class="standard-input-label">PASSWORD</label>
@@ -59,19 +70,20 @@
             <button
               class="btn-all bg-success hover:brightness-12 active:brightness-75 transition-all"
             >
-              LOGIN
+              <span>LOGIN</span>
             </button>
             <span class="text-xs">NO LOGIN? SIGN UP HERE</span>
           </div>
         </form>
       </ul>
 
-      <Router-link class="menu-dropdown-item" to="/account"
-        >ACCOUNT SETTINGS</Router-link
-      >
-
+      <Router-link class="menu-dropdown-item" to="/account">
+        <span>ACCOUNT SETTINGS</span>
+        <font-awesome-icon icon="fa-solid fa-gear" />
+      </Router-link>
       <li class="menu-dropdown-item">
         <span>LOGOUT</span>
+        <font-awesome-icon width="16px" icon="fa-solid fa-right-from-bracket" />
       </li>
     </div>
   </ul>
@@ -117,7 +129,7 @@
 }
 
 .menu-nav {
-  @apply text-white max-w-7xl mx-auto;
+  @apply text-white max-w-7xl w-full mx-auto;
 }
 .menu-nav-container {
   @apply /* --------------------- */
@@ -132,30 +144,33 @@
   @apply /* --------------------- */
   /* desktop */ px-16 py-3
   /* tablet */ lg-max:px-8 
-  /* mobile */ sm-max:p-4 
-  /* general design */;
+  /* mobile */ sm-max:p-4;
 }
 .menu-item {
   @apply /* --------------------- */
-  /* desktop */ 
-  /* tablet */ 
   /* mobile */ sm-max:border-b sm-max:border-r-0
-  /* general design */ flex items-center relative font-bebas text-3xl text-white  border-r border-borderColor hover:bg-menuSecondary transition-all cursor-pointer;
+  /* general design */ flex items-center relative font-bebas text-3xl text-white border-r border-borderColor hover:bg-menuSecondary transition-all cursor-pointer;
 }
 
 .menu-item-first {
   @apply /* --------------------- */
   /* mobile */ sm-max:border-t
+  /* tablet */ lg-max:border-l-0
   /* general design */ menu-item extra-border;
+}
+.menu-item-last {
+  @apply /* --------------------- */
+  /* mobile */ 
+  /* tablet */ lg-max:border-r-0
+  /* general design */menu-item extra-border;
 }
 
 .menu-item-dropdown {
-  @apply /*  */
-  /* mobile */ sm-max:p-4 sm-max:border-b-0
+  @apply /* --------------------- */
+  /* mobile */ sm-max:p-4 
   /* tablet */ lg-max:px-16 
   /* desktop */ px-24 py-3
-  /* general design */
-   menu-item extra-border;
+  /* general design */;
 }
 
 .extra-border {
@@ -167,15 +182,25 @@
   @apply block relative;
 }
 .menu-dropdown-content {
-  @apply absolute transition-all flex flex-col items-start dropdownParent-animation bg-menuPrimary border border-b-0 border-borderColor gap-0.5 w-full drop-shadow-xl;
+  @apply absolute transition-all flex flex-col items-start dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl border-b border-borderColor;
 }
 .menu-dropdown-item {
-  @apply items-center justify-between relative bg-menuPrimary hover:bg-menuSecondary py-3 px-4 flex w-full cursor-pointer;
+  @apply /* --------------------- */
+  /* mobile */ sm-max:border-0
+  /* tablet */ 
+  /* desktop */ border-y-0 border-borderColor
+  /* general design */ items-center justify-between relative bg-menuPrimary hover:bg-menuSecondary py-3 px-4 flex w-full cursor-pointer border;
 }
+
 .dropdown:hover .dropdown-content {
   @apply transition-all flex flex-col dropdownParent-animation;
 }
+
 .menu-login-form {
-  @apply flex flex-col dropdownChild-animation h-80 w-full;
+  @apply /* --------------------- */
+  /* mobile */ sm-max:border-0
+  /* tablet */ 
+  /* desktop */ border-x border-borderColor 
+  /* general design */ flex flex-col dropdownChild-animation h-80 w-full;
 }
 </style>

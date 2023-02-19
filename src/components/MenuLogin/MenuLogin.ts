@@ -6,6 +6,7 @@ export default defineComponent({
   setup() {
     const dropdownChild = ref(false);
     const dropdownParent = ref(false);
+    const displayPassword = ref("password");
 
     document.addEventListener("mousedown", function (event: any) {
       if (!event.target.closest(".menu-dropdown-container")) {
@@ -13,6 +14,14 @@ export default defineComponent({
         dropdownParent.value = false;
       }
     });
+
+    const handleDisplayPassword = () => {
+      if (displayPassword.value === "password") {
+        displayPassword.value = "text";
+      } else {
+        displayPassword.value = "password";
+      }
+    };
 
     const handleDropdownParent = () => {
       dropdownParent.value = !dropdownParent.value;
@@ -22,6 +31,8 @@ export default defineComponent({
       dropdownChild.value = !dropdownChild.value;
     };
     return {
+      displayPassword,
+      handleDisplayPassword,
       triangle,
       handleDropdownChild,
       dropdownChild,

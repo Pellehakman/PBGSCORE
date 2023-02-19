@@ -4,7 +4,7 @@
     --primary: #0F0D15;
     --secondary: rgb(11, 99, 150);
     --borderColor: rgb(28, 28, 28);
-    --inputDark: #171717;
+    --input: #171717;
 
     --success: #157866;
     --warning: #b2bd1a;
@@ -45,7 +45,7 @@
   --primary: #a8a8a8;
   --secondary: rgb(179, 227, 255);
   --borderColor: rgb(227, 227, 227);
-  --inputDark: #171717;
+  --input: #171717;
 
   --success: #157866;
   --warning: #b2bd1a;

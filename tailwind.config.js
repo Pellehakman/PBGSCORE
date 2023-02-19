@@ -32,7 +32,7 @@ module.exports = {
         gray: "var(--gray)",
 
         borderColor: "var(--borderColor)",
-        inputDark: "var(--inputDark)",
+        input: "var(--input)",
 
         success: "var(--success)",
         warning: "var(--warning)",

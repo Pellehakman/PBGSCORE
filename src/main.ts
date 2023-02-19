@@ -18,10 +18,24 @@ import {
   faChevronDown,
   faCaretRight,
   faBars,
+  faRightFromBracket,
+  faGear,
+  faEyeSlash,
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faUserSecret, faChevronDown, faCaretRight, faBars);
+library.add(
+  faUserSecret,
+  faChevronDown,
+  faCaretRight,
+  faBars,
+  faRightFromBracket,
+  faGear,
+  faEyeSlash,
+  faEye
+
+);
 
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);
 

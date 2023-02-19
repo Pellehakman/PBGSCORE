@@ -1,6 +1,7 @@
 import Account from "@/views/Account/Account.vue";
 import Home from "@/views/Home/Home.vue";
 import Landing from "@/views/Landing/Landing.vue";
+
 import Statistics from "@/views/Statistics/Statistics.vue";
 import Teams from "@/views/Teams/Teams.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -11,6 +12,10 @@ const router = createRouter({
   routes: [
     {
       path: "/",
+      redirect: "/landing",
+    },
+    {
+      path: "/landing",
       name: "landing",
       component: Landing,
     },

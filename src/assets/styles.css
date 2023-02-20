@@ -19,7 +19,7 @@ select:-webkit-autofill:focus {
 
 @layer base {
   body{
-    @apply main-bg-linear h-screen w-screen font-open 
+    @apply main-bg-linear h-screen w-screen font-open overflow-hidden
   }
 }
 
@@ -33,7 +33,7 @@ select:-webkit-autofill:focus {
     @apply px-2 py-2
   }
   .btn-xl{
-    @apply px-2 py-2
+    @apply px-12
   }
   .btn-all{
     @apply 
@@ -70,7 +70,7 @@ select:-webkit-autofill:focus {
 
   /* CUSTOM STYLING START */
   .main-bg-linear{
-    background: linear-gradient(140deg, rgba(48,45,60,1) 0%, rgb(15, 11, 23) 100%);
+    background: linear-gradient(140deg, rgb(18, 17, 22) 0%, rgb(11, 8, 17) 100%);
   }
   .active-menu{
     background-color: var(--bg-menu-secondary)

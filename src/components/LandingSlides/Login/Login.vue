@@ -1,7 +1,7 @@
 <script src="./Login" lang="ts"></script>
 
 <template>
-  <span class="landing-hero-small"> LOGIN </span>
+  <span class="bebas-xl"> LOGIN </span>
   <p class="text-white text-m font-open">
     Welcome back, please enter your information to login and compare statistics.
   </p>

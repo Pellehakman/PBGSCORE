@@ -1,7 +1,7 @@
 <script src="./Signup" lang="ts"></script>
 
 <template>
-  <span class="landing-hero-small"> SIGN UP </span>
+  <span class="bebas-xl"> SIGN UP </span>
   <p class="text-white text-m font-open">
     Enter your information to register and join other people comparing PUBG
     statistics

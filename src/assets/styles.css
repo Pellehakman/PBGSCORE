@@ -24,6 +24,36 @@ select:-webkit-autofill:focus {
 }
 
 @layer components {
+
+  .bebas-xl{
+    @apply  /* --------------------- */
+    /* desktop */ text-8xl
+    /* tablet */ lg-max:text-6xl
+    /* mobile */ sm-max:text-4xl
+    /* general design */ font-bebas text-textSecondary ;
+  }
+
+  .bebas-lg{
+    @apply  /* --------------------- */
+    /* desktop */ text-8xl
+    /* tablet */ lg-max:text-6xl
+    /* mobile */ sm-max:text-4xl
+    /* general design */ font-bebas text-textSecondary ;
+  }
+  .bebas-sm{
+    @apply  /* --------------------- */
+    /* desktop */ text-3xl
+    /* tablet */ lg-max:text-2xl
+    /* mobile */ sm-max:text-xl
+    /* general design */ font-bebas text-textSecondary ;
+  }
+  .landing-search-btn {
+    @apply /* --------------------- */
+    /* desktop */ px-16
+    /* tablet */ lg-max:px-8
+    /* mobile */ sm-max:px-2 
+    /* general design */ bg-success bebas-sm flex justify-center items-center text-white rounded-r-sm;
+  }
   /* GENERAL STYLING START */
  
   .btn-sm{
@@ -40,7 +70,7 @@ select:-webkit-autofill:focus {
     /* desktop */ px-12 py-4
     /* tablet */ lg-max:px-10 lg-max:py-3
     /* mobile */ sm-max:px-6 sm-max:text-xs
-    /* general design */ rounded-sm text-xl font-semibold text-white
+    /* general design */ rounded-sm text-xl font-semibold text-white 
   }
 
 .icon-container{

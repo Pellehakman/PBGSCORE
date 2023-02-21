@@ -36,7 +36,7 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
         </Transition>
       </div>
 
-      <Transition class="absolute px-16" name="login-modal">
+      <Transition class="absolute px-16 " name="login-modal">
         <div v-if="loginModal" class="max-w-2xl w-screen">
           <Login :handleModal="handleModal" />
         </div>
@@ -57,7 +57,7 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
   /* desktop */  pt-32
   /* tablet */ lg-max:pt-24
   /* mobile */sm-max:pt-16
-  /* general design */ w-screen justify-center flex;
+  /* general design */ w-screen justify-center flex ;
 }
 .landing-main-container {
   @apply /* --------------------- */

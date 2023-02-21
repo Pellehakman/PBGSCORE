@@ -4,10 +4,11 @@
     --primary: #0F0D15;
     --secondary: rgb(11, 99, 150);
     --borderColor: rgb(15, 15, 15);
-    --input: #171717;
-
+    --input: #0d0c11;
+    --monestral: #100E17;
+    
     --success: #157866;
-    --warning: #b2bd1a;
+    --warning: #B78F00;
     --danger: #a7505b;
 
     --black: #0e0e0e;
@@ -16,8 +17,8 @@
     
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(255, 255, 255);
-    --bg-menu-primary: #070707;
-    --bg-menu-secondary: #000000;
+    --bg-menu-primary: #09080f;
+    --bg-menu-secondary: #141120;
     
     --ff-bebas: 'Bebas Neue', sans-serif;
     --ff-open : 'Open Sans', sans-serif;

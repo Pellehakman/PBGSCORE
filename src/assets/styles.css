@@ -19,7 +19,7 @@ select:-webkit-autofill:focus {
 
 @layer base {
   body{
-    @apply main-bg-linear h-screen w-screen font-open overflow-hidden
+    @apply bg-pubg bg-center bg-cover h-screen w-screen font-open overflow-x-hidden
   }
 }
 
@@ -38,30 +38,31 @@ select:-webkit-autofill:focus {
   .btn-all{
     @apply 
     /* desktop */ px-12 py-4
-    /* tablet */ lg-max:px-10 lg-max:py-2
-    /* mobile */
-    /* general design */ rounded-sm text-xl font-semibold
+    /* tablet */ lg-max:px-10 lg-max:py-3
+    /* mobile */ sm-max:px-6 sm-max:text-xs
+    /* general design */ rounded-sm text-xl font-semibold text-white
   }
-  .standard-input-show{
-    /* @apply  */
-    
-  }
+
 .icon-container{
   @apply absolute top-0 bottom-0 my-auto
 }
 .icons{
   @apply flex w-6 h-6 justify-center items-center absolute top-0 right-2 bottom-0 my-auto
 }
-  .standard-input-field{
-    @apply 
-    /* desktop */ pt-6 pb-2 pl-2
-    /* tablet */
-    /* mobile */
-    /* general design */ flex text-sm w-full rounded-sm appearance-none text-white focus:outline-none focus:ring-0 
-  }
-  .standard-input-label{
-    @apply absolute text-base duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-2 top-0 peer-focus:top-0
-  }
+
+.standard-input-xl{
+  @apply relative
+}
+.standard-input-field{
+  @apply 
+  /* desktop */ pt-6 pb-2 pl-2
+  /* tablet */
+  /* mobile */
+  /* general design */ flex text-sm w-full rounded-sm appearance-none bg-input focus:outline-none focus:ring-0 text-white 
+}
+.standard-input-label{
+  @apply absolute text-base text-white duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-2 top-0 peer-focus:top-0
+}
   /* GENERAL STYLING END */
 
 
@@ -70,7 +71,7 @@ select:-webkit-autofill:focus {
 
   /* CUSTOM STYLING START */
   .main-bg-linear{
-    background: linear-gradient(140deg, rgb(18, 17, 22) 0%, rgb(11, 8, 17) 100%);
+    background: linear-gradient(140deg, rgb(43, 21, 21) 0%, rgb(37, 35, 44)100%);
   }
   .active-menu{
     background-color: var(--bg-menu-secondary)

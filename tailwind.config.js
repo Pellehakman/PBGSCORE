@@ -6,6 +6,9 @@ module.exports = {
 
   theme: {
     extend: {
+      lineHeight: {
+        zero: "0",
+      },
       screens: {
         "sm-min": "640px",
         // => @media (min-width: 640px) { ... }
@@ -30,6 +33,7 @@ module.exports = {
         black: "var(--black)",
         white: "var(--white)",
         gray: "var(--gray)",
+        monestral: "var(--monestral)",
 
         borderColor: "var(--borderColor)",
         input: "var(--input)",
@@ -46,6 +50,9 @@ module.exports = {
       fontFamily: {
         bebas: ["var(--ff-bebas)"],
         open: ["var(--ff-open)"],
+      },
+      backgroundImage: {
+        pubg: "url('/src/assets/PUBG.png')",
       },
     },
   },

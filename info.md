@@ -7,6 +7,50 @@
         <img class="logo" :src="logo" alt="logo" />
       </figure>
 
+
+
+
+
+
+
+      
+<div class="flex justify-between gap-8 h-24">
+            <span
+              @click="handleClick1"
+              :class="{
+                'text-8xl lg-max:text-6xl ': isButton1Pressed,
+              }"
+              class="landing-hero-small"
+            >
+              SIGN UP
+            </span>
+            <h1
+              @click="handleClick2"
+              :class="{
+                'text-8xl lg-max:text-6xl  ': isButton2Pressed,
+              }"
+              class="landing-hero-small"
+            >
+              LOGIN
+            </h1>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <ul class="flex gap-4">
         <li @click="handleView" class="landing-sign" to="#">SIGN IN</li>
         <li @click="handleView" class="landing-sign bg-primary" to="#">

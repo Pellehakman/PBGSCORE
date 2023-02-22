@@ -5,17 +5,18 @@
   <p class="text-white text-m font-open">
     Welcome back, please enter your information to login and compare statistics.
   </p>
-  <form class="gap-2 flex flex-col mt-6">
+  <form class="form-container">
     <Email />
+
     <Password />
-    <div class="flex justify-end">
-      <span class="font-bold text-white">FORGOT PASSWORD?</span>
+    <div class="form-warning">
+      <span class="text-white">WARNING</span>
     </div>
-    <div class="flex justify-end pt-8">
+    <div class="form-btn-container">
       <button @click.prevent="props.handleModal" class="btn-all">
         <span>CANCEL</span>
       </button>
-      <Router-link to="statistics" class="btn-all bg-success"
+      <Router-link to="statistics" class="btn-all btn-success"
         >LOGIN
       </Router-link>
     </div>

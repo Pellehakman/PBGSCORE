@@ -4,7 +4,7 @@
   <ul class="menu-dropdown-container">
     <li
       @click="handleDropdownParent"
-      class="menu-item-dropdown menu-item-last"
+      class="menu-item-dropdown menu-item"
       :class="{ 'bg-menuSecondary': dropdownParent === true }"
     >
       <span>ACCOUNT</span>
@@ -94,16 +94,6 @@
     height: 16rem;
   }
 }
-.header-logo-container {
-  @apply /* --------------------- */
-  /* mobile */ sm-max:justify-between
-  /* general design */ p-4 flex justify-center items-center max-w-7xl mx-auto;
-}
-.menu-container {
-  @apply /* --------------------- */
-  /* mobile */ sm-max:border-0
-  /* general design */ border border-borderColor border-l-0 border-r-0;
-}
 
 .menu-nav {
   @apply text-white max-w-7xl w-full mx-auto;
@@ -119,28 +109,20 @@
 }
 .menu-item-size {
   @apply /* --------------------- */
-  /* desktop */ px-16 py-3
+  /* desktop */ px-16 py-3 
   /* tablet */ lg-max:px-6 
   /* mobile */ sm-max:p-4;
 }
 .menu-item {
   @apply /* --------------------- */
-  /* mobile */ sm-max:border-b sm-max:border-r-0
-  /* general design */ flex items-center relative font-bebas text-3xl text-white border-r border-borderColor hover:bg-menuSecondary transition-all cursor-pointer;
+  /* desktop */ 
+  /* tablet */ 
+  /* mobile */  sm-max:my-0 sm-max:mb-4
+  /* general design */  my-4 flex items-center relative font-bebas text-3xl text-white hover:bg-menuSecondary transition-all cursor-pointer;
 }
 
-.menu-item-first {
-  @apply /* --------------------- */
-  /* mobile */ sm-max:border-t
-  /* tablet */ lg-max:border-l-0
-  /* general design */ menu-item extra-border;
-}
-.menu-item-last {
-  @apply /* --------------------- */
-  /* mobile */ 
-  /* tablet */ lg-max:border-r-0
-  /* general design */menu-item extra-border;
-}
+
+
 
 .menu-item-dropdown {
   @apply /* --------------------- */
@@ -150,16 +132,11 @@
   /* general design */;
 }
 
-.extra-border {
-  @apply /* --------------------- */
-  /* mobile */ sm-max:border-l-0 
-  /* general design */ border-l border-l-borderColor;
-}
 .menu-dropdown-container {
   @apply block relative;
 }
 .menu-dropdown-content {
-  @apply absolute transition-all flex flex-col items-start dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl border-b border-borderColor;
+  @apply absolute transition-all flex flex-col items-start dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl;
 }
 .menu-dropdown-item {
   @apply /* --------------------- */
@@ -175,7 +152,7 @@
 
 .menu-login-form {
   @apply /* --------------------- */
-  /* desktop */ border-x border-borderColor p-2 font-semibold gap-2
+  /* desktop */ p-2 font-semibold gap-2
   /* tablet */ 
   /* mobile */ sm-max:border-0
   /* general design */ flex flex-col dropdownChild-animation h-64 w-full;

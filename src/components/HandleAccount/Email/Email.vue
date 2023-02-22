@@ -1,15 +1,15 @@
 <script src="./Email" lang="ts"></script>
 
 <template>
-  <div class="standard-input-xl">
+  <div class="input-container">
     <input
       autofocus
       type="email"
       id="email"
-      class="standard-input-field peer"
+      class="input-field peer"
       placeholder=" "
     />
-    <label for="email" class="standard-input-label">EMAIL ADRESS</label>
+    <label for="email" class="input-label">Email Adress</label>
   </div>
 </template>
 <style></style>

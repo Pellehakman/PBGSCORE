@@ -4,12 +4,15 @@
   <span class="bebas-xl"> SIGN UP </span>
   <p class="text-white text-m font-open">
     Enter your information to register and join other people comparing PUBG
-    statistics
+    statistics.
   </p>
-  <form class="gap-2 flex flex-col mt-6">
+  <form class="form-container">
     <Nickname />
     <Email />
     <Password />
+    <div class="form-warning">
+      <span class="text-white">WARNING</span>
+    </div>
 
     <div class="flex justify-end pt-8">
       <button @click.prevent="props.handleModal" class="btn-all">

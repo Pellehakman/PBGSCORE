@@ -7,7 +7,11 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
   <div class="flex flex-col">
     <header class="landing-heading">
       <div class="flex">
-        <img class="logo" :src="logo" alt="logo" />
+        <img
+          class="logo-landing bg-red-600 px-12 py-2 h-16"
+          :src="logo"
+          alt="logo"
+        />
       </div>
       <div class="flex gap-2">
         <button
@@ -29,20 +33,20 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
 
     <main class="modal-container">
       <div class="landing-main-container">
-        <Transition class="absolute px-16" name="default-modal">
+        <Transition class="modal" name="default-modal">
           <div v-if="firstModal">
             <GoPro />
           </div>
         </Transition>
       </div>
 
-      <Transition class="absolute px-16 " name="login-modal">
+      <Transition class="modal" name="login-modal">
         <div v-if="loginModal" class="max-w-2xl w-screen">
           <Login :handleModal="handleModal" />
         </div>
       </Transition>
 
-      <Transition class="absolute px-16" name="signup-modal">
+      <Transition class="modal" name="signup-modal">
         <div v-if="signupModal" class="max-w-2xl w-screen">
           <Signup :handleModal="handleModal" />
         </div>
@@ -52,12 +56,19 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
 </template>
 
 <style>
+.modal {
+  @apply /* --------------------- */
+  /* desktop */ px-16
+  /* tablet */ lg-max:px-8 
+  /* mobile */ sm-max:px-4 
+  /* general design */ absolute;
+}
 .modal-container {
   @apply /* --------------------- */
   /* desktop */  pt-32
   /* tablet */ lg-max:pt-24
   /* mobile */sm-max:pt-16
-  /* general design */ w-screen justify-center flex ;
+  /* general design */ w-screen justify-center flex;
 }
 .landing-main-container {
   @apply /* --------------------- */
@@ -123,8 +134,13 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
   @apply px-16 py-4 rounded-sm hover:scale-105 hover:backdrop-brightness-90 transition ease-in-out duration-300 hover:-translate-y-1;
 }
 .landing-heading {
-  @apply flex justify-between  mx-16 pt-16;
+  @apply /* --------------------- */
+  /* desktop */ p-16
+  /* tablet */ lg-max:p-8 
+  /* mobile */ sm-max:p-4 
+  /* general design */ flex justify-between;
 }
+
 .landing-sign {
   @apply big-btn text-white font-open font-semibold text-lg;
 }
@@ -132,6 +148,6 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
   @apply flex;
 }
 .landing-search {
-  @apply bg-success font-bebas text-3xl px-6 text-white flex-1 flex flex-col flex-grow;
+  @apply bg-success-500 font-bebas text-3xl px-6 text-white flex-1 flex flex-col flex-grow;
 }
 </style>

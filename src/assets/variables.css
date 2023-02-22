@@ -4,10 +4,12 @@
     --primary: #0F0D15;
     --secondary: rgb(11, 99, 150);
     --borderColor: rgb(24, 23, 31);
-    --input: #ffffff;
+    --input: #000000c1;
     --monestral: #100E17;
     
-    --success: #157866;
+    --success-500: #1cb091;
+    --success-600: #138e76;
+    --success-700: #157866;
     --warning: #B78F00;
     --danger: #a7505b;
 
@@ -17,8 +19,8 @@
     
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(255, 255, 255);
-    --bg-menu-secondary: #09080f;
-    --bg-menu-primary: #0e0c16;
+    --bg-menu-secondary: #1a1a1a;
+    --bg-menu-primary: #000000;
     
     --ff-bebas: 'Bebas Neue', sans-serif;
     --ff-open : 'Open Sans', sans-serif;
@@ -40,24 +42,3 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  
-:root.dark-theme{
-  --primary: #a8a8a8;
-  --secondary: rgb(179, 227, 255);
-  --borderColor: rgb(227, 227, 227);
-  --input: #171717;
-
-  --success: #157866;
-  --warning: #b2bd1a;
-  --danger: #a7505b;
-
-  --black: #0e0e0e;
-  --white: #000000;
-  --gray: #606060;
-  
-  --bg-menu-primary: #f7f7f7;
-  --bg-menu-secondary: #efefef;
-  --ff-bebas: 'Bebas Neue', sans-serif;
-  --ff-open : 'Open Sans', sans-serif;
-}

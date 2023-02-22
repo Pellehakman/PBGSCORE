@@ -3,7 +3,6 @@
 <template>
   <header class="header-container">
     <div class="header-logo-container">
-      <img id="logo" class="logo" :src="logo" alt="" />
       <button @click="handleMenu" class="sm:hidden p-2">
         <font-awesome-icon width="16px" icon="fa-bars" style="color: white" />
       </button>
@@ -14,10 +13,14 @@
         <div
           ref="menuContainer"
           :class="{ activeMenu: toggleMenu }"
-          class="menu-nav-container"
+          class="menu-nav-container relative"
         >
-          <div class="flex sm-max:flex-col">
-            <Router-link to="/home" class="menu-item-first menu-item-size">
+          <div class="flex sm-max:flex-col gap-4 sm-max:gap-0">
+            <div class="logo-container">
+              <img id="logo" class="logo" :src="logo" alt="" />
+            </div>
+
+            <Router-link to="/home" class="menu-item menu-item-size">
               <span>HOME</span>
             </Router-link>
 
@@ -37,10 +40,28 @@
 </template>
 
 <style>
-.logo {
-  @apply w-16;
+.header-logo-container {
+  @apply /* --------------------- */
+  /* mobile */ sm-max:justify-end
+  /* general design */  flex justify-center items-center mx-auto relative;
 }
+.logo-container {
+  @apply /* --------------------- */
+  /* desktop */
+  /* tablet */ lg-max:w-24
+  /* mobile */ 
+  /* general design */ relative w-32;
+}
+
+.logo {
+  @apply /* --------------------- */
+  /* desktop */ h-40 p-4
+  /* tablet */  
+  /* mobile */ sm-max:hidden
+  /* general design */ absolute -top-1 z-20 bg-red-600 left-0 text-white shadow-2xl;
+}
+
 .header-container {
-  @apply bg-menuPrimary;
+  @apply bg-menuPrimary px-4 sm-max:px-0;
 }
 </style>

@@ -22,6 +22,9 @@ import {
   faGear,
   faEyeSlash,
   faEye,
+  faSpinner,
+  faCircleExclamation,
+  faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -33,7 +36,10 @@ library.add(
   faRightFromBracket,
   faGear,
   faEyeSlash,
-  faEye
+  faEye,
+  faSpinner,
+  faCircleExclamation,
+  faCircleCheck
 
 );
 

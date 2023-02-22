@@ -19,7 +19,7 @@ select:-webkit-autofill:focus {
 
 @layer base {
   body{
-    @apply bg-pubg bg-center bg-cover h-screen w-screen font-open overflow-x-hidden
+    @apply bg-pubg bg-center backdrop-brightness-75 bg-cover h-screen w-screen font-open overflow-x-hidden
   }
 }
 
@@ -40,6 +40,7 @@ select:-webkit-autofill:focus {
     /* mobile */ sm-max:text-4xl
     /* general design */ font-bebas text-textSecondary ;
   }
+
   .bebas-sm{
     @apply  /* --------------------- */
     /* desktop */ text-3xl
@@ -52,7 +53,7 @@ select:-webkit-autofill:focus {
     /* desktop */ px-16
     /* tablet */ lg-max:px-8
     /* mobile */ sm-max:px-2 
-    /* general design */ bg-success bebas-sm flex justify-center items-center text-white rounded-r-sm;
+    /* general design */ transition-all bg-success-500 hover:bg-success-600 active:bg-success-700 bebas-sm flex justify-center items-center text-white rounded-r-sm;
   }
   /* GENERAL STYLING START */
  
@@ -65,6 +66,14 @@ select:-webkit-autofill:focus {
   .btn-xl{
     @apply px-12
   }
+
+
+.btn-success{
+  @apply bg-success-500 hover:bg-success-600 active:bg-success-700
+}
+
+
+  /* ACCORDION */
   .btn-all{
     @apply 
     /* desktop */ px-12 py-4
@@ -73,26 +82,54 @@ select:-webkit-autofill:focus {
     /* general design */ rounded-sm text-xl font-semibold text-white 
   }
 
-.icon-container{
-  @apply absolute top-0 bottom-0 my-auto
-}
-.icons{
-  @apply flex w-6 h-6 justify-center items-center absolute top-0 right-2 bottom-0 my-auto
-}
-
-.standard-input-xl{
+/* STANDARD INPUT STYLING START */
+.input-container{
   @apply relative
 }
-.standard-input-field{
+.input-field{
   @apply 
-  /* desktop */ pt-6 pb-2 pl-2
+  /* desktop */ pt-6 pb-2 pl-4
   /* tablet */
   /* mobile */
-  /* general design */ flex text-sm w-full rounded-sm appearance-none bg-input focus:outline-none focus:ring-0 text-white 
+  /* general design */ flex text-sm w-full rounded-sm appearance-none bg-input bg-opacity-20 focus:outline-none focus:ring-0 text-textSecondary 
 }
-.standard-input-label{
-  @apply absolute text-base text-white duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-2 top-0 peer-focus:top-0
+.input-label{
+  @apply absolute text-base font-semibold text-textSecondary duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-4 top-0 peer-focus:top-0
 }
+.input-icon-container{
+  @apply flex w-6 h-6 justify-center items-center absolute top-0 right-2 bottom-0 my-auto
+}
+.input-icon{
+  @apply text-white
+}
+/* STANDARD INPUT STYLING END */
+
+
+
+
+
+
+/* STANDARD FORM STYLING START */
+.form-container{
+  @apply gap-2 flex flex-col mt-6
+}
+.form-warning{
+  @apply flex justify-end
+}
+.form-btn-container{
+  @apply flex justify-end pt-8
+
+}
+
+/* STANDARD FORM STYLING END */
+
+
+
+
+
+
+
+
   /* GENERAL STYLING END */
 
 

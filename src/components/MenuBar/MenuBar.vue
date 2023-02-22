@@ -15,7 +15,7 @@
           :class="{ activeMenu: toggleMenu }"
           class="menu-nav-container relative"
         >
-          <div class="flex sm-max:flex-col gap-4 sm-max:gap-0">
+          <div class="flex sm-max:flex-col gap-4 mr-4 sm-max:gap-0">
             <div class="logo-container">
               <img id="logo" class="logo" :src="logo" alt="" />
             </div>
@@ -49,7 +49,7 @@
   @apply /* --------------------- */
   /* desktop */
   /* tablet */ lg-max:w-24
-  /* mobile */ 
+  /* mobile */ md-max:hidden
   /* general design */ relative w-32;
 }
 
@@ -62,6 +62,6 @@
 }
 
 .header-container {
-  @apply bg-menuPrimary px-4 sm-max:px-0;
+  @apply bg-menuPrimary pl-4;
 }
 </style>

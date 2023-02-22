@@ -7,11 +7,7 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
   <div class="flex flex-col">
     <header class="landing-heading">
       <div class="flex">
-        <img
-          class="logo-landing bg-red-600 px-12 py-2 h-16"
-          :src="logo"
-          alt="logo"
-        />
+        <img class="logo-landing h-16" :src="logo" alt="logo" />
       </div>
       <div class="flex gap-2">
         <button

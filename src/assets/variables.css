@@ -3,7 +3,7 @@
 :root{
     --primary: #0F0D15;
     --secondary: rgb(11, 99, 150);
-    --borderColor: rgb(24, 23, 31);
+    --borderColor: rgb(0, 0, 0);
     --input: #000000c1;
     --monestral: #100E17;
     
@@ -19,7 +19,7 @@
     
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(255, 255, 255);
-    --bg-menu-secondary: #1a1a1a;
+    --bg-menu-secondary: #0f0f0f;
     --bg-menu-primary: #000000;
     
     --ff-bebas: 'Bebas Neue', sans-serif;

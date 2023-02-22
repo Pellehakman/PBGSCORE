@@ -110,8 +110,8 @@
 .menu-item-size {
   @apply /* --------------------- */
   /* desktop */ px-16 py-3
-   /* desktop */ 
-  /* tablet */ lg-max:px-5 
+   /* desktop */ xl-max:px-8
+  /* tablet */ lg-max:px-4 
   /* mobile */ sm-max:p-4;
 }
 .menu-item {

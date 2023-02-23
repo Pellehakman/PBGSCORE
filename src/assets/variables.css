@@ -4,14 +4,26 @@
     --primary: #0F0D15;
     --secondary: rgb(11, 99, 150);
     --borderColor: rgb(0, 0, 0);
-    --input: #000000c1;
+    --input: #1e1e1ec1;
     --monestral: #100E17;
+
+    --primary-500: #1eadff;
+    --primary-600: #068fff;
+    --primary-700: #007bff;
     
     --success-500: #1cb091;
     --success-600: #138e76;
     --success-700: #157866;
-    --warning: #B78F00;
-    --danger: #a7505b;
+
+    --warning-600: #cab902;
+    --warning-700: #a38805;
+    --warning-800: #866a0d;
+
+    --danger-600: #bc4246;
+    --danger-700: #9d3339;
+    --danger-800: #842d35;
+
+   
 
     --black: #0e0e0e;
     --white: #ffffff;

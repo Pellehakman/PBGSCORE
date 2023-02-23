@@ -1,26 +1,27 @@
-import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
-'@/components/HandleLogin/Nickname/Nickname';
-
 <script lang="ts" src="./Landing.ts"></script>
 
 <template>
-  <div class="flex flex-col">
-    <header class="landing-heading">
+  <div class="landing-container">
+    <header class="landing-header">
       <div class="flex">
-        <img class="logo-landing h-16" :src="logo" alt="logo" />
+        <img class="landing-logo" :src="logo" alt="logo" />
       </div>
-      <div class="flex gap-2">
+      <div class="header-btn-container">
         <button
           @click="handleLogin"
           :class="{ 'bg-primary': loginModal === true }"
-          class="btn-all"
+          class="btn"
         >
           <span>LOGIN</span>
         </button>
         <button
           @click="handleSignup"
-          :class="{ 'bg-primary': signupModal === true }"
-          class="btn-all"
+          :class="[
+            signupModal
+              ? 'bg-monestral border border-transparent'
+              : 'border rounded-sm border-white',
+          ]"
+          class="btn"
         >
           <span>SIGN UP</span>
         </button>
@@ -37,13 +38,13 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
       </div>
 
       <Transition class="modal" name="login-modal">
-        <div v-if="loginModal" class="max-w-2xl w-screen">
+        <div v-if="loginModal">
           <Login :handleModal="handleModal" />
         </div>
       </Transition>
 
       <Transition class="modal" name="signup-modal">
-        <div v-if="signupModal" class="max-w-2xl w-screen">
+        <div v-if="signupModal">
           <Signup :handleModal="handleModal" />
         </div>
       </Transition>
@@ -52,6 +53,23 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
 </template>
 
 <style>
+.landing-container {
+  @apply flex flex-col;
+}
+.landing-header {
+  @apply /* --------------------- */
+  /* desktop */ p-16
+  /* tablet */ lg-max:p-8 
+  /* mobile */ sm-max:p-4 
+  /* general design */ flex justify-between;
+}
+.header-btn-container {
+  @apply flex gap-4 justify-between items-center;
+}
+.landing-logo {
+  @apply h-16;
+}
+
 .modal {
   @apply /* --------------------- */
   /* desktop */ px-16
@@ -95,7 +113,7 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
     /* general design */ flex text-sm w-full rounded-l-sm appearance-none text-white focus:outline-none focus:ring-0;
 }
 .big-input-label {
-  @apply absolute text-base duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-2 top-0 peer-focus:top-0;
+  @apply absolute text-base duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:scale-75  left-2 top-0 peer-focus:top-0;
 }
 
 .default-modal-enter-from,
@@ -128,13 +146,6 @@ import Email from '@/components/HandleLogin/Email/Email'; import Nickname from
 }
 .big-btn {
   @apply px-16 py-4 rounded-sm hover:scale-105 hover:backdrop-brightness-90 transition ease-in-out duration-300 hover:-translate-y-1;
-}
-.landing-heading {
-  @apply /* --------------------- */
-  /* desktop */ p-16
-  /* tablet */ lg-max:p-8 
-  /* mobile */ sm-max:p-4 
-  /* general design */ flex justify-between;
 }
 
 .landing-sign {

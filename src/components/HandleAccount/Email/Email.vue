@@ -9,7 +9,7 @@
       class="input-field peer"
       placeholder=" "
     />
-    <label for="email" class="input-label">Email Adress</label>
+    <label for="email" class="input-label">EMAIL</label>
   </div>
 </template>
 <style></style>

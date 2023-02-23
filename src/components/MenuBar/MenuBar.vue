@@ -3,8 +3,15 @@
 <template>
   <header class="header-container">
     <div class="header-logo-container">
-      <button @click="handleMenu" class="sm:hidden p-2">
-        <font-awesome-icon width="16px" icon="fa-bars" style="color: white" />
+      <img id="logo" class="header-logo" :src="logo" alt="brand logo" />
+      <button>
+        <font-awesome-icon
+          @click="handleMenu"
+          class="sm:hidden p-4"
+          width="16px"
+          icon="fa-bars"
+          style="color: white"
+        />
       </button>
     </div>
 
@@ -15,21 +22,21 @@
           :class="{ activeMenu: toggleMenu }"
           class="menu-nav-container relative"
         >
-          <div class="flex sm-max:flex-col gap-4 mr-4 sm-max:gap-0">
-            <div class="logo-container">
-              <img id="logo" class="logo" :src="logo" alt="" />
+          <div class="menu-item-container">
+            <div class="menu-logo-container">
+              <img id="logo" class="menu-logo" :src="logo" alt="" />
             </div>
 
             <Router-link to="/home" class="menu-item menu-item-size">
-              <span>HOME</span>
+              <span class="menu-heading">HOME</span>
             </Router-link>
 
             <Router-link to="/statistics" class="menu-item menu-item-size">
-              <span>STATISTICS</span>
+              <span class="menu-heading">STATISTICS</span>
             </Router-link>
 
             <Router-link to="/teams" class="menu-item menu-item-size">
-              <span>TEAMS</span>
+              <span class="menu-heading">TEAMS</span>
             </Router-link>
           </div>
           <MenuLogin />
@@ -40,6 +47,21 @@
 </template>
 
 <style>
+.header-container {
+  @apply bg-menuPrimary px-4 sm-max:px-0;
+}
+.menu-heading {
+  @apply text-3xl lg-max:text-2xl;
+}
+.menu-logo-container {
+  @apply bg-danger-600 flex items-center justify-center w-24 sm-max:hidden;
+}
+.menu-logo {
+  @apply h-8;
+}
+.header-logo {
+  @apply w-24 p-4 bg-danger-600 flex items-center sm-min:hidden;
+}
 .header-logo-container {
   @apply /* --------------------- */
   /* mobile */ sm-max:justify-end
@@ -49,7 +71,7 @@
   @apply /* --------------------- */
   /* desktop */
   /* tablet */ lg-max:w-24
-  /* mobile */ md-max:hidden
+  /* mobile */ md-max:hidden sm-max:hidden
   /* general design */ relative w-32;
 }
 
@@ -60,8 +82,7 @@
   /* mobile */ sm-max:hidden
   /* general design */ absolute -top-1 z-20 bg-red-600 left-0 text-white shadow-2xl;
 }
-
-.header-container {
-  @apply bg-menuPrimary pl-4;
+.menu-item-container {
+  @apply flex sm-max:flex-col gap-4 sm-max:gap-0;
 }
 </style>

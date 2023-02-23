@@ -13,12 +13,10 @@
       <span class="text-white">WARNING</span>
     </div>
     <div class="form-btn-container">
-      <button @click.prevent="props.handleModal" class="btn-all">
+      <button @click.prevent="props.handleModal" class="btn">
         <span>CANCEL</span>
       </button>
-      <Router-link to="statistics" class="btn-all btn-success"
-        >LOGIN
-      </Router-link>
+      <Router-link to="statistics" class="btn btn--success">LOGIN</Router-link>
     </div>
   </form>
 </template>

@@ -25,7 +25,7 @@
       class="input-field peer"
       placeholder=" "
     />
-    <label for="password" class="input-label">Password</label>
+    <label for="password" class="input-label">PASSWORD</label>
   </div>
 </template>
 <style></style>

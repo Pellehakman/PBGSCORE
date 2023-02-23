@@ -15,11 +15,11 @@
     </div>
 
     <div class="flex justify-end pt-8">
-      <button @click.prevent="props.handleModal" class="btn-all">
+      <button @click.prevent="props.handleModal" class="btn">
         <span>CANCEL</span>
       </button>
-      <Router-link to="statistics" class="btn-all bg-warning"
-        >REGISTER
+      <Router-link to="statistics" class="btn btn--primary"
+        >SIGN UP
       </Router-link>
     </div>
   </form>

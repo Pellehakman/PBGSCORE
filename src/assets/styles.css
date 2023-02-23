@@ -16,7 +16,6 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-
 @layer base {
   body{
     @apply bg-pubg bg-center backdrop-brightness-75 bg-cover h-screen w-screen font-open overflow-x-hidden
@@ -24,7 +23,9 @@ select:-webkit-autofill:focus {
 }
 
 @layer components {
-
+.center{
+  @apply flex justify-center items-center
+}
   .bebas-xl{
     @apply  /* --------------------- */
     /* desktop */ text-8xl
@@ -53,7 +54,7 @@ select:-webkit-autofill:focus {
     /* desktop */ px-16
     /* tablet */ lg-max:px-8
     /* mobile */ sm-max:px-2 
-    /* general design */ transition-all bg-success-500 hover:bg-success-600 active:bg-success-700 bebas-sm flex justify-center items-center text-white rounded-r-sm;
+    /* general design */ btn--success bebas-sm flex center text-white rounded-r-sm;
   }
   /* GENERAL STYLING START */
  
@@ -67,19 +68,42 @@ select:-webkit-autofill:focus {
     @apply px-12
   }
 
-
-.btn-success{
-  @apply bg-success-500 hover:bg-success-600 active:bg-success-700
-}
-
-
-  /* ACCORDION */
-  .btn-all{
+  .btn--primary{
+    @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-700
+  }
+  .btn--secondary{
+    @apply bg-success-500 hover:bg-success-600 active:bg-success-700
+  }
+  .btn--success{
+    @apply bg-success-500 hover:bg-success-600 active:bg-success-700
+  }
+  .btn--warning{
+    @apply bg-warning-600 hover:bg-warning-700 active:bg-warning-800
+  }
+  .btn--danger{
+    @apply bg-danger-600 hover:bg-danger-700 active:bg-danger-800
+  }
+  .btn--outline{
+    @apply  rounded-sm border-2 border-white
+  }
+  .btn--link{
+    @apply bg-success-500 hover:bg-success-600 active:bg-success-700
+  }
+  .icon-sm{
+    @apply  text-white 
+  }
+  .btn-icon--r {
+    @apply pl-2 ;
+  }
+  .btn-icon--l {
+    @apply pr-2 ;
+  }
+  .btn{
     @apply 
     /* desktop */ px-12 py-4
     /* tablet */ lg-max:px-10 lg-max:py-3
     /* mobile */ sm-max:px-6 sm-max:text-xs
-    /* general design */ rounded-sm text-xl font-semibold text-white 
+    /* general design */ rounded-sm text-xl font-semibold text-white transition-all flex
   }
 
 /* STANDARD INPUT STYLING START */
@@ -97,17 +121,12 @@ select:-webkit-autofill:focus {
   @apply absolute text-base font-semibold text-textSecondary duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-4 top-0 peer-focus:top-0
 }
 .input-icon-container{
-  @apply flex w-6 h-6 justify-center items-center absolute top-0 right-2 bottom-0 my-auto
+  @apply flex w-6 h-6 justify-center items-center absolute top-0 right-4 bottom-0 my-auto
 }
 .input-icon{
   @apply text-white
 }
 /* STANDARD INPUT STYLING END */
-
-
-
-
-
 
 /* STANDARD FORM STYLING START */
 .form-container{
@@ -118,7 +137,6 @@ select:-webkit-autofill:focus {
 }
 .form-btn-container{
   @apply flex justify-end pt-8
-
 }
 
 /* STANDARD FORM STYLING END */

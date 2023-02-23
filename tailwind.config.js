@@ -44,10 +44,22 @@ module.exports = {
         borderColor: "var(--borderColor)",
         input: "var(--input)",
 
+        "primary-500": "var(--primary-500)",
+        "primary-600": "var(--primary-600)",
+        "primary-700": "var(--primary-700)",
+
         "success-500": "var(--success-500)",
         "success-600": "var(--success-600)",
         "success-700": "var(--success-700)",
-        warning: "var(--warning)",
+
+        "warning-600": "var(--warning-600)",
+        "warning-700": "var(--warning-700)",
+        "warning-800": "var(--warning-800)",
+
+        "danger-600": "var(--danger-600)",
+        "danger-700": "var(--danger-700)",
+        "danger-800": "var(--danger-800)",
+
         danger: "var(--danger)",
 
         textPrimary: "var(--text-primary)",
@@ -60,7 +72,7 @@ module.exports = {
         open: ["var(--ff-open)"],
       },
       backgroundImage: {
-        pubg: "url('/src/assets/PUBG.png')",
+        pubg: "url('/src/assets/PUBG.jpeg')",
       },
     },
   },

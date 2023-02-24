@@ -4,14 +4,8 @@
   <header class="header-container">
     <div class="header-logo-container">
       <img id="logo" class="header-logo" :src="logo" alt="brand logo" />
-      <button>
-        <font-awesome-icon
-          @click="handleMenu"
-          class="sm:hidden p-4"
-          width="16px"
-          icon="fa-bars"
-          style="color: white"
-        />
+      <button @click="handleMenu" class="burger-icon">
+        <font-awesome-icon width="16px" icon="fa-bars" style="color: white" />
       </button>
     </div>
 
@@ -47,8 +41,11 @@
 </template>
 
 <style>
+.burger-icon {
+  @apply sm-min:hidden p-4;
+}
 .header-container {
-  @apply bg-menuPrimary px-4 sm-max:px-0;
+  @apply bg-menuPrimary px-4 sm-max:px-0 mb-10 sm-max:mb-0;
 }
 .menu-heading {
   @apply text-3xl lg-max:text-2xl;
@@ -60,12 +57,12 @@
   @apply h-8;
 }
 .header-logo {
-  @apply w-24 p-4 bg-danger-600 flex items-center sm-min:hidden;
+  @apply w-24 p-4 flex items-center sm-min:hidden;
 }
 .header-logo-container {
   @apply /* --------------------- */
-  /* mobile */ sm-max:justify-end
-  /* general design */  flex justify-center items-center mx-auto relative;
+  /* mobile */ sm-max:justify-between
+  /* general design */  flex justify-center items-center mx-auto relative ;
 }
 .logo-container {
   @apply /* --------------------- */
@@ -83,6 +80,6 @@
   /* general design */ absolute -top-1 z-20 bg-red-600 left-0 text-white shadow-2xl;
 }
 .menu-item-container {
-  @apply flex sm-max:flex-col gap-4 sm-max:gap-0;
+  @apply flex w-screen sm-max:flex-col gap-4 sm-max:gap-0;
 }
 </style>

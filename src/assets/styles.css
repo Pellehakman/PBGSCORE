@@ -16,9 +16,15 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+select::-ms-expand {
+  display: none;
+}
 @layer base {
   body{
-    @apply bg-pubg bg-center backdrop-brightness-75 bg-cover h-screen w-screen font-open overflow-x-hidden
+    @apply w-full 
+  }
+  #app {
+    @apply min-h-screen w-full flex flex-col  bg-pubg bg-center bg-fixed bg-cover font-open 
   }
 }
 
@@ -26,7 +32,7 @@ select:-webkit-autofill:focus {
 .center{
   @apply flex justify-center items-center
 }
-  .bebas-xl{
+  .heading-bebas-xl{
     @apply  /* --------------------- */
     /* desktop */ text-8xl
     /* tablet */ lg-max:text-6xl
@@ -34,15 +40,15 @@ select:-webkit-autofill:focus {
     /* general design */ font-bebas text-textSecondary ;
   }
 
-  .bebas-lg{
+  .heading-bebas-lg{
     @apply  /* --------------------- */
-    /* desktop */ text-8xl
-    /* tablet */ lg-max:text-6xl
-    /* mobile */ sm-max:text-4xl
+    /* desktop */ text-5xl
+    /* tablet */ lg-max:text-3xl
+    /* mobile */ sm-max:text-2xl
     /* general design */ font-bebas text-textSecondary ;
   }
 
-  .bebas-sm{
+  .heading-bebas-sm{
     @apply  /* --------------------- */
     /* desktop */ text-3xl
     /* tablet */ lg-max:text-2xl
@@ -61,8 +67,10 @@ select:-webkit-autofill:focus {
   .btn-sm{
     @apply px-2 py-2
   }
-  .btn-lg{
-    @apply px-2 py-2
+  .btn--lg{
+    @apply 
+    /* all */ px-10 py-3
+     /* mobile */ sm-max:px-6 sm-max:text-xs
   }
   .btn-xl{
     @apply px-12
@@ -98,13 +106,23 @@ select:-webkit-autofill:focus {
   .btn-icon--l {
     @apply pr-2 ;
   }
-  .btn{
+  .btn-default{
     @apply 
     /* desktop */ px-12 py-4
     /* tablet */ lg-max:px-10 lg-max:py-3
     /* mobile */ sm-max:px-6 sm-max:text-xs
-    /* general design */ rounded-sm text-xl font-semibold text-white transition-all flex
+    /* general design */ 
   }
+  .btn{
+    @apply rounded-sm text-xl font-semibold text-white transition-all flex
+  }
+  
+.width-max{
+  @apply max-w-7xl w-full mx-auto
+}
+
+
+
 
 /* STANDARD INPUT STYLING START */
 .input-container{
@@ -128,6 +146,10 @@ select:-webkit-autofill:focus {
 }
 /* STANDARD INPUT STYLING END */
 
+
+
+
+
 /* STANDARD FORM STYLING START */
 .form-container{
   @apply gap-2 flex flex-col mt-6
@@ -142,7 +164,11 @@ select:-webkit-autofill:focus {
 /* STANDARD FORM STYLING END */
 
 
-
+/* PADDING RULES START */
+.padding-2{
+  @apply p-2
+}
+/* PADDING RULES END */
 
 
 

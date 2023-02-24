@@ -26,6 +26,8 @@ import {
   faCircleExclamation,
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "./firebase/config";
 
 /* add icons to the library */
 library.add(
@@ -40,9 +42,8 @@ library.add(
   faSpinner,
   faCircleExclamation,
   faCircleCheck
-
 );
-
+// initializeApp(firebaseConfig);
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);
 
 app.use(createPinia());

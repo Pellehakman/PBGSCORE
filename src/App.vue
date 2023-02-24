@@ -22,5 +22,7 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
+  <!-- <div class="flex flex-col justify-between"> -->
   <RouterView />
+<!-- </div> -->
 </template>

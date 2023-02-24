@@ -10,7 +10,7 @@
         <button
           @click="handleLogin"
           :class="{ 'bg-primary': loginModal === true }"
-          class="btn"
+          class="btn btn-default"
         >
           <span>LOGIN</span>
         </button>
@@ -21,7 +21,7 @@
               ? 'bg-monestral border border-transparent'
               : 'border rounded-sm border-white',
           ]"
-          class="btn"
+          class="btn btn-default"
         >
           <span>SIGN UP</span>
         </button>
@@ -82,7 +82,7 @@
   /* desktop */  pt-32
   /* tablet */ lg-max:pt-24
   /* mobile */sm-max:pt-16
-  /* general design */ w-screen justify-center flex;
+  /* general design */ w-full justify-center flex;
 }
 .landing-main-container {
   @apply /* --------------------- */
@@ -118,17 +118,17 @@
 
 .default-modal-enter-from,
 .default-modal-leave-to {
-  transform: translateX(-100%);
+  transform: translateX(-10%);
   opacity: 0;
 }
 .signup-modal-leave-to,
 .signup-modal-enter-from {
-  transform: translateX(100%);
+  transform: translateX(-10%);
   opacity: 0;
 }
 .login-modal-leave-to,
 .login-modal-enter-from {
-  transform: translateX(-100%);
+  transform: translateX(-10%);
   opacity: 0;
 }
 

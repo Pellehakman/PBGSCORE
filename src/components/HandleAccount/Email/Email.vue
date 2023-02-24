@@ -3,6 +3,7 @@
 <template>
   <div class="input-container">
     <input
+      v-model="email"
       autofocus
       type="email"
       id="email"

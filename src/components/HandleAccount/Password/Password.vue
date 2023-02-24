@@ -24,6 +24,7 @@
       id="password"
       class="input-field peer"
       placeholder=" "
+      autocomplete="on"
     />
     <label for="password" class="input-label">PASSWORD</label>
   </div>

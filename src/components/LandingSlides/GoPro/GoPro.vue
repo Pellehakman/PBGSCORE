@@ -3,7 +3,7 @@ import Nickname from '@/components/HandleAccount/Nickname/Nickname';
 <script src="./GoPro" lang="ts"></script>
 
 <template>
-  <h1 class="bebas-xl">
+  <h1 class="heading-bebas-xl">
     IS YOUR SQUAD <br />
     READY TO GO PRO?
   </h1>
@@ -15,14 +15,14 @@ import Nickname from '@/components/HandleAccount/Nickname/Nickname';
   </p>
   <div class="flex mt-6">
     <Nickname class="flex w-full rounded-r-none" />
-    <button class="btn btn--success rounded-l-none">
+    <button class="btn btn-default btn--success rounded-l-none">
       SEARCH
-      <div class="btn-icon--r">
+      <!-- <div class="btn-icon--r">
         <font-awesome-icon
           class="peer animate-spin text-white icon-sm"
           icon="fa-solid fa-spinner"
         />
-      </div>
+      </div> -->
     </button>
   </div>
 

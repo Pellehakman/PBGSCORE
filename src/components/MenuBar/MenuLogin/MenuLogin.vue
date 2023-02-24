@@ -4,7 +4,7 @@
   <div class="menu-dropdown-container">
     <button
       @click="handleDropdownParent"
-      class="menu-item menu-item-size sm:px-20 lg:px-24"
+      class="menu-item menu-item-size justify-center sm-max:justify-start w-full"
       :class="{ 'bg-menuSecondary': dropdownParent === true }"
     >
       <span class="menu-heading">ACCOUNT</span>
@@ -18,7 +18,7 @@
 
     <div class="menu-dropdown-content" v-if="dropdownParent">
       <div class="flex flex-col w-full">
-        <div
+        <button
           @click="handleDropdownChild"
           class="menu-dropdown-item justify-between"
           to="#"
@@ -35,13 +35,13 @@
             width="16px"
             icon="fa-solid fa-chevron-down"
           />
-        </div>
-        <form v-if="dropdownChild" class="menu-login-form bg-MenuPrimary">
+        </button>
+        <form v-if="dropdownChild" class="menu-form bg-MenuPrimary">
           <Email />
           <Password />
 
-          <div class="flex flex-col items-center justify-center gap-2 mt-6">
-            <button class="btn btn--success">LOGIN</button>
+          <div class="menu-form-btn-container">
+            <button class="btn btn-default btn--success">LOGIN</button>
             <span class="text-xs">NO LOGIN? SIGN UP HERE</span>
           </div>
         </form>
@@ -107,16 +107,16 @@
   @apply /* --------------------- */
   /* desktop */ px-16 py-3
   /* desktop */ lg-max:px-4
-  /* tablet */ md-max:px-8 
+  /* tablet */ md-max:px-8
 
-  /* mobile */ sm-max:w-screen;
+  /* mobile */ sm-max:w-full;
 }
 .menu-item {
   @apply /* --------------------- */
-  /* desktop */ 
-  /* tablet */ 
-  /* mobile */  sm-max:my-0
-  /* general design */ my-4 flex items-center relative font-bebas text-3xl text-white hover:bg-menuSecondary transition-all cursor-pointer rounded-sm;
+  /* desktop */
+  /* tablet */
+  /* mobile */  sm-max:my-0 
+  /* general design */ my-4 flex items-center  relative font-bebas text-3xl text-white hover:bg-menuSecondary transition-all cursor-pointer rounded-sm;
 }
 .dropdown {
   @apply flex justify-center items-center;
@@ -126,22 +126,22 @@
   @apply /* --------------------- */
   /* desktop */ px-24 py-3
   /* tablet */ lg-max:px-10
-  /* tablet */ md-max:px-10 
-  /* mobile */ sm-max:px-4 
-  /* general design */;
+  /* tablet */ md-max:px-10
+  /* mobile */ sm-max:px-4
+  /* general design */ ;
 }
 
 .menu-dropdown-container {
-  @apply relative;
+  @apply relative w-full;
 }
 .menu-dropdown-content {
   @apply absolute transition-all flex flex-col items-start dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl;
 }
 .menu-dropdown-item {
   @apply /* --------------------- */
-  /* mobile */ 
-  /* tablet */ 
-  /* desktop */ 
+  /* mobile */
+  /* tablet */
+  /* desktop */
   /* general design */ items-center relative bg-menuPrimary hover:bg-menuSecondary py-3 px-4 flex w-full cursor-pointer transition-all;
 }
 
@@ -149,11 +149,14 @@
   @apply transition-all flex flex-col dropdownParent-animation;
 }
 
-.menu-login-form {
+.menu-form {
   @apply /* --------------------- */
   /* desktop */ p-2 font-semibold gap-2
-  /* tablet */ 
-  /* mobile */ 
+  /* tablet */
+  /* mobile */
   /* general design */ flex flex-col dropdownChild-animation h-64 w-full;
+}
+.menu-form-btn-container {
+  @apply flex flex-col items-center justify-center gap-2 mt-6;
 }
 </style>

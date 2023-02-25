@@ -25,6 +25,7 @@
       class="input-field peer"
       placeholder=" "
       autocomplete="on"
+      @change="handlePassword(password)"
     />
     <label for="password" class="input-label">PASSWORD</label>
   </div>

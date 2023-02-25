@@ -8,8 +8,8 @@
   </p>
   <form class="form-container">
     <Nickname />
-    <Email />
-    <Password />
+    <Email @onEmail="handleEmail" />
+    <Password @onPassword="handlePassword" />
     <div class="form-warning">
       <span class="text-white">WARNING</span>
     </div>
@@ -18,9 +18,12 @@
       <button @click.prevent="props.handleModal" class="btn btn-default">
         <span>CANCEL</span>
       </button>
-      <Router-link to="statistics" class="btn btn-default btn--primary"
-        >SIGN UP
-      </Router-link>
+      <button
+        @click.prevent="handleSignup"
+        class="btn btn-default btn--primary"
+      >
+        SIGN UP
+      </button>
     </div>
   </form>
 </template>

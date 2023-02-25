@@ -1,11 +1,20 @@
 import { defineComponent, ref } from "vue";
 import { showEyeIcon } from "@/models/enums";
 
+
 export default defineComponent({
   name: "Password",
-  setup() {
+  props: {},
+  emits: ["onPassword"],
+  setup(props, { emit }) {
     const displayPassword = ref(showEyeIcon.yes);
     const password = ref("");
+
+    const handlePassword = (password: string) => {
+      emit("onPassword", password);
+      // console.log(password);
+    };
+
     const handleDisplayPassword = () => {
       if (displayPassword.value === showEyeIcon.yes) {
         displayPassword.value = showEyeIcon.no;
@@ -14,6 +23,12 @@ export default defineComponent({
       }
     };
 
-    return { password, handleDisplayPassword, displayPassword, showEyeIcon };
+    return {
+      password,
+      handleDisplayPassword,
+      displayPassword,
+      showEyeIcon,
+      handlePassword,
+    };
   },
 });

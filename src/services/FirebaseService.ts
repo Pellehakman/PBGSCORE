@@ -1,26 +1,21 @@
 import database from "@/firebase/config";
 import { ref } from "firebase/database";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-import {
-  collection,
-  orderBy,
-  getDocs,
-  getFirestore,
-  query,
-  updateDoc,
-  doc,
-} from "firebase/firestore";
-
+const db = ref(database, "calender");
+const auth = getAuth();
 class FirebaseService {
-  // async firebaseLogin() {
-  //   const firestore = getFirestore();
-  //   const dateRef = query(collection(firestore, "calender"), orderBy("timeID"));
-  //   const snapshots = await getDocs(dateRef);
-  //   const fetchFirebase = snapshots.docs.map((doc) => {
-  //     const data = doc.data();
-  //     return data;
-  //   });
-  // }
+  async RegisterSubmit(email: string, password: string) {
+    console.log(email, password);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential: { user: any }) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error: { code: any; message: any }) => {
+        console.log(error);
+      });
+  }
 }
 
 const $firebaseService = new FirebaseService();

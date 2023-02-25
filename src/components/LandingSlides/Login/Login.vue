@@ -6,7 +6,7 @@
     Welcome back, please enter your information to login and compare statistics.
   </p>
   <form class="form-container">
-    <Email :v-model="email" />
+    <Email />
     <Password />
     <div class="form-warning">
       <span class="text-white">WARNING</span>

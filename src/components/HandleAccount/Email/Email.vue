@@ -9,6 +9,7 @@
       id="email"
       class="input-field peer"
       placeholder=" "
+      @change="handleEmail(email)"
     />
     <label for="email" class="input-label">EMAIL</label>
   </div>

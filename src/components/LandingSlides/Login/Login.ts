@@ -6,13 +6,11 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "login",
   components: { Password, Email },
-  props: { handleModal: Boolean, email: String },
+  props: { handleModal: Boolean },
 
   setup(props) {
     // $firebaseService.firebaseLogin();
-    function handleLogin(email: any) {
-      console.log(email.value);
-    }
+    function handleLogin() {}
     return { props, handleLogin };
   },
 });

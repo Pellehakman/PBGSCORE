@@ -6,13 +6,13 @@
     Welcome back, please enter your information to login and compare statistics.
   </p>
   <form class="form-container">
-    <Email />
-    <Password />
+    <Email @onEmail="handleEmail" />
+    <Password @onPassword="handlePassword" />
     <div class="form-warning">
       <span class="text-white">WARNING</span>
     </div>
     <div class="form-btn-container">
-      <button @click.prevent="props.handleModal" class="btn btn-default">
+      <button @click.prevent="cancelLogin" class="btn btn-default">
         <span>CANCEL</span>
       </button>
       <button @click.prevent="handleLogin" class="btn btn-default btn--success">

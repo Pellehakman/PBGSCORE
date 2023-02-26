@@ -41,13 +41,13 @@ export default defineComponent({
     };
 
     return {
-      handleModal,
       logo,
       handleSignup,
       handleLogin,
       firstModal,
       loginModal,
       signupModal,
+      handleModal,
     };
   },
 });

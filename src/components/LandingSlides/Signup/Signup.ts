@@ -6,10 +6,19 @@ import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   components: { Password, Email, Nickname },
-  props: { handleModal: Boolean },
   name: "signup",
+  emits: ["onCancelSignup"],
 
-  setup(props) {
+  setup(props, { emit }) {
+    async function handleSignup() {
+      $firebaseService.RegisterSubmit(password.value, email.value);
+    }
+
+    const displayName = ref("");
+    const handleNickname = (fromNickname: string) => {
+      displayName.value = fromNickname;
+    };
+
     const email = ref("");
     const handleEmail = (fromEmail: string) => {
       email.value = fromEmail;
@@ -20,9 +29,16 @@ export default defineComponent({
       password.value = fromPassword;
     };
 
-    async function handleSignup() {
-      $firebaseService.RegisterSubmit(password.value, email.value);
-    }
-    return { props, handleSignup, handlePassword, handleEmail };
+    const cancelSignup = () => {
+      emit("onCancelSignup");
+    };
+
+    return {
+      handleSignup,
+      handlePassword,
+      handleEmail,
+      cancelSignup,
+      handleNickname,
+    };
   },
 });

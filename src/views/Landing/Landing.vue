@@ -39,13 +39,13 @@
 
       <Transition class="modal" name="login-modal">
         <div v-if="loginModal">
-          <Login :handleModal="handleModal" />
+          <Login @onCancelLogin="handleModal" />
         </div>
       </Transition>
 
       <Transition class="modal" name="signup-modal">
         <div v-if="signupModal">
-          <Signup :handleModal="handleModal" />
+          <Signup @onCancelSignup="handleModal" />
         </div>
       </Transition>
     </main>

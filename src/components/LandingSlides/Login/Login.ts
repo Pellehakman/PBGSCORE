@@ -6,11 +6,25 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "login",
   components: { Password, Email },
-  props: { handleModal: Boolean },
+  emits: ["onCancelLogin"],
 
-  setup(props) {
-    // $firebaseService.firebaseLogin();
-    function handleLogin() {}
-    return { props, handleLogin };
+  setup(props, { emit }) {
+    function handleLogin() {
+      $firebaseService.LoginSubmit(password.value, email.value);
+    }
+    const email = ref("");
+    const handleEmail = (fromEmail: string) => {
+      email.value = fromEmail;
+    };
+
+    const password = ref("");
+    const handlePassword = (fromPassword: string) => {
+      password.value = fromPassword;
+    };
+
+    const cancelLogin = () => {
+      emit("onCancelLogin");
+    };
+    return { handleLogin, cancelLogin, handleEmail, handlePassword };
   },
 });

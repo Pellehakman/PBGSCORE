@@ -17,11 +17,12 @@
       /> -->
     </div>
     <input
-      autofocus
+      v-model="nickname"
       type="nickname"
       id="nickname"
       class="input-field peer"
       placeholder=" "
+      @change="handleNickname(nickname)"
     />
     <label for="nickname" class="input-label">PUBG Playername</label>
   </div>

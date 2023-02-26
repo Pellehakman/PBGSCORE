@@ -21,7 +21,7 @@
     <input
       v-model="password"
       :type="displayPassword"
-      id="password"
+      name="password"
       class="input-field peer"
       placeholder=" "
       autocomplete="on"

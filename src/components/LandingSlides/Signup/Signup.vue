@@ -7,7 +7,7 @@
     statistics.
   </p>
   <form class="form-container">
-    <Nickname />
+    <Nickname @onNickname="handleNickname" />
     <Email @onEmail="handleEmail" />
     <Password @onPassword="handlePassword" />
     <div class="form-warning">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="flex justify-end pt-8">
-      <button @click.prevent="props.handleModal" class="btn btn-default">
+      <button @click.prevent="cancelSignup" class="btn btn-default">
         <span>CANCEL</span>
       </button>
       <button
@@ -23,6 +23,12 @@
         class="btn btn-default btn--primary"
       >
         SIGN UP
+        <!-- <div class="btn-icon--r">
+        <font-awesome-icon
+          class="peer animate-spin text-white icon-sm"
+          icon="fa-solid fa-spinner"
+        />
+      </div> -->
       </button>
     </div>
   </form>

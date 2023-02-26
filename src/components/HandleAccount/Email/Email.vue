@@ -6,7 +6,7 @@
       v-model="email"
       autofocus
       type="email"
-      id="email"
+      name="email"
       class="input-field peer"
       placeholder=" "
       @change="handleEmail(email)"

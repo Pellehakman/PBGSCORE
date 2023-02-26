@@ -1,9 +1,15 @@
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: "Email",
-  setup() {
-    const email = ref("");
-    return { email };
+  name: "nickname",
+  props: {},
+  emits: ["onNickname"],
+  setup(props, { emit }) {
+    const nickname = ref("");
+    const handleNickname = (nickname: string) => {
+      emit("onNickname", nickname);
+    };
+
+    return { nickname, handleNickname };
   },
 });

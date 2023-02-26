@@ -1,9 +1,9 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "./firebase/config";
 import App from "./App.vue";
 import router from "./router";
-
 import "./assets/styles.css";
 
 /* import the fontawesome core */
@@ -26,8 +26,6 @@ import {
   faCircleExclamation,
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "./firebase/config";
 
 /* add icons to the library */
 library.add(

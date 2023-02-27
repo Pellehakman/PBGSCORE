@@ -16,15 +16,12 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-select::-ms-expand {
-  display: none;
-}
 @layer base {
   body{
-    @apply w-full 
+    @apply w-full
   }
   #app {
-    @apply min-h-screen w-full flex flex-col  bg-pubg bg-center bg-fixed bg-cover font-open 
+    @apply min-h-screen  w-full flex flex-col bg-pubg bg-center bg-fixed bg-cover font-open 
   }
 }
 
@@ -34,33 +31,33 @@ select::-ms-expand {
 }
   .heading-bebas-xl{
     @apply  /* --------------------- */
-    /* desktop */ text-8xl
+    /* full */ text-8xl
     /* tablet */ lg-max:text-6xl
     /* mobile */ sm-max:text-4xl
-    /* general design */ font-bebas text-textSecondary ;
+    /* design */ font-bebas text-textSecondary ;
   }
 
   .heading-bebas-lg{
     @apply  /* --------------------- */
-    /* desktop */ text-5xl
+    /* full */ text-5xl
     /* tablet */ lg-max:text-3xl
     /* mobile */ sm-max:text-2xl
-    /* general design */ font-bebas text-textSecondary ;
+    /* design */ font-bebas text-textSecondary ;
   }
 
   .heading-bebas-sm{
     @apply  /* --------------------- */
-    /* desktop */ text-3xl
+    /* full */ text-3xl
     /* tablet */ lg-max:text-2xl
     /* mobile */ sm-max:text-xl
-    /* general design */ font-bebas text-textSecondary ;
+    /* design */ font-bebas text-textSecondary ;
   }
   .landing-search-btn {
     @apply /* --------------------- */
-    /* desktop */ px-16
+    /* full */ px-16
     /* tablet */ lg-max:px-8
     /* mobile */ sm-max:px-2 
-    /* general design */ btn--success bebas-sm flex center text-white rounded-r-sm;
+    /* design */ btn--success bebas-sm flex center text-white rounded-r-sm;
   }
   /* GENERAL STYLING START */
  
@@ -108,14 +105,20 @@ select::-ms-expand {
   }
   .btn-default{
     @apply 
-    /* desktop */ px-12 py-4
-    /* tablet */ lg-max:px-10 lg-max:py-3
-    /* mobile */ sm-max:px-6 sm-max:text-xs
-    /* general design */ 
+    /* full */ lg-max:px-8 text-xl
+    /* tablet */  md-max:px-3 md-max:text-base
+    /* mobile */ sm-max:py-4 sm-max:px-8 sm-max:text-base
+    /* design */ px-12 py-2 font-bold
   }
+
   .btn{
-    @apply rounded-sm text-xl font-semibold text-white transition-all flex
+    @apply 
+    /* full  text-xl
+    /* tablet lg-max:text-s
+    /* mobile   sm-max:text-xs
+    /* design */ rounded-sm text-white transition-all center flex;
   }
+
   
 .width-max{
   @apply max-w-7xl w-full mx-auto
@@ -130,10 +133,10 @@ select::-ms-expand {
 }
 .input-field{
   @apply 
-  /* desktop */ pt-6 pb-2 pl-4
+  /* full */ pt-6 pb-2 pl-4
   /* tablet */
   /* mobile */
-  /* general design */ flex text-sm w-full rounded-sm appearance-none bg-input bg-opacity-20 focus:outline-none focus:ring-0 text-textSecondary 
+  /* design */ flex text-sm w-full rounded-sm appearance-none bg-input bg-opacity-20 focus:outline-none focus:ring-0 text-textSecondary 
 }
 .input-label{
   @apply absolute text-base font-semibold text-textSecondary duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-4 top-0 peer-focus:top-0
@@ -193,15 +196,16 @@ select::-ms-expand {
 
 
 
-/* desktop */ 
+/* full */ 
 /* tablet */ 
 /* mobile */
-/* general design */ 
+/* design */ 
 
 .NAME {
   @apply /* --------------------- */
-  /* desktop */ px-16
-  /* tablet */ lg-max:px-8 
-  /* mobile */ sm-max:px-4 
-  /* general design */;
+  /* full */ px-16 py-3
+  /* laptop */ lg-max:px-8
+  /* tablet */ md-max:px-2 
+  /* mobile */ sm-max:w-full
+  /* design */ ;
 }

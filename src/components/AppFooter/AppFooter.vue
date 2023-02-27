@@ -1,4 +1,4 @@
-<script lang="ts" src="./Footers"></script>
+<script lang="ts" src="./AppFooter"></script>
 <template>
   <footer class="width-max bg-monestral mt-auto">
     footer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quo

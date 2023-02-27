@@ -1,4 +1,5 @@
-import Footers from "@/components/Footers/Footers.vue";
+
+import AppFooter from "@/components/AppFooter/AppFooter.vue";
 import MatchList from "@/components/MatchList/MatchList.vue";
 import MenuBar from "@/components/MenuBar/MenuBar.vue";
 import OptionBar from "@/components/OptionBar/OptionBar.vue";
@@ -10,7 +11,7 @@ export default defineComponent({
   name: "statistics-view",
   components: {
     MenuBar,
-    Footers,
+    AppFooter,
     SeasonStats,
     OptionBar,
     PlayerStats,

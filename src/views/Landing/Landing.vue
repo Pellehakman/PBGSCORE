@@ -3,7 +3,7 @@
 <template>
   <div class="landing-container">
     <header class="landing-header">
-      <div class="flex">
+      <div class="flex items-center justify-center">
         <img class="landing-logo" :src="logo" alt="logo" />
       </div>
       <div class="header-btn-container">
@@ -23,7 +23,7 @@
           ]"
           class="btn btn-default"
         >
-          <span>SIGN UP</span>
+          <span class="break">SIGN UP</span>
         </button>
       </div>
     </header>
@@ -58,59 +58,59 @@
 }
 .landing-header {
   @apply /* --------------------- */
-  /* desktop */ p-16
+  /* full */ p-16
   /* tablet */ lg-max:p-8 
   /* mobile */ sm-max:p-4 
-  /* general design */ flex justify-between;
+  /* design */ flex justify-between;
 }
 .header-btn-container {
   @apply flex gap-4 justify-between items-center;
 }
 .landing-logo {
-  @apply h-16;
+  @apply h-16 sm-max:h-8;
 }
 
 .modal {
   @apply /* --------------------- */
-  /* desktop */ px-16
+  /* full */ px-16
   /* tablet */ lg-max:px-8 
   /* mobile */ sm-max:px-4 
-  /* general design */ absolute;
+  /* design */ absolute;
 }
 .modal-container {
   @apply /* --------------------- */
-  /* desktop */  pt-32
+  /* full */  pt-32
   /* tablet */ lg-max:pt-24
   /* mobile */sm-max:pt-16
-  /* general design */ w-full justify-center flex;
+  /* design */ w-full justify-center flex;
 }
 .landing-main-container {
   @apply /* --------------------- */
-  /* desktop */  
+  /* full */  
   /* tablet */ 
   /* mobile */
-  /* general design */ max-w-7xl w-full relative transition-all;
+  /* design */ max-w-7xl w-full relative transition-all;
 }
 .landing-hero-text {
   @apply /* --------------------- */
-  /* desktop */ text-8xl
+  /* full */ text-8xl
   /* tablet */ lg-max:text-6xl
   /* mobile */ sm-max:text-4xl 
-  /* general design */ font-bebas text-white transition-all cursor-pointer;
+  /* design */ font-bebas text-white transition-all cursor-pointer;
 }
 .landing-hero-small {
   @apply /* --------------------- */
-  /* desktop */ text-8xl
+  /* full */ text-8xl
   /* tablet */ lg-max:text-4xl
   /* mobile */ sm-max:text-3xl 
-  /* general design */ font-bebas text-white transition-all cursor-pointer;
+  /* design */ font-bebas text-white transition-all cursor-pointer;
 }
 
 .big-input-field {
-  @apply /* desktop */ pt-6 pb-2 pl-2
-    /* tablet */
-    /* mobile */
-    /* general design */ flex text-sm w-full rounded-l-sm appearance-none text-white focus:outline-none focus:ring-0;
+  @apply /* full */ pt-6 pb-2 pl-2
+  /* tablet */
+  /* mobile */
+  /* design */ flex text-sm w-full rounded-l-sm appearance-none text-white focus:outline-none focus:ring-0;
 }
 .big-input-label {
   @apply absolute text-base duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:scale-75  left-2 top-0 peer-focus:top-0;
@@ -151,9 +151,11 @@
 .landing-sign {
   @apply big-btn text-white font-open font-semibold text-lg;
 }
+
 .landing-search-block {
   @apply flex;
 }
+
 .landing-search {
   @apply bg-success-500 font-bebas text-3xl px-6 text-white flex-1 flex flex-col flex-grow;
 }

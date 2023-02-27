@@ -17,7 +17,7 @@
     <select class="option-bar">
       <option>RANKED</option>
     </select>
-    <button class="btn btn--lg btn--success">UPDATE</button>
+    <button class="btn btn-default btn--success">UPDATE</button>
   </div>
 </template>
 
@@ -27,9 +27,9 @@
 }
 .option-bar-container {
   @apply /* --------------------- */
-  /* desktop */ 
+  /* full */ 
   /* tablet */ 
   /* mobile */ sm-max:gap-0 sm-max:my-0 
-  /* general design */ flex sm-max:flex-col my-2 gap-2;
+  /* design */ flex sm-max:flex-col my-2 gap-2;
 }
 </style>

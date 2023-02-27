@@ -2,7 +2,7 @@
 
 <template>
   <section class="bg-red-400">
-    <h2 class="statistics-heading heading-bebas-sm">PLAYER NAME</h2>
+    <h2 class="heading-styling heading-bebas-sm">PLAYER NAME</h2>
     <div class="p-2">
       <h3>Heading h3</h3>
       <ul class="grid grid-cols-2">

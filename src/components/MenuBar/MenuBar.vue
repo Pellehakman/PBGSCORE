@@ -9,8 +9,8 @@
       </button>
     </div>
 
-    <div class="menu-container">
-      <nav class="menu-nav">
+    <div class="menu-container sm-max:relative">
+      <nav class="menu-nav sm-max:absolute sm-max:bg-menuPrimary">
         <div
           ref="menuContainer"
           :class="{ activeMenu: toggleMenu }"
@@ -42,13 +42,25 @@
 
 <style>
 .burger-icon {
-  @apply sm-min:hidden p-4;
+  @apply p-4 sm:hidden;
 }
+
 .header-container {
-  @apply bg-menuPrimary px-4 sm-max:px-0 mb-10 sm-max:mb-0;
+  @apply /* --------------------- */
+  /* full */ px-4 mb-10 w-full
+  /* laptop */ 
+  /* tablet */ 
+  /* mobile */ sm-max:px-0 sm-max:mb-0 sm-max:sticky sm-max:top-0 sm-max:z-50
+  /* design */ bg-menuPrimary;
 }
+
 .menu-heading {
-  @apply text-3xl lg-max:text-2xl;
+  @apply /* --------------------- */
+  /* full */ 
+  /* laptop */ lg-max:text-2xl
+  /* tablet */ 
+  /* mobile */ 
+  /* design */ text-3xl;
 }
 .menu-logo-container {
   @apply bg-danger-600 flex items-center justify-center w-24 sm-max:hidden;
@@ -57,29 +69,31 @@
   @apply h-8;
 }
 .header-logo {
-  @apply w-24 p-4 flex items-center sm-min:hidden;
+  @apply /* --------------------- */
+   /* full */ 
+   /* mobile */ w-24 p-4 flex items-center sm:hidden;
 }
 .header-logo-container {
   @apply /* --------------------- */
   /* mobile */ sm-max:justify-between
-  /* general design */  flex justify-center items-center mx-auto relative ;
+  /* design */  flex justify-center items-center mx-auto relative;
 }
 .logo-container {
   @apply /* --------------------- */
-  /* desktop */
+  /* full */
   /* tablet */ lg-max:w-24
   /* mobile */ md-max:hidden sm-max:hidden
-  /* general design */ relative w-32;
+  /* design */ relative w-32;
 }
 
 .logo {
   @apply /* --------------------- */
-  /* desktop */ h-40 p-4
+  /* full */ h-40 p-4
   /* tablet */  
   /* mobile */ sm-max:hidden
-  /* general design */ absolute -top-1 z-20 bg-red-600 left-0 text-white shadow-2xl;
+  /* design */ absolute -top-1 z-20 bg-red-600 left-0 text-white shadow-2xl;
 }
 .menu-item-container {
-  @apply flex w-screen sm-max:flex-col gap-4 sm-max:gap-0;
+  @apply flex w-full sm-max:flex-col gap-4 sm-max:gap-0;
 }
 </style>

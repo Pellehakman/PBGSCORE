@@ -1,7 +1,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "footer-component",
+  name: "App-Footer",
   setup() {
     return {};
   },

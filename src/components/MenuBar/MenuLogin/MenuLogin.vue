@@ -97,7 +97,7 @@
 .menu-nav-container {
   @apply /* --------------------- */
   /* mobile */ sm-max:hidden sm-max:flex-col sm-max:gap-0 sm-max:items-start
-  /* general design */ flex justify-between items-center gap-4;
+  /* design */ flex justify-between items-center gap-4;
 }
 
 .activeMenu {
@@ -105,18 +105,26 @@
 }
 .menu-item-size {
   @apply /* --------------------- */
-  /* desktop */ px-16 py-3
-  /* desktop */ lg-max:px-4
-  /* tablet */ md-max:px-8
-
+  /* full */px-16 py-3
+  /* laptop */ lg-max:px-8
+  /* tablet */ md-max:px-2 
   /* mobile */ sm-max:w-full;
+  /* design */
+}
+.btn-default {
+  @apply /* --------------------- */
+  /* full */ px-12 py-2 font-bold
+  /* laptop */ lg-max:px-8 text-xl
+  /* tablet */ md-max:px-3 md-max:text-base
+  /* mobile */ sm-max:py-4 sm-max:px-8 sm-max:text-base
+  /* design */;
 }
 .menu-item {
   @apply /* --------------------- */
-  /* desktop */
+  /* full */ my-4
   /* tablet */
   /* mobile */  sm-max:my-0 
-  /* general design */ my-4 flex items-center  relative font-bebas text-3xl text-white hover:bg-menuSecondary transition-all cursor-pointer rounded-sm;
+  /* design */  flex items-center relative font-bebas text-3xl text-white hover:bg-menuSecondary transition-all cursor-pointer rounded-sm;
 }
 .dropdown {
   @apply flex justify-center items-center;
@@ -124,25 +132,25 @@
 
 .menu-item-dropdown {
   @apply /* --------------------- */
-  /* desktop */ px-24 py-3
+  /* full */ px-24 py-3
   /* tablet */ lg-max:px-10
   /* tablet */ md-max:px-10
   /* mobile */ sm-max:px-4
-  /* general design */ ;
+  /* design */;
 }
 
 .menu-dropdown-container {
   @apply relative w-full;
 }
 .menu-dropdown-content {
-  @apply absolute transition-all flex flex-col items-start dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl;
+  @apply flex flex-col items-start absolute transition-all dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl;
 }
 .menu-dropdown-item {
   @apply /* --------------------- */
-  /* mobile */
+  /* full */ py-3 px-4 w-full
   /* tablet */
-  /* desktop */
-  /* general design */ items-center relative bg-menuPrimary hover:bg-menuSecondary py-3 px-4 flex w-full cursor-pointer transition-all;
+  /* mobile */
+  /* design */ flex items-center relative bg-menuPrimary hover:bg-menuSecondary cursor-pointer transition-all;
 }
 
 .dropdown:hover .dropdown-content {
@@ -151,10 +159,10 @@
 
 .menu-form {
   @apply /* --------------------- */
-  /* desktop */ p-2 font-semibold gap-2
+  /* full */ p-2 gap-2 h-64 w-full
   /* tablet */
   /* mobile */
-  /* general design */ flex flex-col dropdownChild-animation h-64 w-full;
+  /* design */ flex flex-col font-semibold dropdownChild-animation;
 }
 .menu-form-btn-container {
   @apply flex flex-col items-center justify-center gap-2 mt-6;

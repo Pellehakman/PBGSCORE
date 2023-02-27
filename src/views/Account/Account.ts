@@ -1,9 +1,10 @@
+import AppFooter from "@/components/AppFooter/AppFooter.vue";
 import MenuBar from "@/components/MenuBar/MenuBar.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "account-view",
-  components: { MenuBar },
+  components: { MenuBar, AppFooter },
   setup() {},
 
   // mounted() {

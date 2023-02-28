@@ -15,13 +15,16 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+html {
+  overflow-y:scroll;
+}
 
 @layer base {
   body{
     @apply w-full
   }
   #app {
-    @apply min-h-screen  w-full flex flex-col bg-pubg bg-center bg-fixed bg-cover font-open 
+    @apply min-h-screen w-full flex flex-col bg-pubg bg-center bg-fixed bg-cover font-open 
   }
 }
 
@@ -105,17 +108,15 @@ select:-webkit-autofill:focus {
   }
   .btn-default{
     @apply 
-    /* full */ lg-max:px-8 text-xl
-    /* tablet */  md-max:px-3 md-max:text-base
+    /*  full  */ px-10 py-2 text-xl
+    /* laptop */ lg-max:px-8 
+    /* tablet */ md-max:px-3 md-max:text-base
     /* mobile */ sm-max:py-4 sm-max:px-8 sm-max:text-base
-    /* design */ px-12 py-2 font-bold
+    /* design */ font-bold
   }
 
   .btn{
     @apply 
-    /* full  text-xl
-    /* tablet lg-max:text-s
-    /* mobile   sm-max:text-xs
     /* design */ rounded-sm text-white transition-all center flex;
   }
 
@@ -203,7 +204,7 @@ select:-webkit-autofill:focus {
 
 .NAME {
   @apply /* --------------------- */
-  /* full */ px-16 py-3
+  /*  full  */ px-16 py-3
   /* laptop */ lg-max:px-8
   /* tablet */ md-max:px-2 
   /* mobile */ sm-max:w-full

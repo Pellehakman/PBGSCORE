@@ -26,6 +26,7 @@ import {
   faCircleExclamation,
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import { getAuth } from "firebase/auth";
 
 /* add icons to the library */
 library.add(
@@ -48,3 +49,5 @@ app.use(createPinia());
 app.use(router);
 
 app.mount("#app");
+
+

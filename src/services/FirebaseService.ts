@@ -5,7 +5,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useRoute } from "vue-router";
 
 const db = ref(database, "calender");
 const auth = getAuth();

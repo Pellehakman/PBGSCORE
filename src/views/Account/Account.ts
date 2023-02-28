@@ -1,12 +1,17 @@
 import AppFooter from "@/components/AppFooter/AppFooter.vue";
 import MenuBar from "@/components/MenuBar/MenuBar.vue";
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import { getAuth } from "firebase/auth";
 
 export default defineComponent({
   name: "account-view",
   components: { MenuBar, AppFooter },
-  setup() {},
+  setup() {
+    const auth = getAuth();
+    const user = auth.currentUser;
 
+    return { user };
+  },
   // mounted() {
   //   const initUserTheme = this.getTheme() || this.getMediaPreference();
   //   this.setTheme(initUserTheme);

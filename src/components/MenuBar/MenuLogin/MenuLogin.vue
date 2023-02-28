@@ -51,12 +51,12 @@
         <font-awesome-icon class="pr-4 icon-sm" icon="fa-solid fa-gear" />
         <span>ACCOUNT SETTINGS</span>
       </Router-link>
-      <button class="menu-dropdown-item btn--danger">
+      <button @click="handleLogout" class="menu-dropdown-item btn--danger">
         <font-awesome-icon
           class="pl-4 rotate-180 icon-sm"
           icon="fa-solid fa-right-from-bracket"
         />
-        <span>LOGOUT</span>
+        LOGOUT
       </button>
     </div>
   </div>

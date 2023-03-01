@@ -2,7 +2,8 @@ import Email from "@/components/HandleAccount/Email/Email.vue";
 import PlayerName from "@/components/HandleAccount/PlayerName/PlayerName.vue";
 import Password from "@/components/HandleAccount/Password/Password.vue";
 import $firebaseService from "@/services/FirebaseService";
-import { defineComponent, ref } from "vue";
+import { computed, defineComponent, onMounted, reactive, ref } from "vue";
+import $pubgService from "@/services/pubgService";
 
 export default defineComponent({
   components: { Password, Email, PlayerName },
@@ -10,15 +11,11 @@ export default defineComponent({
   emits: ["onCancelSignup"],
 
   setup(props, { emit }) {
-    async function handleSignup() {
-      $firebaseService.RegisterSubmit(password.value, email.value);
-    }
-
     const displayName = ref("");
     const handlePlayerName = (fromPlayerName: string) => {
       displayName.value = fromPlayerName;
     };
-
+    function handleAccountID() {}
     const email = ref("");
     const handleEmail = (fromEmail: string) => {
       email.value = fromEmail;
@@ -34,7 +31,7 @@ export default defineComponent({
     };
 
     return {
-      handleSignup,
+      handleAccountID,
       handlePassword,
       handleEmail,
       cancelSignup,

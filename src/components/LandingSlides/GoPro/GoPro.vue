@@ -7,7 +7,8 @@ import PlayerName from '@/components/HandleAccount/PlayerName/PlayerName';
     IS YOUR SQUAD <br />
     READY TO GO PRO?
   </h1>
-  {{ date.id }}
+  <!-- {{ playerData?.id }} -->
+
   <p class="text-white text-m font-open">
     In this applicatiodn you can build your team and compare it against the top
     teams.<br />

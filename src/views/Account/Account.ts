@@ -9,6 +9,7 @@ export default defineComponent({
   setup() {
     const auth = getAuth();
     const user = auth.currentUser;
+    console.log(user);
 
     return { user };
   },

@@ -4,6 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 
 const db = ref(database, "calender");
@@ -15,6 +16,11 @@ class FirebaseService {
         const user = userCredential.user;
         console.log(user);
       })
+      .then(() =>
+        updateProfile(auth.currentUser, {
+          displayName: "refData",
+        })
+      )
       .catch((error: { code: any; message: any }) => {
         console.log(error);
       });

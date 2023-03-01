@@ -19,7 +19,7 @@
         <span>CANCEL</span>
       </button>
       <button
-        @click.prevent="handleSignup"
+        @click.prevent="handleAccountID"
         class="btn btn-default btn--primary"
       >
         SIGN UP

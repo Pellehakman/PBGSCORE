@@ -7,7 +7,7 @@
     statistics.
   </p>
   <form class="form-container">
-    <Nickname @onNickname="handleNickname" />
+    <PlayerName @onPlayerName="handlePlayerName" />
     <Email @onEmail="handleEmail" />
     <Password @onPassword="handlePassword" />
     <div class="form-warning">

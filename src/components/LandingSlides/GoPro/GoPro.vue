@@ -1,4 +1,4 @@
-import Nickname from '@/components/HandleAccount/Nickname/Nickname';
+import PlayerName from '@/components/HandleAccount/PlayerName/PlayerName';
 
 <script src="./GoPro" lang="ts"></script>
 
@@ -7,6 +7,7 @@ import Nickname from '@/components/HandleAccount/Nickname/Nickname';
     IS YOUR SQUAD <br />
     READY TO GO PRO?
   </h1>
+  {{ date.id }}
   <p class="text-white text-m font-open">
     In this applicatiodn you can build your team and compare it against the top
     teams.<br />
@@ -14,8 +15,15 @@ import Nickname from '@/components/HandleAccount/Nickname/Nickname';
     of every season you played.
   </p>
   <div class="flex mt-6">
-    <Nickname class="flex w-full rounded-r-none" />
-    <button class="btn btn-default btn--success rounded-l-none">
+    <PlayerName
+      @onPlayerName="handlePlayerName"
+      class="flex w-full rounded-r-none"
+    />
+
+    <button
+      @click="handleSerach"
+      class="btn btn-default btn--success rounded-l-none"
+    >
       SEARCH
       <!-- <div class="btn-icon--r">
         <font-awesome-icon

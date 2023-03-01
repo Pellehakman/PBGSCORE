@@ -1,11 +1,11 @@
 import Email from "@/components/HandleAccount/Email/Email.vue";
-import Nickname from "@/components/HandleAccount/Nickname/Nickname.vue";
+import PlayerName from "@/components/HandleAccount/PlayerName/PlayerName.vue";
 import Password from "@/components/HandleAccount/Password/Password.vue";
 import $firebaseService from "@/services/FirebaseService";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  components: { Password, Email, Nickname },
+  components: { Password, Email, PlayerName },
   name: "signup",
   emits: ["onCancelSignup"],
 
@@ -15,8 +15,8 @@ export default defineComponent({
     }
 
     const displayName = ref("");
-    const handleNickname = (fromNickname: string) => {
-      displayName.value = fromNickname;
+    const handlePlayerName = (fromPlayerName: string) => {
+      displayName.value = fromPlayerName;
     };
 
     const email = ref("");
@@ -38,7 +38,7 @@ export default defineComponent({
       handlePassword,
       handleEmail,
       cancelSignup,
-      handleNickname,
+      handlePlayerName,
     };
   },
 });

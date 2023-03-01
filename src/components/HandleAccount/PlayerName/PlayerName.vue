@@ -1,7 +1,8 @@
-<script src="./Nickname" lang="ts"></script>
+<script src="./PlayerName" lang="ts"></script>
 
 <template>
   <div class="input-container">
+   
     <div class="input-icon-container">
       <font-awesome-icon
         class="peer animate-spin icon-sm"
@@ -17,14 +18,14 @@
       /> -->
     </div>
     <input
-      v-model="nickname"
-      type="nickname"
-      id="nickname"
+      v-model="playerName"
+      type="playerName"
+      id="playerName"
       class="input-field peer"
       placeholder=" "
-      @change="handleNickname(nickname)"
+      @change="handlePlayerName(playerName)"
     />
-    <label for="nickname" class="input-label">PUBG Playername</label>
+    <label for="playerName" class="input-label">PUBG Playername</label>
   </div>
 </template>
 <style></style>

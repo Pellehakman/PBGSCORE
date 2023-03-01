@@ -27,13 +27,13 @@ import type AppFooter from '@/components/AppFooter/AppFooter';
             <div class="input-icon-container"></div>
             <input
               disabled
-              type="nickname"
-              id="nickname"
+              type="PlayerName"
+              id="PlayerName"
               class="input-field peer w-1/2"
               placeholder=" "
               :value="user?.uid"
             />
-            <label for="nickname" class="input-label">PUBG Playername</label>
+            <label for="PlayerName" class="input-label">PUBG Playername</label>
           </div>
           <div class="input-container">
             <div class="input-icon-container"></div>
@@ -45,19 +45,19 @@ import type AppFooter from '@/components/AppFooter/AppFooter';
               placeholder=" "
               :value="user?.email"
             />
-            <label for="nickname" class="input-label">PUBG Playername</label>
+            <label for="PlayerName" class="input-label">PUBG Playername</label>
           </div>
           <div class="input-container">
             <div class="input-icon-container"></div>
             <input
               disabled
-              type="nickname"
-              id="nickname"
+              type="PlayerName"
+              id="PlayerName"
               class="input-field peer w-1/2"
               placeholder=" "
               :value="user?.displayName"
             />
-            <label for="nickname" class="input-label">PUBG Playername</label>
+            <label for="PlayerName" class="input-label">PUBG Playername</label>
           </div>
         </div>
         <div class="flex justify-end">

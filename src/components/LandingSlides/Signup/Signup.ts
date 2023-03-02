@@ -11,29 +11,15 @@ export default defineComponent({
   emits: ["onCancelSignup"],
 
   setup(props, { emit }) {
-    const data = ref();
     const loading = ref(false);
 
-    async function handleSignup() {
-      loading.value = true;
-      await $pubgService.GetPlayer(playerName.value);
-      loading.value = false;
-
-      handleRegister();
+    function handleSignup() {
+      $firebaseService.RegisterSubmit(
+        email.value,
+        password.value,
+        $pubgService
+      );
     }
-
-    function handleRegister() {
-      // $firebaseService.RegisterSubmit(
-      //   email.value,
-      //   password.value,
-      //   $pubgService
-      // );
-    }
-
-    const playerName = ref("");
-    const handlePlayerName = (fromPlayerName: string) => {
-      playerName.value = fromPlayerName;
-    };
 
     const email = ref("");
     const handleEmail = (fromEmail: string) => {
@@ -55,7 +41,6 @@ export default defineComponent({
       handlePassword,
       handleEmail,
       cancelSignup,
-      handlePlayerName,
     };
   },
 });

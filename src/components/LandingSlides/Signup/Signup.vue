@@ -8,8 +8,8 @@
   </p>
 
   <form class="form-container">
-    <PlayerName @onPlayerName="handlePlayerName" />
-    <Email @onEmail="handleEmail" />
+    <PlayerName />
+    <Email />
     <Password @onPassword="handlePassword" />
     <div class="form-warning">
       <span class="text-white">WARNING</span>

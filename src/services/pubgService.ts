@@ -3,9 +3,13 @@ import { ref } from "vue";
 
 class PubgService {
   playerData: playerModel | undefined;
+  error: string | undefined;
 
   get data() {
     return this.playerData;
+  }
+  get isError() {
+    return this.error;
   }
 
   async GetPlayer(playerName: string) {
@@ -22,9 +26,13 @@ class PubgService {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
+
         this.playerData = response.data[0];
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.log(err);
+        this.error = err;
+      });
   }
 }
 

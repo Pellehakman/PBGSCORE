@@ -8,9 +8,9 @@ import {
 } from "firebase/auth";
 
 const db = ref(database, "calender");
-const auth = getAuth();
+const auth: any = getAuth();
 class FirebaseService {
-  async RegisterSubmit(password: string, email: string) {
+  async RegisterSubmit(email: string, password: string, $pubgService: any) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential: { user: any }) => {
         const user = userCredential.user;
@@ -18,11 +18,11 @@ class FirebaseService {
       })
       .then(() =>
         updateProfile(auth.currentUser, {
-          displayName: "refData",
+          displayName: $pubgService.data?.id,
         })
       )
       .catch((error: { code: any; message: any }) => {
-        console.log(error);
+        // console.log(error);
       });
   }
 

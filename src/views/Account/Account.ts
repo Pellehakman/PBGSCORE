@@ -2,10 +2,11 @@ import AppFooter from "@/components/AppFooter/AppFooter.vue";
 import MenuBar from "@/components/MenuBar/MenuBar.vue";
 import { defineComponent, ref } from "vue";
 import { getAuth } from "firebase/auth";
+import Email from "@/components/HandleAccount/Email/Email.vue";
 
 export default defineComponent({
   name: "account-view",
-  components: { MenuBar, AppFooter },
+  components: { MenuBar, AppFooter, Email },
   setup() {
     const auth = getAuth();
     const user = auth.currentUser;

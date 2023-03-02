@@ -31,7 +31,7 @@ import type AppFooter from '@/components/AppFooter/AppFooter';
               id="PlayerName"
               class="input-field peer w-1/2"
               placeholder=" "
-              :value="user?.uid"
+              :value="user?.phoneNumber"
             />
             <label for="PlayerName" class="input-label">PUBG Playername</label>
           </div>
@@ -45,8 +45,10 @@ import type AppFooter from '@/components/AppFooter/AppFooter';
               placeholder=" "
               :value="user?.email"
             />
+
             <label for="PlayerName" class="input-label">PUBG Playername</label>
           </div>
+
           <div class="input-container">
             <div class="input-icon-container"></div>
             <input

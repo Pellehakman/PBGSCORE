@@ -6,6 +6,7 @@
     Enter your information to register and join other people comparing PUBG
     statistics.
   </p>
+
   <form class="form-container">
     <PlayerName @onPlayerName="handlePlayerName" />
     <Email @onEmail="handleEmail" />
@@ -19,10 +20,11 @@
         <span>CANCEL</span>
       </button>
       <button
-        @click.prevent="handleAccountID"
+        @click.prevent="handleSignup"
         class="btn btn-default btn--primary"
       >
         SIGN UP
+
         <!-- <div class="btn-icon--r">
         <font-awesome-icon
           class="peer animate-spin text-white icon-sm"
@@ -32,5 +34,6 @@
       </button>
     </div>
   </form>
+  <div>{{ loading }}</div>
 </template>
 <style></style>

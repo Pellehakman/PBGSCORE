@@ -1,16 +1,18 @@
 import type { playerModel } from "@/models/models";
 import { ref } from "vue";
 
-const playerData = ref<playerModel>();
-
 class PubgService {
-  playerData() {
-    return playerData;
+  playerData: playerModel | undefined;
+
+  get data() {
+    return this.playerData;
   }
-  GetPlayer(playerName: string) {
+
+  async GetPlayer(playerName: string) {
     const player = `players?filter[playerNames]=${playerName}`;
     const player_url = `${player}`;
-    fetch(`${import.meta.env.VITE_API_URL}${player_url}`, {
+
+    await fetch(`${import.meta.env.VITE_API_URL}${player_url}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
@@ -18,9 +20,9 @@ class PubgService {
       },
     })
       .then((response) => response.json())
-      .then(function (response) {
-        console.log(response.data[0].id);
-        playerData.value = response.data[0].id;
+      .then((response) => {
+        console.log(response);
+        this.playerData = response.data[0];
       })
       .catch((err) => console.error(err));
   }

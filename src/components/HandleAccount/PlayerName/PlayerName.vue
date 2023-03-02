@@ -2,12 +2,11 @@
 
 <template>
   <div class="input-container">
-   
     <div class="input-icon-container">
-      <font-awesome-icon
+      <!-- <font-awesome-icon
         class="peer animate-spin icon-sm"
         icon="fa-solid fa-spinner"
-      />
+      /> -->
       <!-- <font-awesome-icon
         class="standard-input-show peer text-warning"
         icon="fa-solid fa-circle-exclamation"

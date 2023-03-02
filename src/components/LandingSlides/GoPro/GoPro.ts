@@ -10,20 +10,17 @@ export default defineComponent({
   setup() {
     // const playerData = computed(() => $pubgService.playerData().value);
 
-    // const playerName = ref("");
-    // const handlePlayerName = (fromPlayerName: string) => {
-    //   playerName.value = fromPlayerName;
-    // };
-    // const handleSerach = () => {
-    //   $pubgService.GetPlayer(playerName.value);
-    // };
-    // const handleUpdate = () => {
-    //   const name = "pelle";
-    //   $firebaseService.UpdateProfile(name);
-    // };
+    const playerName = ref("");
+    const handlePlayerName = (fromPlayerName: string) => {
+      playerName.value = fromPlayerName;
+    };
+    const handleSerach = () => {
+      $pubgService.GetPlayer(playerName.value);
+    };
 
     return {
-      // handleSerach, handlePlayerName, playerData
+      handleSerach,
+      handlePlayerName,
     };
   },
 });

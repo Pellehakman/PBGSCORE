@@ -118,17 +118,17 @@
 
 .default-modal-enter-from,
 .default-modal-leave-to {
-  transform: translateX(-10%);
+  transform: translateX(-100%);
   opacity: 0;
 }
 .signup-modal-leave-to,
 .signup-modal-enter-from {
-  transform: translateX(-10%);
+  transform: translateX(-100%);
   opacity: 0;
 }
 .login-modal-leave-to,
 .login-modal-enter-from {
-  transform: translateX(-10%);
+  transform: translateX(-100%);
   opacity: 0;
 }
 
@@ -139,6 +139,7 @@
 .default-modal-enter-active,
 .default-modal-leave-active {
   transition: all 0.2s ease-in-out;
+ 
 }
 
 .landing-login {

@@ -20,12 +20,13 @@ export default defineComponent({
       await $pubgService.GetPlayer(playerName);
       loading.value = false;
 
+      if ($pubgService.FetchPlayer) {
+        success.value = true;
+        warning.value = false;
+      }
       if ($pubgService.isError) {
         warning.value = true;
         success.value = false;
-      } else if ($pubgService.playerData) {
-        warning.value = false;
-        success.value = true;
       }
 
       emit("onPlayerName", playerName);

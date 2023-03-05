@@ -1,8 +1,6 @@
 import PlayerName from "@/components/HandleAccount/PlayerName/PlayerName.vue";
-import type { playerModel } from "@/models/models";
-import $firebaseService from "@/services/FirebaseService";
 import $pubgService from "@/services/pubgService";
-import { computed, defineComponent, onMounted, reactive, ref } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "go-pro",
@@ -10,15 +8,18 @@ export default defineComponent({
   setup() {
     // const playerData = computed(() => $pubgService.playerData().value);
 
-    const playerName = ref("");
-    const handleError = (fromPlayerName: string) => {
-      playerName.value = fromPlayerName;
+    const pubgError = ref("");
+
+    const handleError = (fromError: string) => {
+      pubgError.value = fromError;
     };
+
     const handleSerach = () => {
-      $pubgService.GetPlayer(playerName.value);
+      console.log("search");
     };
 
     return {
+      pubgError,
       handleSerach,
       handleError,
     };

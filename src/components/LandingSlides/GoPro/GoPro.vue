@@ -16,10 +16,7 @@ import PlayerName from '@/components/HandleAccount/PlayerName/PlayerName';
     of every season you played.
   </p>
   <div class="flex mt-6">
-    <PlayerName
-      @onPlayerName="handlePlayerName"
-      class="flex w-full rounded-r-none"
-    />
+    <PlayerName @onError="handleError" class="flex w-full rounded-r-none" />
 
     <button
       @click="handleSerach"

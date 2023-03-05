@@ -2,7 +2,7 @@ import Email from "@/components/HandleAccount/Email/Email.vue";
 import PlayerName from "@/components/HandleAccount/PlayerName/PlayerName.vue";
 import Password from "@/components/HandleAccount/Password/Password.vue";
 import $firebaseService from "@/services/FirebaseService";
-import { defineComponent, ref, type Ref } from "vue";
+import { defineComponent, ref } from "vue";
 import $pubgService from "@/services/pubgService";
 
 export default defineComponent({
@@ -13,21 +13,30 @@ export default defineComponent({
   setup(props, { emit }) {
     const loading = ref(false);
 
-    function handleSignup() {
-      $firebaseService.RegisterSubmit(
+    const handleSignup = async () => {
+      loading.value = true;
+      await $firebaseService.RegisterSubmit(
         email.value,
         password.value,
         $pubgService
       );
-    }
+      fireError.value = $firebaseService.isError;
+      loading.value = false;
+    };
+
+    const pubgError = ref("");
+    const fireError = ref<any>("");
+    const handleError = (fromError: string) => {
+      pubgError.value = fromError;
+    };
 
     const email = ref("");
     const handleEmail = (fromEmail: string) => {
       email.value = fromEmail;
     };
-
     const password = ref("");
     const handlePassword = (fromPassword: string) => {
+      console.log(fromPassword);
       password.value = fromPassword;
     };
 
@@ -36,8 +45,11 @@ export default defineComponent({
     };
 
     return {
+      pubgError,
+      fireError,
       loading,
       handleSignup,
+      handleError,
       handlePassword,
       handleEmail,
       cancelSignup,

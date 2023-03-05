@@ -12,7 +12,7 @@ export default defineComponent({
 
     const handlePassword = (password: string) => {
       emit("onPassword", password);
-      // console.log(password);
+      console.log(password);
     };
 
     const handleDisplayPassword = () => {

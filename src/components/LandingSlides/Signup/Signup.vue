@@ -8,11 +8,11 @@
   </p>
 
   <form class="form-container">
-    <PlayerName />
-    <Email />
+    <PlayerName @onError="handleError" />
+    <Email @onEmail="handleEmail" />
     <Password @onPassword="handlePassword" />
     <div class="form-warning">
-      <span class="text-white">WARNING</span>
+      <span class="text-white">{{ pubgError }} {{ fireError }}</span>
     </div>
 
     <div class="flex justify-end pt-8">
@@ -25,15 +25,15 @@
       >
         SIGN UP
 
-        <!-- <div class="btn-icon--r">
-        <font-awesome-icon
-          class="peer animate-spin text-white icon-sm"
-          icon="fa-solid fa-spinner"
-        />
-      </div> -->
+        <div class="btn-icon--r">
+          <font-awesome-icon
+            v-if="loading"
+            class="peer animate-spin text-white icon-sm"
+            icon="fa-solid fa-spinner"
+          />
+        </div>
       </button>
     </div>
   </form>
-  <div>{{ loading }}</div>
 </template>
 <style></style>

@@ -9,7 +9,7 @@
     <Email @onEmail="handleEmail" />
     <Password @onPassword="handlePassword" />
     <div class="form-warning">
-      <span class="text-white">WARNING</span>
+      <span class="text-white">{{ fireError }}</span>
     </div>
     <div class="form-btn-container">
       <button @click.prevent="cancelLogin" class="btn btn-default">
@@ -17,6 +17,11 @@
       </button>
       <button @click.prevent="handleLogin" class="btn btn-default btn--success">
         LOGIN
+        <font-awesome-icon
+          v-if="loading"
+          class="peer animate-spin text-white icon-sm"
+          icon="fa-solid fa-spinner"
+        />
       </button>
     </div>
   </form>

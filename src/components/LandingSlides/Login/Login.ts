@@ -9,9 +9,15 @@ export default defineComponent({
   emits: ["onCancelLogin"],
 
   setup(props, { emit }) {
-    function handleLogin() {
-      $firebaseService.LoginSubmit(password.value, email.value);
-    }
+    const loading = ref(false);
+    const fireError = ref<any>("");
+
+    const handleLogin = async () => {
+      loading.value = true;
+      await $firebaseService.LoginSubmit(password.value, email.value);
+      loading.value = false;
+      fireError.value = $firebaseService.isError;
+    };
     const email = ref("");
     const handleEmail = (fromEmail: string) => {
       email.value = fromEmail;
@@ -19,12 +25,20 @@ export default defineComponent({
 
     const password = ref("");
     const handlePassword = (fromPassword: string) => {
+      console.log(fromPassword);
       password.value = fromPassword;
     };
 
     const cancelLogin = () => {
       emit("onCancelLogin");
     };
-    return { handleLogin, cancelLogin, handleEmail, handlePassword };
+    return {
+      handleLogin,
+      cancelLogin,
+      handleEmail,
+      handlePassword,
+      loading,
+      fireError,
+    };
   },
 });

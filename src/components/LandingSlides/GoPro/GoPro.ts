@@ -11,7 +11,7 @@ export default defineComponent({
     // const playerData = computed(() => $pubgService.playerData().value);
 
     const playerName = ref("");
-    const handlePlayerName = (fromPlayerName: string) => {
+    const handleError = (fromPlayerName: string) => {
       playerName.value = fromPlayerName;
     };
     const handleSerach = () => {
@@ -20,7 +20,7 @@ export default defineComponent({
 
     return {
       handleSerach,
-      handlePlayerName,
+      handleError,
     };
   },
 });

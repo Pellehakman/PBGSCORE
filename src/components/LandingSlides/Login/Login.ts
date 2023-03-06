@@ -1,6 +1,6 @@
 import Email from "@/components/HandleAccount/Email/Email.vue";
 import Password from "@/components/HandleAccount/Password/Password.vue";
-import $firebaseService from "@/services/FirebaseService";
+import $fireAccount from "@/services/account/fireAccount";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -10,13 +10,14 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const loading = ref(false);
-    const fireError = ref<any>("");
+    const fireError = ref<string | undefined>("");
 
     const handleLogin = async () => {
       loading.value = true;
-      await $firebaseService.LoginSubmit(password.value, email.value);
+      fireError.value = "";
+      await $fireAccount.LoginSubmit(password.value, email.value);
       loading.value = false;
-      fireError.value = $firebaseService.isError;
+      fireError.value = $fireAccount.Error;
     };
     const email = ref("");
     const handleEmail = (fromEmail: string) => {

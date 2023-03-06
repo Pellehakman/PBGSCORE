@@ -1,14 +1,14 @@
 import type { playerModel } from "@/models/models";
 import { ref } from "vue";
 
-class PubgService {
-  fetchPlayer: any | undefined;
-  error: any | undefined;
+class ApiAccount {
+  fetchPlayer: playerModel | undefined;
+  error: string | undefined;
 
   get FetchPlayer() {
     return this.fetchPlayer;
   }
-  get isError() {
+  get Error() {
     return this.error;
   }
 
@@ -58,5 +58,5 @@ class PubgService {
   }
 }
 
-const $pubgService = new PubgService();
-export default $pubgService;
+const $apiAccount = new ApiAccount();
+export default $apiAccount;

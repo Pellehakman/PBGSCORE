@@ -1,21 +1,20 @@
-import database from "@/firebase/config";
-import { ref } from "firebase/database";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+import router from "@/router";
 
-const db = ref(database, "calender");
 const auth: any = getAuth();
-class FirebaseService {
+class FireAccount {
   error: string | undefined;
 
-  get isError() {
+  get Error() {
     return this.error;
   }
-  async RegisterSubmit(email: string, password: string, $pubgService: any) {
+
+  async RegisterSubmit(email: string, password: string, $apiAccount: any) {
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential: { user: any }) => {
         const user = userCredential.user;
@@ -23,9 +22,13 @@ class FirebaseService {
       })
       .then(() =>
         updateProfile(auth.currentUser, {
-          displayName: $pubgService.FetchPlayer.data[0].id,
+          displayName: $apiAccount.FetchPlayer.data[0].id,
         })
       )
+      .then(() => {
+        router.push("/statistics");
+        this.error = "";
+      })
       .catch((error) => {
         console.log(error);
         this.error = error;
@@ -37,17 +40,17 @@ class FirebaseService {
       .then((userCredential) => {
         const user = userCredential.user;
         if (user) {
-          console.log(user.email);
-          console.log(user.uid);
-          sessionStorage.setItem("uid", JSON.stringify(user.uid));
+          this.error = "";
+          router.push("/statistics");
         }
-        return user;
+        // return user;
       })
+
       .catch((error) => {
         this.error = error;
       });
   }
 }
 
-const $firebaseService = new FirebaseService();
-export default $firebaseService;
+const $fireAccount = new FireAccount();
+export default $fireAccount;

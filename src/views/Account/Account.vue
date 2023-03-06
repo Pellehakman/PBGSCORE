@@ -26,28 +26,17 @@ import type AppFooter from '@/components/AppFooter/AppFooter';
           <div class="input-container">
             <div class="input-icon-container"></div>
             <input
-              disabled
-              type="PlayerName"
-              id="PlayerName"
-              class="input-field peer w-1/2"
-              placeholder=" "
-              :value="user?.phoneNumber"
-            />
-            <label for="PlayerName" class="input-label">PUBG Playername</label>
-          </div>
-          <div class="input-container">
-            <div class="input-icon-container"></div>
-            <input
-              disabled
+              :disabled="false"
+              v-model="email"
               type="email"
               id="email"
               class="input-field peer w-1/2"
               placeholder=" "
-              :value="user?.email"
             />
 
-            <label for="PlayerName" class="input-label">PUBG Playername</label>
+            <label for="PlayerName" class="input-label">Email Adress</label>
           </div>
+          <button @click="handleEmailUpdate">SAVE</button>
 
           <div class="input-container">
             <div class="input-icon-container"></div>
@@ -59,9 +48,11 @@ import type AppFooter from '@/components/AppFooter/AppFooter';
               placeholder=" "
               :value="user?.displayName"
             />
-            <label for="PlayerName" class="input-label">PUBG Playername</label>
+            <label for="PlayerName" class="input-label">PUBG ID</label>
           </div>
         </div>
+
+        {{ users }}
         <div class="flex justify-end">
           <button class="btn-default btn btn--primary">EDIT</button>
         </div>

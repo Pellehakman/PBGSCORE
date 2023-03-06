@@ -4,7 +4,7 @@ import Password from "@/components/HandleAccount/Password/Password.vue";
 import $fireAccount from "@/services/account/fireAccount";
 import { defineComponent, ref } from "vue";
 import $apiAccount from "@/services/account/apiAccount";
-
+import $fireUser from "@/services/account/fireUser";
 
 export default defineComponent({
   components: { Password, Email, PlayerName },

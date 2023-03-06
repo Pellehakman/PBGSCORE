@@ -3,9 +3,11 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  updateEmail,
 } from "firebase/auth";
 import router from "@/router";
-
+import { setDoc, doc, getFirestore } from "firebase/firestore";
+const db = getFirestore();
 const auth: any = getAuth();
 class FireAccount {
   error: string | undefined;
@@ -16,19 +18,24 @@ class FireAccount {
 
   async RegisterSubmit(email: string, password: string, $apiAccount: any) {
     await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential: { user: any }) => {
-        const user = userCredential.user;
-        console.log(user);
+      .then((userCredential) => {
+        console.log(userCredential.user);
       })
-      .then(() =>
+      .then(() => {
         updateProfile(auth.currentUser, {
           displayName: $apiAccount.FetchPlayer.data[0].id,
-        })
-      )
-      .then(() => {
+        });
+        setDoc(doc(db, "users", auth.currentUser.uid), {
+          uid: auth.currentUser.uid,
+          pubgid: $apiAccount.FetchPlayer.data[0].id,
+          pubgname: $apiAccount.FetchPlayer.data[0].attributes.name,
+          teams: {},
+          favourites: {},
+        });
         router.push("/statistics");
         this.error = "";
       })
+
       .catch((error) => {
         console.log(error);
         this.error = error;
@@ -48,6 +55,20 @@ class FireAccount {
 
       .catch((error) => {
         this.error = error;
+      });
+  }
+
+  async UpdateEmail(email: string) {
+    await updateEmail(auth.currentUser, email)
+      .then(() => {
+        // Email updated!
+        console.log("Email updated!");
+        // ...
+      })
+      .catch((error) => {
+        // An error occurredc
+        console.log(error);
+        // ...
       });
   }
 }

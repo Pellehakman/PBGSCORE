@@ -9,3 +9,15 @@ export type playerModel = {
     };
   };
 };
+
+export type userModel = {
+  pubgid: string;
+  uid: string;
+  pubgname: string;
+  teams?: {
+    name?: any;
+  };
+  favourites?: {
+    name?: any;
+  };
+};

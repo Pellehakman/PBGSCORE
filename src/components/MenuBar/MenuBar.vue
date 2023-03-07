@@ -17,7 +17,7 @@
           class="menu-nav-container relative"
         >
           <div class="menu-item-container">
-            <div class="menu-logo-container">
+            <div class="menu-logo-container shadow-xl">
               <img id="logo" class="menu-logo" :src="logo" alt="" />
             </div>
 

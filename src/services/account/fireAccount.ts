@@ -4,9 +4,10 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
   updateEmail,
+  updatePassword,
 } from "firebase/auth";
 import router from "@/router";
-import { setDoc, doc, getFirestore } from "firebase/firestore";
+import { setDoc, doc, getFirestore, updateDoc } from "firebase/firestore";
 const db = getFirestore();
 const auth: any = getAuth();
 class FireAccount {
@@ -59,15 +60,51 @@ class FireAccount {
   }
 
   async UpdateEmail(email: string) {
+    console.log(email);
     await updateEmail(auth.currentUser, email)
       .then(() => {
         // Email updated!
+        console.log(auth.currentUser);
         console.log("Email updated!");
         // ...
       })
-      .catch((error) => {
-        // An error occurredc
+      .catch(async (error) => {
+        // An error occurred
+        this.error = await error;
         console.log(error);
+
+        // ...
+      });
+  }
+
+  async UpdatePlayerName($apiAccount: any) {
+    updateProfile(auth.currentUser, {
+      displayName: $apiAccount.FetchPlayer.data[0].id,
+    })
+      .then(async () => {
+        const firestore = getFirestore();
+        const updatePlayerNameRef = doc(
+          firestore,
+          "users",
+          auth.currentUser.uid
+        );
+        await updateDoc(updatePlayerNameRef, {
+          pubgname: $apiAccount.FetchPlayer.data[0].attributes.name,
+        });
+      })
+      .catch((error) => {
+        // An error occurred
+      });
+  }
+
+  async UpdatePassword(password: string) {
+    console.log("new cunt");
+    updatePassword(auth.currentUser, password)
+      .then(() => {
+        console.log("Update successful");
+      })
+      .catch((error) => {
+        console.log("NO GO", error);
         // ...
       });
   }

@@ -4,7 +4,7 @@
   <div class="menu-dropdown-container">
     <button
       @click="handleDropdownParent"
-      class="menu-item menu-item-size justify-center sm-max:justify-start w-full"
+      class="menu-item menu-item-size justify-center sm-max:justify-start"
       :class="{ 'bg-menuSecondary': dropdownParent === true }"
     >
       <span class="menu-heading">ACCOUNT</span>
@@ -28,28 +28,28 @@
               class="pr-4"
               icon="fa-solid fa-right-from-bracket"
             />
-            <span>LOGIN</span>
+            <Router-link to="account">LOGIN</Router-link>
           </div>
-          <font-awesome-icon
+          <!-- <font-awesome-icon
             :class="{ ['rotate-180 transition-all icon-sm']: dropdownChild }"
             width="16px"
             icon="fa-solid fa-chevron-down"
-          />
+          /> -->
         </button>
-        <form v-if="dropdownChild" class="menu-form bg-MenuPrimary">
-          <Email />
+        <!-- <form v-if="dropdownChild" class="menu-form bg-MenuPrimary">
+         <Email />
           <Password />
 
           <div class="menu-form-btn-container">
             <button class="btn btn-default btn--success">LOGIN</button>
             <span class="text-xs">NO LOGIN? SIGN UP HERE</span>
           </div>
-        </form>
+        </form> -->
       </div>
 
       <Router-link class="menu-dropdown-item" to="/account">
-        <font-awesome-icon class="pr-4 icon-sm" icon="fa-solid fa-gear" />
-        <span>ACCOUNT SETTINGS</span>
+        <font-awesome-icon class="pr-4 icon-sm" icon="fa-solid fa-user-gear" />
+        <span>ACCOUNT</span>
       </Router-link>
       <button @click="handleLogout" class="menu-dropdown-item btn--danger">
         <font-awesome-icon
@@ -140,7 +140,7 @@
 }
 
 .menu-dropdown-container {
-  @apply relative w-full;
+  @apply relative sm-max:w-full;
 }
 .menu-dropdown-content {
   @apply flex flex-col items-start absolute transition-all dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl;

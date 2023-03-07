@@ -4,7 +4,7 @@
   <div class="input-container">
     <input
       v-model="email"
-      autofocus
+      :disabled="editable"
       type="email"
       name="email"
       class="input-field peer"

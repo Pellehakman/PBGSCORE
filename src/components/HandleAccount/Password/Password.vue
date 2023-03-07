@@ -19,6 +19,7 @@
     </div>
 
     <input
+      :disabled="editable"
       v-model="password"
       :type="displayPassword"
       name="password"
@@ -27,7 +28,7 @@
       autocomplete="on"
       @change="handlePassword(password)"
     />
-    <label for="password" class="input-label">PASSWORD</label>
+    <label for="password" class="input-label">{{ placeholderPassword }}</label>
   </div>
 </template>
 <style></style>

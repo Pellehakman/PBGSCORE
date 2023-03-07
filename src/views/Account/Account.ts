@@ -1,32 +1,25 @@
 import AppFooter from "@/components/AppFooter/AppFooter.vue";
 import MenuBar from "@/components/MenuBar/MenuBar.vue";
-import { defineComponent, onMounted, ref } from "vue";
-import { getAuth } from "firebase/auth";
-import Email from "@/components/HandleAccount/Email/Email.vue";
-import $fireAccount from "@/services/account/fireAccount";
-import $fireUser from "@/services/account/fireUser";
-import type { userModel } from "@/models/models";
+import { defineComponent, ref } from "vue";
+
+import AccountInformation from "@/components/AccountPages/AccountInformation/AccountInformation.vue";
 
 export default defineComponent({
   name: "account-view",
-  components: { MenuBar, AppFooter, Email },
+  components: {
+    AccountInformation,
+    MenuBar,
+    AppFooter,
+  },
+
   setup() {
-    const users = ref<userModel[]>();
-    onMounted(async () => {
-      const data = await $fireUser.getUsers();
-      console.log(data);
-      users.value = data;
-    });
-    const auth = getAuth();
-    const user = auth.currentUser;
-    console.log(user);
-    const email = ref<any>(user?.email);
-    const handleEmailUpdate = () => {
-      $fireAccount.UpdateEmail(email.value);
-      console.log(email.value);
+    const toggleState = ref(1);
+    const toggleTab = (index: number) => {
+      toggleState.value = index;
+      console.log(index)
     };
 
-    return { user, email, handleEmailUpdate, users };
+    return { toggleTab, toggleState };
   },
   // mounted() {
   //   const initUserTheme = this.getTheme() || this.getMediaPreference();

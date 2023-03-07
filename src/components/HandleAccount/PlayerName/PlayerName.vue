@@ -10,6 +10,7 @@
       />
     </div>
     <input
+      :disabled="editable"
       v-model="playerName"
       type="playerName"
       id="playerName"

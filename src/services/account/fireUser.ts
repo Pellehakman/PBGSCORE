@@ -1,16 +1,35 @@
 import type { userModel } from "@/models/models";
-import { collection, getDocs, getFirestore, query } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  query,
+} from "firebase/firestore";
 
 class FireUser {
-  async getUsers() {
+  user: any | undefined;
+
+  get User() {
+    return this.user;
+  }
+
+  async getUser() {
+    const auth = getAuth();
+
     const firestore = getFirestore();
-    const userQuery = query(collection(firestore, "users"));
-    const snapshots = await getDocs(userQuery);
-    const fetchUsers = snapshots.docs.map((doc) => {
-      const data = doc.data() as userModel;
-      return data;
-    });
-    return fetchUsers;
+    const docRef = doc(firestore, "users", `${auth?.currentUser?.uid}`);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log(docSnap.data());
+      this.user = docSnap.data();
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
   }
 }
 

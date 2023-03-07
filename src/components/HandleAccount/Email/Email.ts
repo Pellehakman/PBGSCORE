@@ -1,12 +1,22 @@
-import { defineComponent, ref } from "vue";
+import $fireUser from "@/services/account/fireUser";
+import { getAuth } from "firebase/auth";
+import { defineComponent, onMounted, ref } from "vue";
 
 export default defineComponent({
   name: "Email",
-  props: {},
+  props: { editable: Boolean },
   emits: ["onEmail"],
   setup(props, { emit }) {
-    const email = ref("");
+    const auth = getAuth();
+    onMounted(async () => {
+      await $fireUser.getUser();
+      if (auth.currentUser) {
+        email.value = auth.currentUser.email;
+      }
+    });
+    const email = ref<string | any>("");
     const handleEmail = (email: string) => {
+      console.log(email);
       emit("onEmail", email);
     };
 

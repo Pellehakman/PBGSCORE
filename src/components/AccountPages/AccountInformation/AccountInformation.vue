@@ -8,7 +8,6 @@
     beatae eos expedita tempora dolorem inventore hic quibusdam in corrupti!
   </p>
   <div class="flex flex-col gap-4">
-    <span>current name {{ data?.pubgname }}</span>
     <PlayerName
       @onError="handleError"
       :edit="edit"

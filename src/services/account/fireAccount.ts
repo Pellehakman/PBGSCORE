@@ -72,35 +72,25 @@ class FireAccount {
 
   async UpdateEmail(email: string) {
     if (email === auth.currentUser.email) {
-      console.log("same email");
+      console.log("EMAIL: Nothing to update!");
     } else {
-      console.log(email);
+      console.log("EMAIL: Email updated!");
       await updateEmail(auth.currentUser, email)
-        .then(() => {
-          // Email updated!
-          console.log(auth.currentUser);
-          console.log("Email updated!");
-          // ...
-        })
+        .then(() => {})
         .catch(async (error) => {
-          // An error occurred
           this.error = await error;
-          console.log(error);
-
-          // ...
         });
     }
   }
 
   async UpdatePlayerName($apiAccount: any) {
-    console.log($apiAccount.FetchPlayer);
     if ($apiAccount.FetchPlayer === undefined) {
-      console.log("no changes were made");
+      console.log("PLAYERNAME: Nothing to update!");
     } else {
-      console.log("updated IGN");
+      console.log("PLAYERNAME: Playername updated!");
       await updateProfile(auth.currentUser, {
-        displayName: $apiAccount.FetchPlayer.data[0].id,
-        photoURL: $apiAccount.FetchPlayer.data[0].attributes.name,
+        displayName: await $apiAccount.FetchPlayer.data[0].id,
+        photoURL: await $apiAccount.FetchPlayer.data[0].attributes.name,
       })
         .then(async () => {
           const firestore = getFirestore();
@@ -113,22 +103,20 @@ class FireAccount {
             pubgname: $apiAccount.FetchPlayer.data[0].attributes.name,
           });
         })
-        .catch((error) => {
-          // An error occurred
-        });
+        .catch((error) => {});
     }
   }
 
   async UpdatePassword(password: string) {
-    console.log("new cunt");
-    updatePassword(auth.currentUser, password)
-      .then(() => {
-        console.log("Update successful");
-      })
-      .catch((error) => {
-        console.log("NO GO", error);
-        // ...
-      });
+    if (password.length > 0) {
+      updatePassword(auth.currentUser, password)
+        .then(() => {
+          console.log("PASSWORD: Password updated!");
+        })
+        .catch((error) => {});
+    } else {
+      console.log("PASSWORD: Nothing to update!");
+    }
   }
 }
 

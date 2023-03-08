@@ -8,14 +8,8 @@ export default defineComponent({
   emits: ["onEmail"],
   setup(props, { emit }) {
     const auth = getAuth();
-    onMounted(async () => {
-      await $fireUser.getUser();
-      if (auth.currentUser) {
-        email.value = auth.currentUser.email;
-      }
-    });
 
-    const email = ref<string | any>("");
+    const email = ref<any | undefined>(auth?.currentUser?.email);
     const handleEmail = (email: string) => {
       console.log(email);
       emit("onEmail", email);

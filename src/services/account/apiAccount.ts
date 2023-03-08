@@ -25,14 +25,16 @@ class ApiAccount {
       .then((response) => response.json())
       .then(async (response) => {
         console.log(response);
-        this.fetchPlayer = await response;
         if (response.errors) {
           this.error = await response.errors[0].detail;
         } else {
+          this.fetchPlayer = await response;
           this.error = "";
         }
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err);
+      });
   }
 }
 

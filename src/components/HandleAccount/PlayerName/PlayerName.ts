@@ -11,19 +11,20 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const auth = getAuth();
-    onMounted(async () => {
-      loading.value = true;
-      await $fireUser.getUser();
-      if (auth.currentUser?.displayName) {
-        playerName.value = $fireUser.User.pubgname;
-      }
-      loading.value = false;
-    });
+    // onMounted(async () => {
+    //   loading.value = true;
+
+    // await $fireUser.getUser();
+    // if (auth.currentUser?.displayName) {
+    //   playerName.value = $fireUser.User.pubgname;
+    // }
+    //   loading.value = false;
+    // });
     const loadingGood = ref(false);
     const loadingBad = ref(false);
 
     const loading = ref(false);
-    const playerName = ref<userModel | string>("");
+    const playerName = ref<any | string>(auth.currentUser?.photoURL);
 
     const error = ref<string | undefined>("");
 

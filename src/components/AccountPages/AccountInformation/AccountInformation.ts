@@ -16,29 +16,24 @@ export default defineComponent({
   setup() {
     const auth = getAuth();
     const user = auth.currentUser;
-    const data = ref<userModel>();
+
     const pubgError = ref("");
     const fireError = ref<string | undefined>("");
     const handleError = (fromError: string) => {
       pubgError.value = fromError;
     };
 
-    onMounted(async () => {
-      await $fireUser.getUser();
-      data.value = $fireUser.User;
-    });
-
-    console.log(user);
     const email = ref<any>(user?.email);
     const handleEmail = (fromEmail: string) => {
       email.value = fromEmail;
       console.log(email.value);
     };
+
     const password = ref("");
     const handlePassword = (fromPassword: string) => {
-      console.log(fromPassword);
       password.value = fromPassword;
     };
+
     const edit = ref(true);
     const editStyle = ref(false);
     const editText = ref("EDIT");
@@ -62,9 +57,8 @@ export default defineComponent({
       await $fireAccount.UpdatePassword(password.value);
       await $fireAccount.UpdateEmail(email.value);
       fireError.value = $fireAccount.Error;
-      await $fireAccount.UpdatePlayerName($apiAccount);
-      console.log($apiAccount);
       editStyle.value = false;
+      await $fireAccount.UpdatePlayerName($apiAccount);
     };
 
     return {
@@ -79,7 +73,6 @@ export default defineComponent({
       user,
       email,
       handleEmail,
-      data,
       handlePassword,
       handleUpdate,
     };

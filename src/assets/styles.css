@@ -186,7 +186,7 @@ html {
 
   /* CUSTOM STYLING START */
   .main-bg-linear{
-    background: linear-gradient(140deg, rgb(43, 21, 21) 0%, rgb(37, 35, 44)100%);
+    background: linear-gradient(140deg, rgb(43, 21, 20) 0%, rgb(37, 35, 44)100%);
   }
   .active-menu{
     background-color: var(--bg-menu-secondary)

@@ -4,7 +4,7 @@
   <div class="menu-dropdown-container">
     <button
       @click="handleDropdownParent"
-      class="menu-item menu-item-size justify-center sm-max:justify-start"
+      class="menu-item menu-item-size px-16 justify-center sm-max:justify-start"
       :class="{ 'bg-menuSecondary': dropdownParent === true }"
     >
       <span class="menu-heading">ACCOUNT</span>

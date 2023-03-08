@@ -3,6 +3,8 @@ import MenuBar from "@/components/MenuBar/MenuBar.vue";
 import { defineComponent, ref } from "vue";
 
 import AccountInformation from "@/components/AccountPages/AccountInformation/AccountInformation.vue";
+import Signup from "@/components/LandingSlides/Signup/Signup.vue";
+import Login from "@/components/LandingSlides/Login/Login.vue";
 
 export default defineComponent({
   name: "account-view",
@@ -10,13 +12,15 @@ export default defineComponent({
     AccountInformation,
     MenuBar,
     AppFooter,
+    Signup,
+    Login,
   },
 
   setup() {
     const toggleState = ref(1);
     const toggleTab = (index: number) => {
       toggleState.value = index;
-      console.log(index)
+      console.log(index);
     };
 
     return { toggleTab, toggleState };

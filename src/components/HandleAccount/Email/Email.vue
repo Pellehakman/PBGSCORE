@@ -4,10 +4,13 @@
   <div class="input-container">
     <input
       v-model="email"
-      :disabled="editable"
+      :disabled="edit"
       type="email"
       name="email"
       class="input-field peer"
+      :class="{
+        'bg-black animate-pulse': props.editStyle === true,
+      }"
       placeholder=" "
       @change="handleEmail(email)"
     />

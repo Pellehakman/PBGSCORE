@@ -8,13 +8,26 @@
         class="peer animate-spin icon-sm"
         icon="fa-solid fa-spinner"
       />
+      <font-awesome-icon
+        v-if="loadingGood"
+        class="peer icon-sm text-white"
+        icon="fa-solid fa-check-circle"
+      />
+      <font-awesome-icon
+        v-if="loadingBad"
+        class="peer icon-sm text-white"
+        icon="fa-solid fa-exclamation-circle"
+      />
     </div>
     <input
-      :disabled="editable"
+      :disabled="edit"
       v-model="playerName"
       type="playerName"
       id="playerName"
       class="input-field peer"
+      :class="{
+        'bg-black animate-pulse': props.editStyle === true,
+      }"
       placeholder=" "
       @change="handlePlayerName(playerName)"
     />

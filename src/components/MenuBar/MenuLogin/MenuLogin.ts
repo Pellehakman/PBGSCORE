@@ -28,9 +28,9 @@ export default defineComponent({
       dropdownChild.value = !dropdownChild.value;
     };
 
-    const handleLogout = () => {
-      auth.signOut();
-      router.push({ path: "/landing" });
+    const handleLogout = async () => {
+      await auth.signOut();
+      location.reload();
     };
     return {
       handleLogout,

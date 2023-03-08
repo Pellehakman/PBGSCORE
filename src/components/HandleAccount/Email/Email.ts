@@ -4,7 +4,7 @@ import { defineComponent, onMounted, ref } from "vue";
 
 export default defineComponent({
   name: "Email",
-  props: { editable: Boolean },
+  props: { edit: Boolean, editStyle: Boolean },
   emits: ["onEmail"],
   setup(props, { emit }) {
     const auth = getAuth();
@@ -14,12 +14,13 @@ export default defineComponent({
         email.value = auth.currentUser.email;
       }
     });
+
     const email = ref<string | any>("");
     const handleEmail = (email: string) => {
       console.log(email);
       emit("onEmail", email);
     };
 
-    return { email, handleEmail };
+    return { email, handleEmail, props };
   },
 });

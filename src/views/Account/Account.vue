@@ -1,4 +1,4 @@
-import type AppFooter from '@/components/AppFooter/AppFooter';
+
 
 <script lang="ts" src="./Account.ts"></script>
 
@@ -33,12 +33,18 @@ import type AppFooter from '@/components/AppFooter/AppFooter';
           SIGN IN
         </button>
       </aside>
-      <section class="flex flex-col bg-orange-400 w-full p-6">
+      <section class="flex flex-col bg-zinc-900 w-full p-6">
         <div :class="[toggleState === 1 ? 'active-tab' : 'hidden']">
           <AccountInformation />
         </div>
         <div :class="[toggleState === 2 ? 'active-tab' : 'hidden']">
-          <h1>shit in my face</h1>
+          nothing here yet
+        </div>
+        <div :class="[toggleState === 3 ? 'active-tab' : 'hidden']">
+          <Login />
+        </div>
+        <div :class="[toggleState === 4 ? 'active-tab' : 'hidden']">
+          <Signup />
         </div>
       </section>
     </div>

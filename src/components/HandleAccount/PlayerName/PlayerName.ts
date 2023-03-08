@@ -6,7 +6,7 @@ import { defineComponent, onMounted, ref } from "vue";
 
 export default defineComponent({
   name: "PlayerName",
-  props: { editable: Boolean },
+  props: { edit: Boolean, editStyle: Boolean },
   emits: ["onError"],
 
   setup(props, { emit }) {
@@ -14,34 +14,50 @@ export default defineComponent({
     onMounted(async () => {
       loading.value = true;
       await $fireUser.getUser();
-      if (auth.currentUser) {
+      if (auth.currentUser?.displayName) {
         playerName.value = $fireUser.User.pubgname;
       }
       loading.value = false;
     });
+    const loadingGood = ref(false);
+    const loadingBad = ref(false);
+
     const loading = ref(false);
     const playerName = ref<userModel | string>("");
 
     const error = ref<string | undefined>("");
 
     const handlePlayerName = async (playerName: string) => {
+      loadingGood.value = false;
+      loadingBad.value = false;
       loading.value = true;
       await $apiAccount.GetPlayer(playerName);
       error.value = $apiAccount.Error;
+      if (error.value) {
+        loadingGood.value = false;
+        loadingBad.value = true;
+      } else {
+        loadingGood.value = true;
+        loadingBad.value = false;
+      }
       loading.value = false;
+
       emit("onError", $apiAccount.Error);
     };
 
     // const disable = ref(false);
-  
+
     // if (auth.currentUser) {
     //   disable.value = true;
     // }
 
     return {
+      props,
       playerName,
       handlePlayerName,
       loading,
+      loadingGood,
+      loadingBad,
       error,
     };
   },

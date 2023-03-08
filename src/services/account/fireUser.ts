@@ -24,7 +24,6 @@ class FireUser {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log(docSnap.data());
       this.user = docSnap.data();
     } else {
       // doc.data() will be undefined in this case

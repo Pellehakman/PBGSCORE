@@ -34,8 +34,9 @@ import PlayerName from '@/components/HandleAccount/PlayerName/PlayerName';
   <div class="form-warning">
     <span class="text-white">{{ pubgError }}</span>
   </div>
-  <Router-link to="/statistics" class="flex justify-end text-white pt-8">
+ 
+  <button class="flex justify-end text-white pt-8" @click="handleGuest">
     continue without signing in
-  </Router-link>
+  </button>
 </template>
 <style></style>

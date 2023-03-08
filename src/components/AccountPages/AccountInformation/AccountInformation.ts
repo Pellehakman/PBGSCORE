@@ -28,6 +28,7 @@ export default defineComponent({
       data.value = $fireUser.User;
     });
 
+    console.log(user);
     const email = ref<any>(user?.email);
     const handleEmail = (fromEmail: string) => {
       email.value = fromEmail;
@@ -38,15 +39,23 @@ export default defineComponent({
       console.log(fromPassword);
       password.value = fromPassword;
     };
-
+    const edit = ref(true);
+    const editStyle = ref(false);
+    const editText = ref("EDIT");
     const handleUpdate = async () => {
-      disable.value = !disable.value;
-      if (disable.value === false) {
+      edit.value = !edit.value;
+      if (edit.value === false) {
         editText.value = "SAVE";
+        editStyle.value = true;
       } else {
         editText.value = "EDIT";
         handleSave();
       }
+    };
+    const handleUpdateCancel = () => {
+      editText.value = "EDIT";
+      edit.value = true;
+      editStyle.value = false;
     };
 
     const handleSave = async () => {
@@ -54,16 +63,19 @@ export default defineComponent({
       await $fireAccount.UpdateEmail(email.value);
       fireError.value = $fireAccount.Error;
       await $fireAccount.UpdatePlayerName($apiAccount);
+      console.log($apiAccount);
+      editStyle.value = false;
     };
 
-    const disable = ref(true);
-    const editText = ref("EDIT");
     return {
+      handleUpdateCancel,
+      handleSave,
       pubgError,
       fireError,
       handleError,
       editText,
-      disable,
+      edit,
+      editStyle,
       user,
       email,
       handleEmail,

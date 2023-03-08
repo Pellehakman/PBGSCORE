@@ -9,9 +9,24 @@
   </p>
   <div class="flex flex-col gap-4">
     <span>current name {{ data?.pubgname }}</span>
-    <PlayerName @onError="handleError" :editable="disable" class="w-3/4" />
-    <Email :editable="disable" @onEmail="handleEmail" class="w-3/4" />
-    <Password :editable="disable" @onPassword="handlePassword" class="w-3/4" />
+    <PlayerName
+      @onError="handleError"
+      :edit="edit"
+      :editStyle="editStyle"
+      class="w-3/4"
+    />
+    <Email
+      @onEmail="handleEmail"
+      :edit="edit"
+      :editStyle="editStyle"
+      class="w-3/4"
+    />
+    <Password
+      @onPassword="handlePassword"
+      :edit="edit"
+      :editStyle="editStyle"
+      class="w-3/4"
+    />
     <div class="form-warning">
       <span class="text-white">{{ pubgError }} {{ fireError }}</span>
     </div>
@@ -19,7 +34,14 @@
 
   <div class="flex justify-end">
     <button
-      :class="[disable ? 'btn--primary' : 'btn--success']"
+      @click="handleUpdateCancel"
+      :class="[edit ? 'hidden' : '']"
+      class="btn-default btn"
+    >
+      CANCEL
+    </button>
+    <button
+      :class="[edit ? 'btn--primary' : 'btn--success']"
       class="btn-default btn"
       @click="handleUpdate"
     >

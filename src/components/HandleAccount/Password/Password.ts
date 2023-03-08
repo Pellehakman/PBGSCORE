@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 
 export default defineComponent({
   name: "Password",
-  props: { editable: Boolean },
+  props: { edit: Boolean, editStyle: Boolean },
   emits: ["onPassword"],
   setup(props, { emit }) {
     const auth = getAuth();
@@ -17,7 +17,6 @@ export default defineComponent({
     }
     const handlePassword = (password: string) => {
       emit("onPassword", password);
-      console.log(password);
     };
 
     const handleDisplayPassword = () => {
@@ -27,8 +26,9 @@ export default defineComponent({
         displayPassword.value = showEyeIcon.yes;
       }
     };
-    console.log(props.editable);
+
     return {
+      props,
       password,
       placeholderPassword,
       handleDisplayPassword,

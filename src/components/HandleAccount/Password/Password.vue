@@ -19,11 +19,14 @@
     </div>
 
     <input
-      :disabled="editable"
+      :disabled="edit"
       v-model="password"
       :type="displayPassword"
       name="password"
       class="input-field peer"
+      :class="{
+        'bg-black animate-pulse': props.editStyle === true,
+      }"
       placeholder=" "
       autocomplete="on"
       @change="handlePassword(password)"

@@ -5,6 +5,7 @@ import {
   updateProfile,
   updateEmail,
   updatePassword,
+  signInAnonymously,
 } from "firebase/auth";
 import router from "@/router";
 import { setDoc, doc, getFirestore, updateDoc } from "firebase/firestore";
@@ -25,6 +26,7 @@ class FireAccount {
       .then(() => {
         updateProfile(auth.currentUser, {
           displayName: $apiAccount.FetchPlayer.data[0].id,
+          photoURL: $apiAccount.FetchPlayer.data[0].attributes.name,
         });
         setDoc(doc(db, "users", auth.currentUser.uid), {
           uid: auth.currentUser.uid,
@@ -35,12 +37,21 @@ class FireAccount {
         });
         router.push("/statistics");
         this.error = "";
+        console.log(auth.currentUser);
       })
 
       .catch((error) => {
         console.log(error);
         this.error = error;
       });
+  }
+  async LoginGuest() {
+    const auth = getAuth();
+    signInAnonymously(auth)
+      .then(() => {
+        router.push("/statistics");
+      })
+      .catch((error) => {});
   }
 
   async LoginSubmit(password: string, email: string) {
@@ -60,41 +71,52 @@ class FireAccount {
   }
 
   async UpdateEmail(email: string) {
-    console.log(email);
-    await updateEmail(auth.currentUser, email)
-      .then(() => {
-        // Email updated!
-        console.log(auth.currentUser);
-        console.log("Email updated!");
-        // ...
-      })
-      .catch(async (error) => {
-        // An error occurred
-        this.error = await error;
-        console.log(error);
+    if (email === auth.currentUser.email) {
+      console.log("same email");
+    } else {
+      console.log(email);
+      await updateEmail(auth.currentUser, email)
+        .then(() => {
+          // Email updated!
+          console.log(auth.currentUser);
+          console.log("Email updated!");
+          // ...
+        })
+        .catch(async (error) => {
+          // An error occurred
+          this.error = await error;
+          console.log(error);
 
-        // ...
-      });
+          // ...
+        });
+    }
   }
 
   async UpdatePlayerName($apiAccount: any) {
-    updateProfile(auth.currentUser, {
-      displayName: $apiAccount.FetchPlayer.data[0].id,
-    })
-      .then(async () => {
-        const firestore = getFirestore();
-        const updatePlayerNameRef = doc(
-          firestore,
-          "users",
-          auth.currentUser.uid
-        );
-        await updateDoc(updatePlayerNameRef, {
-          pubgname: $apiAccount.FetchPlayer.data[0].attributes.name,
-        });
+    console.log($apiAccount.FetchPlayer);
+    if ($apiAccount.FetchPlayer === undefined) {
+      console.log("no changes were made");
+    } else {
+      console.log("updated IGN");
+      await updateProfile(auth.currentUser, {
+        displayName: $apiAccount.FetchPlayer.data[0].id,
+        photoURL: $apiAccount.FetchPlayer.data[0].attributes.name,
       })
-      .catch((error) => {
-        // An error occurred
-      });
+        .then(async () => {
+          const firestore = getFirestore();
+          const updatePlayerNameRef = doc(
+            firestore,
+            "users",
+            auth.currentUser.uid
+          );
+          await updateDoc(updatePlayerNameRef, {
+            pubgname: $apiAccount.FetchPlayer.data[0].attributes.name,
+          });
+        })
+        .catch((error) => {
+          // An error occurred
+        });
+    }
   }
 
   async UpdatePassword(password: string) {

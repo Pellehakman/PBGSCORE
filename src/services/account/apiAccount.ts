@@ -25,7 +25,7 @@ class ApiAccount {
       .then((response) => response.json())
       .then(async (response) => {
         console.log(response);
-        this.fetchPlayer = response;
+        this.fetchPlayer = await response;
         if (response.errors) {
           this.error = await response.errors[0].detail;
         } else {

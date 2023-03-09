@@ -4,12 +4,12 @@
   <div class="landing-container">
     <header class="landing-header">
       <div class="flex items-center justify-center">
-        <img class="landing-logo" :src="logo" alt="logo" />
+        <img class="landing-logo fill-blue-500" :src="logo" alt="logo" />
       </div>
       <div class="header-btn-container">
         <button
           @click="handleLogin"
-          :class="{ 'bg-primary': loginModal === true }"
+          :class="{ 'btn--success': loginModal === true }"
           class="btn btn-default"
         >
           <span>LOGIN</span>
@@ -18,8 +18,8 @@
           @click="handleSignup"
           :class="[
             signupModal
-              ? 'bg-monestral border border-transparent'
-              : 'border rounded-sm border-white',
+              ? 'btn--primary border-2 border-transparent'
+              : 'border-2 rounded-sm border-white',
           ]"
           class="btn btn-default"
         >
@@ -79,9 +79,9 @@
 }
 .modal-container {
   @apply /* --------------------- */
-  /* full */  pt-32
-  /* tablet */ lg-max:pt-24
-  /* mobile */sm-max:pt-16
+  /* full */  pt-16 lg:pl-32
+  /* tablet */ 
+  /* mobile */
   /* design */ w-full justify-center flex;
 }
 .landing-main-container {
@@ -119,16 +119,19 @@
 .default-modal-enter-from,
 .default-modal-leave-to {
   transform: translateX(-100%);
+
   opacity: 0;
 }
 .signup-modal-leave-to,
 .signup-modal-enter-from {
   transform: translateX(-100%);
+
   opacity: 0;
 }
 .login-modal-leave-to,
 .login-modal-enter-from {
   transform: translateX(-100%);
+
   opacity: 0;
 }
 
@@ -139,7 +142,7 @@
 .default-modal-enter-active,
 .default-modal-leave-active {
   transition: all 0.2s ease-in-out;
- 
+  filter: blur(5px);
 }
 
 .landing-login {

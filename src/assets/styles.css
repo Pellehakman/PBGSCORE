@@ -18,13 +18,19 @@ select:-webkit-autofill:focus {
 html {
   overflow-y:scroll;
 }
+.gradient{
+  background: rgb(249,248,241);
+background: linear-gradient(114deg, rgb(235, 233, 217) 0%, rgb(179, 175, 192) 100%);
+}
 
 @layer base {
   body{
     @apply w-full
   }
   #app {
-    @apply min-h-screen w-full flex flex-col bg-pubg bg-center bg-fixed bg-cover font-open 
+    @apply min-h-screen w-full flex flex-col gradient
+    /* bg-pubg bg-center bg-fixed bg-cover  */
+    font-open 
   }
 }
 
@@ -100,6 +106,9 @@ html {
   .icon-sm{
     @apply  text-white 
   }
+  .icon-md{
+    @apply  h-6
+  }
   .btn-icon--r {
     @apply pl-2 ;
   }
@@ -108,8 +117,8 @@ html {
   }
   .btn-default{
     @apply 
-    /*  full  */ px-10 py-2 text-xl
-    /* laptop */ lg-max:px-8 
+    /*  full  */ px-8 py-2 text-xl
+    /* laptop */ lg-max:px-6
     /* tablet */ md-max:px-3 md-max:text-base
     /* mobile */ sm-max:py-4 sm-max:px-8 sm-max:text-base
     /* design */ font-bold
@@ -130,23 +139,23 @@ html {
 
 /* STANDARD INPUT STYLING START */
 .input-container{
-  @apply relative
+  @apply relative shadow-lg
 }
 .input-field{
   @apply 
-  /* full */ pt-6 pb-2 pl-4
+  /* full */ pt-6 pb-3 pl-5 
   /* tablet */
   /* mobile */
-  /* design */ flex text-sm w-full rounded-sm appearance-none bg-input bg-opacity-20 focus:outline-none focus:ring-0 text-textSecondary 
+  /* design */ flex text-sm w-full rounded-sm appearance-none focus:outline-none focus:ring-0 text-textSecondary 
 }
 .input-label{
   @apply absolute text-base font-semibold text-textSecondary duration-150 transform -translate-y-0 peer-focus:-translate-y-0 scale-75 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2  peer-focus:scale-75  left-4 top-0 peer-focus:top-0
 }
 .input-icon-container{
-  @apply flex w-6 h-6 justify-center items-center absolute top-0 right-4 bottom-0 my-auto
+  @apply flex w-6 h-6 justify-center items-center absolute top-0 right-4 bottom-0 my-auto 
 }
 .input-icon{
-  @apply text-white
+  @apply px-8 h-full absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center
 }
 /* STANDARD INPUT STYLING END */
 

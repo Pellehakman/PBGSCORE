@@ -1,5 +1,3 @@
-
-
 <script lang="ts" src="./Account.ts"></script>
 
 <template>
@@ -33,7 +31,7 @@
           SIGN IN
         </button>
       </aside>
-      <section class="flex flex-col bg-zinc-900 w-full p-6">
+      <section class="flex flex-col w-full p-6 bg-background">
         <div :class="[toggleState === 1 ? 'active-tab' : 'hidden']">
           <AccountInformation />
         </div>

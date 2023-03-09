@@ -4,7 +4,6 @@ import Password from "@/components/HandleAccount/Password/Password.vue";
 import $fireAccount from "@/services/account/fireAccount";
 import { defineComponent, ref } from "vue";
 import $apiAccount from "@/services/account/apiAccount";
-import $fireUser from "@/services/account/fireUser";
 
 export default defineComponent({
   components: { Password, Email, PlayerName },
@@ -13,18 +12,27 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const loading = ref(false);
-
+    const signInError = ref("");
     const handleSignup = async () => {
       fireError.value = "";
       pubgError.value = "";
       loading.value = true;
-      await $fireAccount.RegisterSubmit(
-        email.value,
-        password.value,
-        $apiAccount
-      );
-
-      fireError.value = $fireAccount.Error;
+      if ($apiAccount.fetchPlayer === undefined) {
+        signInError.value = "Please search for player";
+      } else if (email.value.length <= 0) {
+        signInError.value = "Please enter email";
+      } else if (password.value.length <= 0) {
+        signInError.value = "Please enter password";
+      } else {
+        await $fireAccount.RegisterSubmit(
+          email.value,
+          password.value,
+          $apiAccount
+        );
+      }
+      if ($fireAccount.Error) {
+        fireError.value = $fireAccount.Error;
+      }
       loading.value = false;
     };
 
@@ -49,6 +57,7 @@ export default defineComponent({
     };
 
     return {
+      signInError,
       pubgError,
       fireError,
       loading,

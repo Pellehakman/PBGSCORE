@@ -7,7 +7,7 @@ import { defineComponent, onMounted, ref } from "vue";
 export default defineComponent({
   name: "PlayerName",
   props: { edit: Boolean, editStyle: Boolean },
-  emits: ["onError"],
+  emits: ["onError", "onPlayerNameCheck"],
 
   setup(props, { emit }) {
     const auth = getAuth();
@@ -24,16 +24,21 @@ export default defineComponent({
     const loadingBad = ref(false);
 
     const loading = ref(false);
-    const playerName = ref<any | string>(auth.currentUser?.photoURL);
+    const playerName = ref<any | string>("");
 
-    const error = ref<string | undefined>("");
-
-    const handlePlayerName = async (playerName: string) => {
+    const error = ref<string>("");
+    const ifDisable = ref(false);
+    const handlePlayerName = async () => {
       loadingGood.value = false;
       loadingBad.value = false;
       loading.value = true;
-      await $apiAccount.GetPlayer(playerName);
-      error.value = $apiAccount.Error;
+      if (playerName.value.length <= 0) {
+        error.value = "Please search for player";
+        console.log(error.value);
+      } else {
+        await $apiAccount.GetPlayer(playerName.value);
+        ifDisable.value = true;
+      }
       if (error.value) {
         loadingGood.value = false;
         loadingBad.value = true;
@@ -43,14 +48,8 @@ export default defineComponent({
       }
       loading.value = false;
 
-      emit("onError", $apiAccount.Error);
+      emit("onError", error.value);
     };
-
-    // const disable = ref(false);
-
-    // if (auth.currentUser) {
-    //   disable.value = true;
-    // }
 
     return {
       props,

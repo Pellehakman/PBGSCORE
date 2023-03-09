@@ -26,6 +26,7 @@ import {
   faCircleExclamation,
   faCircleCheck,
   faUserGear,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -41,7 +42,8 @@ library.add(
   faSpinner,
   faCircleExclamation,
   faCircleCheck,
-  faUserGear
+  faUserGear,
+  faMagnifyingGlass
 );
 // initializeApp(firebaseConfig);
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);

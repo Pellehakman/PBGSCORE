@@ -34,7 +34,7 @@ export default defineComponent({
       password.value = fromPassword;
     };
 
-    const edit = ref(true);
+    const edit = ref(false );
     const editStyle = ref(false);
     const editText = ref("EDIT");
     const handleUpdate = async () => {

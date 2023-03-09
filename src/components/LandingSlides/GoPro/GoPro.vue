@@ -17,24 +17,11 @@ import PlayerName from '@/components/HandleAccount/PlayerName/PlayerName';
   </p>
   <div class="flex mt-6">
     <PlayerName @onError="handleError" class="flex w-full rounded-r-none" />
-
-    <button
-      @click="handleSerach"
-      class="btn btn-default btn--success rounded-l-none"
-    >
-      SEARCH
-      <!-- <div class="btn-icon--r">
-        <font-awesome-icon
-          class="peer animate-spin text-white icon-sm"
-          icon="fa-solid fa-spinner"
-        />
-      </div> -->
-    </button>
   </div>
   <div class="form-warning">
     <span class="text-white">{{ pubgError }}</span>
   </div>
- 
+
   <button class="flex justify-end text-white pt-8" @click="handleGuest">
     continue without signing in
   </button>

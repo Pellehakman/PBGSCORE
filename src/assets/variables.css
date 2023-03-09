@@ -2,6 +2,7 @@
 
 :root{
     --primary: #0F0D15;
+    --background: #e6e6e6;
     --secondary: rgb(11, 99, 150);
     --borderColor: rgb(0, 0, 0);
     --input: #1e1e1ec1;
@@ -29,8 +30,8 @@
     --white: #ffffff;
     --gray: #606060;
     
-    --text-primary: rgb(0, 0, 0);
-    --text-secondary: rgb(255, 255, 255);
+    --text-primary: rgb(255, 255, 255);
+    --text-secondary: rgb(0, 0, 0);
     --bg-menu-secondary: #0f0f0f;
     --bg-menu-primary: #000000;
     

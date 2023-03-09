@@ -31,6 +31,7 @@ module.exports = {
         white: "var(--white)",
         gray: "var(--gray)",
         monestral: "var(--monestral)",
+        background: "var(--background)",
 
         borderColor: "var(--borderColor)",
         input: "var(--input)",

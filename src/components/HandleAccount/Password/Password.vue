@@ -1,31 +1,31 @@
 <script src="./Password" lang="ts"></script>
 
 <template>
-  <div class="relative">
-    <div class="input-icon-container">
+  <div class="input-container">
+    <div class="input-icon">
       <font-awesome-icon
         v-if="displayPassword === showEyeIcon.yes"
         @click="handleDisplayPassword"
-        class="input-icon peer"
+        class="icon-sm peer text-black"
         :class="{ hidden: password.length < 1 }"
         icon="fa-solid fa-eye-slash"
       />
       <font-awesome-icon
         v-if="displayPassword === showEyeIcon.no"
         @click="handleDisplayPassword"
-        class="input-icon peer"
+        class="icon-sm text-black peer"
         icon="fa-solid fa-eye"
       />
     </div>
 
     <input
-      :disabled="edit"
+      :disabled="true"
       v-model="password"
       :type="displayPassword"
       name="password"
       class="input-field peer"
       :class="{
-        'bg-black animate-pulse': props.editStyle === true,
+        '': props.editStyle === true,
       }"
       placeholder=" "
       autocomplete="on"

@@ -9,10 +9,12 @@
 
   <form class="form-container">
     <PlayerName @onError="handleError" />
+    <span class="h-6 flex items-center"> {{ signInError }}{{ pubgError }}</span>
     <Email @onEmail="handleEmail" />
     <Password @onPassword="handlePassword" />
     <div class="form-warning">
-      <span class="text-white">{{ pubgError }} {{ fireError }}</span>
+      <span class="text-white"> </span>
+      <span class="h-6 flex items-center">{{ fireError }}</span>
     </div>
 
     <div class="flex justify-end pt-8">

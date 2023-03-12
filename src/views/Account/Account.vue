@@ -2,7 +2,7 @@
 
 <template>
   <MenuBar />
-  <section class="width-max">
+  <section class="width-max mb-10 ">
     <h2 class="heading-styling heading-bebas-sm">ACCOUNT SETTINGS</h2>
     <div class="flex">
       <aside class="bg-monestral w-1/2 flex flex-col p-2 gap-2">
@@ -46,7 +46,7 @@
         </div>
       </section>
     </div>
-  </section>
+  </section >
   <!-- <Transition
     class="modal absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 px-20 py-4 bg-black"
     v-if="!disable"

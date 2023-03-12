@@ -4,7 +4,6 @@
   <div class="input-container">
     <input
       v-model="email"
-      :disabled="true"
       type="email"
       name="email"
       class="input-field peer"

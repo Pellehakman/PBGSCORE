@@ -20,7 +20,7 @@ html {
 }
 .gradient{
   background: rgb(249,248,241);
-background: linear-gradient(114deg, rgb(235, 233, 217) 0%, rgb(179, 175, 192) 100%);
+  background: linear-gradient(114deg, rgb(235, 233, 217) 0%, rgb(179, 175, 192) 100%);
 }
 
 @layer base {
@@ -104,7 +104,7 @@ background: linear-gradient(114deg, rgb(235, 233, 217) 0%, rgb(179, 175, 192) 10
     @apply bg-success-500 hover:bg-success-600 active:bg-success-700
   }
   .icon-sm{
-    @apply  text-white 
+    @apply  text-black 
   }
   .icon-md{
     @apply  h-6
@@ -197,8 +197,16 @@ background: linear-gradient(114deg, rgb(235, 233, 217) 0%, rgb(179, 175, 192) 10
   .main-bg-linear{
     background: linear-gradient(140deg, rgb(43, 21, 20) 0%, rgb(37, 35, 44)100%);
   }
+  *{
+    box-sizing: border-box;
+  }
   .active-menu{
-    background-color: var(--bg-menu-secondary)
+    /* background-color: rgb(65, 65, 65); */
+  
+    /* color: white; */
+
+
+  /* box-shadow: 0 10px 0px -1px #222; */
   }
   /* CUSTOM STYLING END */
 }

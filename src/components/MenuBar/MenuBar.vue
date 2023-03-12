@@ -17,7 +17,7 @@
           class="menu-nav-container relative"
         >
           <div class="menu-item-container">
-            <div class="menu-logo-container shadow-xl">
+            <div class="menu-logo-container">
               <img id="logo" class="menu-logo" :src="logo" alt="" />
             </div>
 
@@ -47,7 +47,7 @@
 
 .header-container {
   @apply /* --------------------- */
-  /* full */ px-4 mb-10 w-full
+  /* full */ px-4 mb-10 w-full shadow-sm
   /* laptop */ 
   /* tablet */ 
   /* mobile */ sm-max:px-0 sm-max:mb-0 sm-max:sticky sm-max:top-0 sm-max:z-50
@@ -56,14 +56,14 @@
 
 .menu-heading {
   @apply /* --------------------- */
-  /* full */ 
+  /* full */  text-white
   /* laptop */ lg-max:text-2xl
   /* tablet */ 
   /* mobile */ 
   /* design */ text-3xl;
 }
 .menu-logo-container {
-  @apply bg-danger-600 flex items-center justify-center w-24 sm-max:hidden;
+  @apply flex items-center justify-center w-24 sm-max:hidden;
 }
 .menu-logo {
   @apply h-8;
@@ -91,9 +91,9 @@
   /* full */ h-40 p-4
   /* tablet */  
   /* mobile */ sm-max:hidden
-  /* design */ absolute -top-1 z-20 bg-red-600 left-0 text-white shadow-2xl;
+  /* design */ absolute -top-1 z-20 left-0 text-white;
 }
 .menu-item-container {
-  @apply flex w-full sm-max:flex-col gap-4 sm-max:gap-0;
+  @apply flex w-full py-2 sm-max:flex-col sm-max:gap-0;
 }
 </style>

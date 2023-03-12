@@ -15,7 +15,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "/statistics",
+      redirect: "/home",
     },
     {
       path: "/landing",
@@ -30,25 +30,22 @@ const router = createRouter({
     {
       path: "/statistics",
       name: "statistics",
-      meta: {
-        needsAuth: true,
-      },
       component: Statistics,
     },
     {
       path: "/teams",
       name: "teams",
-      meta: {
-        needsAuth: true,
-      },
+      // meta: {
+      //   needsAuth: true,
+      // },
       component: Teams,
     },
     {
       path: "/account",
       name: "account",
-      meta: {
-        needsAuth: true,
-      },
+      // meta: {
+      //   needsAuth: true,
+      // },
       component: Account,
     },
   ],

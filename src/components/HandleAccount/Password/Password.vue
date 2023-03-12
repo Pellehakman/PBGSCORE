@@ -19,7 +19,6 @@
     </div>
 
     <input
-      :disabled="true"
       v-model="password"
       :type="displayPassword"
       name="password"

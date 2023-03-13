@@ -104,10 +104,10 @@ html {
     @apply bg-success-500 hover:bg-success-600 active:bg-success-700
   }
   .icon-sm{
-    @apply  text-black 
+    @apply  text-black h-4 w-4 cursor-pointer
   }
   .icon-md{
-    @apply  h-6
+    @apply  h-6 w-6 cursor-pointer
   }
   .btn-icon--r {
     @apply pl-2 ;
@@ -181,6 +181,9 @@ html {
 .padding-2{
   @apply p-2
 }
+.input-field-container {
+  @apply flex flex-col gap-4 h-32;
+}
 /* PADDING RULES END */
 
 
@@ -201,12 +204,23 @@ html {
     box-sizing: border-box;
   }
   .active-menu{
-    /* background-color: rgb(65, 65, 65); */
+    background-color: var(--bg-menu-secondary)
   
     /* color: white; */
 
 
   /* box-shadow: 0 10px 0px -1px #222; */
+  }
+  .triangle {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(
+      to bottom right,
+      #ffffff00 0%,
+      #ffffff00 50%,
+      rgb(255, 255, 255) 50%,
+      rgb(255, 255, 255) 100%
+    );
   }
   /* CUSTOM STYLING END */
 }

@@ -78,11 +78,11 @@
   /* design */ absolute;
 }
 .modal-container {
-  @apply /* --------------------- */
-  /* full */  pt-16 lg:pl-32
-  /* tablet */ 
+  /* @apply  --------------------- */
+  /* full  pt-16 lg:pl-32*/
+  /* tablet */
   /* mobile */
-  /* design */ w-full justify-center flex;
+  /* design w-full justify-center flex; */
 }
 .landing-main-container {
   @apply /* --------------------- */
@@ -118,20 +118,20 @@
 
 .default-modal-enter-from,
 .default-modal-leave-to {
-  transform: translateX(-100%);
+  transform: translate(-100%);
 
   opacity: 0;
 }
 .signup-modal-leave-to,
 .signup-modal-enter-from {
-  transform: translateX(-100%);
-
+  transform: translateY(-100%);
+  transform: translateX(-50%);
   opacity: 0;
 }
 .login-modal-leave-to,
 .login-modal-enter-from {
-  transform: translateX(-100%);
-
+  transform: translateY(-100%);
+  transform: translateX(-50%);
   opacity: 0;
 }
 
@@ -141,7 +141,7 @@
 .login-modal-leave-active,
 .default-modal-enter-active,
 .default-modal-leave-active {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   filter: blur(5px);
 }
 

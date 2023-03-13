@@ -3,27 +3,34 @@
 <template>
   <div class="flex justify-between">
     <span class="heading-bebas-xl"> LOGIN </span>
-    <font-awesome-icon class="icon-" icon="fa-solid fa-xmark" />
+    <font-awesome-icon
+      @click.prevent="cancelLogin"
+      class="icon-sm hover:scale-150 transition-all hover:bg-stone-300 p-2 rounded-full"
+      icon="fa-solid fa-xmark"
+    />
   </div>
 
   <p class="text-m font-open">
     Welcome back, please enter your information to login and compare statistics.
   </p>
   <form class="form-container">
-    <Email @onEmail="handleEmail" />
-    <Password @onPassword="handlePassword" />
-    <div class="form-warning">
-      <span>{{ fireError }}</span>
+    <div class="input-field-container">
+      <Email @onEmail="handleEmail" />
+      <Password @onPassword="handlePassword" />
     </div>
+
+    <div class="form-warning">
+      <div class="h-6 flex items-center">{{ fireError }}</div>
+    </div>
+
     <div class="form-btn-container justify-between">
       <div class="flex items-center">
         <div class="flex justify-self-start">
           <span
-            >Not a member?
-            <span class="font-bold text-blue-700 cursor-pointer"
-              >Sign up here!</span
-            ></span
-          >
+            @click.prevent="enterSignup"
+            class="font-bold text-sky-600  cursor-pointer"
+            >SIGN UP HERE!
+          </span>
         </div>
       </div>
       <div class="flex">

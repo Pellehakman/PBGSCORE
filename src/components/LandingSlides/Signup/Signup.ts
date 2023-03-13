@@ -51,12 +51,17 @@ export default defineComponent({
       console.log(fromPassword);
       password.value = fromPassword;
     };
-
+    const nextStep = ref(false);
+    const handleNextStep = () => {
+      nextStep.value = true;
+    };
     const cancelSignup = () => {
       emit("onCancelSignup");
     };
 
     return {
+      handleNextStep,
+      nextStep,
       signInError,
       pubgError,
       fireError,

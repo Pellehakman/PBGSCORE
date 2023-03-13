@@ -3,14 +3,14 @@ import PlayerName from '@/components/HandleAccount/PlayerName/PlayerName';
 <script src="./GoPro" lang="ts"></script>
 
 <template>
-  <div >
+  <div>
     <h1 class="heading-bebas-xl">
       IS YOUR SQUAD <br />
       READY TO GO PRO?
     </h1>
     <!-- {{ playerData?.id }} -->
 
-    <p class="text-white text-m font-open">
+    <p class="text-m font-open">
       In this applicatiodn you can build your team and compare it against the
       top teams.<br />
       Is your squad ready to go pro? You can also see detailed general

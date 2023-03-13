@@ -6,7 +6,7 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "login",
   components: { Password, Email },
-  emits: ["onCancelLogin"],
+  emits: ["onCancelLogin", "onEnterSignup"],
 
   setup(props, { emit }) {
     const loading = ref(false);
@@ -33,7 +33,12 @@ export default defineComponent({
     const cancelLogin = () => {
       emit("onCancelLogin");
     };
+    const enterSignup = () => {
+      emit("onEnterSignup");
+    };
+
     return {
+      enterSignup,
       handleLogin,
       cancelLogin,
       handleEmail,

@@ -54,7 +54,7 @@
   /* general design */ flex h-full gap-2;
 }
 .open-type-container {
-  @apply  w-full bg-emerald-700 flex flex-col;
+  @apply w-full bg-emerald-700 flex flex-col sm:hidden;
 }
 .type {
   @apply sm-max:hidden;

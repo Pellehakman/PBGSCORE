@@ -12,11 +12,11 @@ export default defineComponent({
   components: { Email, Password, Signup, Login },
   setup() {
     const auth = getAuth();
-    const dropdownChild = ref(false);
+    // const dropdownChild = ref(false);
     const dropdownParent = ref(false);
 
     document.addEventListener("mousedown", function (event: any) {
-      if (!event.target.closest(".modal1")) {
+      if (!event.target.closest("#modal-popup")) {
         modalPopup.value = false;
       }
     });
@@ -24,7 +24,8 @@ export default defineComponent({
     const handleModalPopup = () => {
       modalPopup.value = !modalPopup.value;
       signinPopup.value = true;
-      dropdownParent.value = false;
+
+      // dropdownParent.value = false;
     };
 
     const signinPopup = ref(false);
@@ -39,6 +40,16 @@ export default defineComponent({
       signinPopup.value = false;
     };
 
+    const handleModal = () => {
+      modalPopup.value = false;
+      signinPopup.value = false;
+      signupPopup.value = false;
+    };
+    const handleEnterSignup = () => {
+      signupPopup.value = true;
+      signinPopup.value = false;
+    };
+
     const handleDropdownParent = () => {
       dropdownParent.value = !dropdownParent.value;
     };
@@ -49,6 +60,8 @@ export default defineComponent({
     };
 
     return {
+      handleEnterSignup,
+      handleModal,
       modalPopup,
       handleModalPopup,
       signupPopup,

@@ -24,32 +24,20 @@
     --danger-700: #9d3339;
     --danger-800: #842d35;
 
-   
-
     --black: #0e0e0e;
     --white: #ffffff;
     --gray: #606060;
     
     --text-primary: rgb(255, 255, 255);
     --text-secondary: rgb(0, 0, 0);
-    --bg-menu-secondary: #dfdfdf;
+    --bg-menu-secondary: #1f1f1f;
     --bg-menu-primary: #141414;
     
     --ff-bebas: 'Bebas Neue', sans-serif;
     --ff-open : 'Open Sans', sans-serif;
   }
-  /* 
-  heading-3xl bebas
-  heading-2xl
 
-  base-l-bold
-  base-m-reg
-  base-m-bold
 
-  
-  
-  
-  */
   *{
     margin: 0;
     padding: 0;

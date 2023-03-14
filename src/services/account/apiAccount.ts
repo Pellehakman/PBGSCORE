@@ -1,9 +1,6 @@
 import type { playerModel } from "@/models/models";
 
 class ApiAccount {
-  hasOwnPropery(arg0: string) {
-    throw new Error("Method not implemented.");
-  }
   fetchPlayer: playerModel | undefined;
   error: string | undefined;
 

@@ -13,7 +13,13 @@ export default defineComponent({
   setup(props, { emit }) {
     const loading = ref(false);
     const signInError = ref("");
+
     const handleSignup = async () => {
+      if ($apiAccount.fetchPlayer === undefined) {
+        signInError.value = "Please search for player";
+      } else {
+        console.log("sjote");
+      }
       fireError.value = "";
       pubgError.value = "";
       loading.value = true;
@@ -41,6 +47,10 @@ export default defineComponent({
     const handleError = (fromError: string) => {
       pubgError.value = fromError;
     };
+    const loaded = ref(true);
+    const handleLoading = (fromLoading: boolean) => {
+      loaded.value = fromLoading;
+    };
 
     const email = ref("");
     const handleEmail = (fromEmail: string) => {
@@ -60,6 +70,8 @@ export default defineComponent({
     };
 
     return {
+      handleLoading,
+      loaded,
       handleNextStep,
       nextStep,
       signInError,

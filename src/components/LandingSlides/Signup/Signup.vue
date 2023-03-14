@@ -16,7 +16,7 @@
   <div name="firstStep">
     <form v-if="!nextStep" class="form-container">
       <div class="input-field-container">
-        <PlayerName @onError="handleError" />
+        <PlayerName @onError="handleError" @onLoading="handleLoading" />
       </div>
 
       <div class="form-warning">
@@ -32,8 +32,13 @@
           <span>CANCEL</span>
         </button>
         <button
+          type="button"
+          :disabled="loaded"
           @click.prevent="handleNextStep"
-          class="btn btn-default btn--primary"
+          :class="{
+            'btn btn-default btn--primary': !loaded,
+            'btn btn-default btn--inactive': loaded,
+          }"
         >
           <span>NEXT</span>
           <font-awesome-icon
@@ -66,10 +71,10 @@
               <span>CANCEL</span>
             </button>
             <button
-              @click.prevent="handleNextStep"
+              @click.prevent="handleSignup"
               class="btn btn-default btn--success"
             >
-              <span>LOGIN</span>
+              <span>REGISTER</span>
               <font-awesome-icon
                 v-if="loading"
                 class="peer animate-spin text-white icon-sm"

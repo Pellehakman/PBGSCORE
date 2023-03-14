@@ -85,6 +85,9 @@ html {
   .btn--primary{
     @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-700
   }
+  .btn--inactive{
+    @apply bg-stone-600
+  }
   .btn--secondary{
     @apply bg-success-500 hover:bg-success-600 active:bg-success-700
   }

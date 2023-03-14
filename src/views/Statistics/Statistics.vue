@@ -9,7 +9,9 @@
         class="w-1/2 sm-max:w-full flex flex-col sm-max:flex-col-reverse sm-max:p-0"
       >
         <SeasonStats />
-        <MatchList />
+        <Suspense>
+          <MatchList />
+        </Suspense>
       </aside>
 
       <section class="flex flex-col w-full">

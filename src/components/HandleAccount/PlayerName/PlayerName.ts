@@ -1,25 +1,12 @@
-import type { userModel } from "@/models/models";
 import $apiAccount from "@/services/account/apiAccount";
-import $fireUser from "@/services/account/fireUser";
-import { getAuth } from "firebase/auth";
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "PlayerName",
   props: { edit: Boolean, editStyle: Boolean },
-  emits: ["onError", "onPlayerNameCheck"],
+  emits: ["onError", "onLoading"],
 
   setup(props, { emit }) {
-    const auth = getAuth();
-    // onMounted(async () => {
-    //   loading.value = true;
-
-    // await $fireUser.getUser();
-    // if (auth.currentUser?.displayName) {
-    //   playerName.value = $fireUser.User.pubgname;
-    // }
-    //   loading.value = false;
-    // });
     const loadingGood = ref(false);
     const loadingBad = ref(false);
 
@@ -47,7 +34,7 @@ export default defineComponent({
         loadingBad.value = false;
       }
       loading.value = false;
-
+      emit("onLoading", loading.value);
       emit("onError", error.value);
     };
 

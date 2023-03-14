@@ -1,4 +1,3 @@
-
 import AppFooter from "@/components/AppFooter/AppFooter.vue";
 import MatchList from "@/components/Statistics/MatchList/MatchList.vue";
 import MenuBar from "@/components/MenuBar/MenuBar.vue";

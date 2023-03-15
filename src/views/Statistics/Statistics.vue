@@ -30,9 +30,7 @@
 .statistics-container {
   @apply bg-neutral-50 bg-opacity-50 mb-10 flex flex-col;
 }
-.heading-styling {
-  @apply py-2 pl-4 bg-slate-800;
-}
+
 
 .padding-container {
   @apply /* --------------------- */

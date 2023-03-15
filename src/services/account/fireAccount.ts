@@ -38,6 +38,7 @@ class FireAccount {
         router.push("/statistics");
         this.error = "";
         console.log(auth.currentUser);
+        window.location.reload();
       })
 
       .catch((error) => {
@@ -61,6 +62,7 @@ class FireAccount {
         if (user) {
           this.error = "";
           router.push("/statistics");
+          window.location.reload();
         }
         // return user;
       })

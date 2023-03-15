@@ -1,6 +1,6 @@
 import { defineComponent, ref } from "vue";
 import { showEyeIcon } from "@/models/enums";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default defineComponent({
   name: "Password",
@@ -8,6 +8,13 @@ export default defineComponent({
   emits: ["onPassword"],
   setup(props, { emit }) {
     const auth = getAuth();
+    const login = ref(false);
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // email.value = user.email;
+        login.value = true;
+      }
+    });
     const displayPassword = ref(showEyeIcon.yes);
     const password = ref("");
 
@@ -28,6 +35,7 @@ export default defineComponent({
     };
 
     return {
+      login,
       props,
       password,
       placeholderPassword,

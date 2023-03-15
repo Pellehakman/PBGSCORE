@@ -53,6 +53,7 @@ export default defineComponent({
     const handleLogout = async () => {
       await auth.signOut();
       location.reload();
+      window.localStorage.clear();
     };
     return {
       handleLogout,

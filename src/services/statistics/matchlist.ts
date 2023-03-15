@@ -20,7 +20,7 @@ class Matchlist {
         .then((response) => response.json())
         .then(async (response) => {
           this.state = await response;
-          
+
           localStorage.setItem(
             "_matches",
             JSON.stringify(response.data[0].relationships.matches.data)

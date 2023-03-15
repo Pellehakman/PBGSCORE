@@ -23,10 +23,7 @@ export type userModel = {
 };
 
 export type seasonStats = {
-  [x: string]: any;
-  map(arg0: (f: { [x: string]: any; }) => any): unknown;
   duo: {
-    filter(arg0: (f: any) => void): unknown;
     assists: number;
     boosts: number;
     dBNOs: number;

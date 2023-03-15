@@ -2,28 +2,46 @@
 
 <template>
   <section class="bg-red-400">
-    <h2 class="heading-styling heading-bebas-sm">{{ playerName }}</h2>
+    <header class="heading-styling">
+      <h2 class="heading-bebas-sm w-full">{{ playerName }}</h2>
+      {{ seasonStats }}
+      <div class="flex items-center justify-center w-6">
+        <font-awesome-icon
+          @click="handleUpdate"
+          :class="{
+            'animate-spin': loading,
+          }"
+          class="icon-sm text-white"
+          icon="fa-solid fa-rotate-right"
+        />
+      </div>
+    </header>
     <div class="p-2">
-      <h3>Heading h3</h3>
+      <h3>SEASON 18</h3>
       <ul class="grid grid-cols-2">
-       
         <li class="flex justify-between">
-          <span>Statistics</span><span class="font-bold">1</span>
+          <span>Kills</span
+          ><span class="font-bold"> {{ seasonData?.kills }}</span>
         </li>
         <li class="flex justify-between">
-          <span>Statistics</span><span class="font-bold">1</span>
+          <span>Assists</span
+          ><span class="font-bold"> {{ seasonData?.assists }}</span>
         </li>
         <li class="flex justify-between">
-          <span>Statistics</span><span class="font-bold">1</span>
+          <span>Rouns played</span
+          ><span class="font-bold"> {{ seasonData?.roundsPlayed }}</span>
         </li>
         <li class="flex justify-between">
-          <span>Statistics</span><span class="font-bold">1</span>
+          <span>Wins</span
+          ><span class="font-bold"> {{ seasonData?.wins }}</span>
         </li>
         <li class="flex justify-between">
-          <span>Statistics</span><span class="font-bold">1</span>
+          <span>Losses</span
+          ><span class="font-bold"> {{ seasonData?.losses }}</span>
         </li>
         <li class="flex justify-between">
-          <span>Statistics</span><span class="font-bold">1</span>
+          <span>Damage</span
+          ><span class="font-bold"> {{ seasonData?.damageDealt }}</span>
         </li>
       </ul>
     </div>

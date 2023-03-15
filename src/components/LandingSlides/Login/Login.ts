@@ -1,6 +1,7 @@
 import Email from "@/components/HandleAccount/Email/Email.vue";
 import Password from "@/components/HandleAccount/Password/Password.vue";
 import $fireAccount from "@/services/account/fireAccount";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -9,8 +10,17 @@ export default defineComponent({
   emits: ["onCancelLogin", "onEnterSignup"],
 
   setup(props, { emit }) {
+    const auth = getAuth();
     const loading = ref(false);
     const fireError = ref<string | undefined>("");
+    const loaded = ref(false);
+    const login = ref(false);
+    onAuthStateChanged(auth, async (user) => {
+      if (user?.displayName) {
+        loaded.value = true;
+        login.value = true;
+      }
+    });
 
     const handleLogin = async () => {
       loading.value = true;
@@ -18,6 +28,16 @@ export default defineComponent({
       await $fireAccount.LoginSubmit(password.value, email.value);
       loading.value = false;
       fireError.value = $fireAccount.Error;
+      if (loaded.value === true) {
+      }
+
+      // cancelLogin();
+    };
+
+    const handleLogout = async () => {
+      await auth.signOut();
+      location.reload();
+      window.localStorage.clear();
     };
     const email = ref("");
     const handleEmail = (fromEmail: string) => {
@@ -26,7 +46,6 @@ export default defineComponent({
 
     const password = ref("");
     const handlePassword = (fromPassword: string) => {
-      console.log(fromPassword);
       password.value = fromPassword;
     };
 
@@ -38,12 +57,15 @@ export default defineComponent({
     };
 
     return {
+      handleLogout,
       enterSignup,
       handleLogin,
       cancelLogin,
       handleEmail,
       handlePassword,
       loading,
+      login,
+      loaded,
       fireError,
     };
   },

@@ -3,6 +3,7 @@
 <template>
   <div class="input-container">
     <input
+      :disabled="login"
       v-model="email"
       type="email"
       name="email"

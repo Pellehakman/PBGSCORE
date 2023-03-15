@@ -27,8 +27,9 @@
       <div class="flex items-center">
         <div class="flex justify-self-start">
           <span
+            v-if="!login"
             @click.prevent="enterSignup"
-            class="font-bold text-sky-600  cursor-pointer"
+            class="font-bold text-sky-600 cursor-pointer"
             >SIGN UP HERE!
           </span>
         </div>
@@ -38,8 +39,21 @@
           <span>CANCEL</span>
         </button>
         <button
+          v-if="login"
+          @click.prevent="handleLogout"
+          class="btn btn-default btn--danger"
+        >
+          LOG OUT
+        </button>
+        <button
+          v-if="!login"
+          type="button"
+          :disabled="loaded"
           @click.prevent="handleLogin"
-          class="btn btn-default btn--success"
+          :class="{
+            'btn btn-default btn--success': !loaded,
+            'btn btn-default btn--inactive': loaded,
+          }"
         >
           LOGIN
           <font-awesome-icon

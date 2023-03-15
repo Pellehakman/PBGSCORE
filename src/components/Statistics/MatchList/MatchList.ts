@@ -9,23 +9,28 @@ export default defineComponent({
     const auth = getAuth();
     const loading = ref(false);
     const matchlist = ref();
+    const matchlistError = ref("");
 
     const getPlayerNameFromAuth = () => {
       onAuthStateChanged(auth, async (user) => {
-        const name: any = user?.photoURL;
-        handleMatches(name);
+        const ign: any = user?.photoURL;
+        handleMatches(ign);
       });
     };
 
-    const handleMatches = async (name: string) => {
+    const handleMatches = async (ign: string) => {
       loading.value = true;
-      await $matchlist.GetMatchlist(name);
+      await $matchlist.GetMatchlist(ign);
       loading.value = false;
       nextStep();
     };
     const nextStep = async () => {
+      if (!auth.currentUser) {
+        matchlistError.value = "please enter user to see matches";
+      }
       if (localStorage.getItem("_matches")) {
         matchlist.value = localStorage.getItem("_matches");
+        matchlistError.value = "";
       } else {
         matchlist.value = $matchlist.state;
       }
@@ -35,6 +40,7 @@ export default defineComponent({
     return {
       loading,
       matchlist,
+      matchlistError,
     };
   },
 });

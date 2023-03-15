@@ -1,11 +1,14 @@
+import { getAuth } from "firebase/auth";
+
 class Matchlist {
   state: any;
-  async GetMatchlist(name: string) {
+  async GetMatchlist(ign: string) {
+    const auth = getAuth();
     if (localStorage.getItem("_matches")) {
       console.log("NO API REQUEST MADE");
-    } else {
+    } else if (auth.currentUser) {
       console.log("API REQUEST MADE");
-      const player = `players?filter[playerNames]=${name}`;
+      const player = `players?filter[playerNames]=${ign}`;
       const player_url = `${player}`;
       await fetch(`${import.meta.env.VITE_API_URL}${player_url}`, {
         method: "GET",
@@ -17,7 +20,11 @@ class Matchlist {
         .then((response) => response.json())
         .then(async (response) => {
           this.state = await response;
-          localStorage.setItem("_matches", JSON.stringify(response));
+          
+          localStorage.setItem(
+            "_matches",
+            JSON.stringify(response.data[0].relationships.matches.data)
+          );
           console.log(this.state);
         });
     }

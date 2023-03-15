@@ -6,6 +6,7 @@
     <div class="p-2">
       <h3>Heading h3</h3>
       <ul class="grid grid-cols-2">
+       
         <li class="flex justify-between">
           <span>Statistics</span><span class="font-bold">1</span>
         </li>

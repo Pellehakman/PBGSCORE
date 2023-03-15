@@ -59,7 +59,7 @@ html {
     /* full */ text-3xl
     /* tablet */ lg-max:text-2xl
     /* mobile */ sm-max:text-xl
-    /* design */ font-bebas text-textSecondary ;
+    /* design */ font-bebas text-textPrimary ;
   }
   .landing-search-btn {
     @apply /* --------------------- */

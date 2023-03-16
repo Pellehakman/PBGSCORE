@@ -8,11 +8,11 @@ export default defineComponent({
   emits: ["onPassword"],
   setup(props, { emit }) {
     const auth = getAuth();
-    const login = ref(false);
+    const isLogin = ref(false);
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         // email.value = user.email;
-        login.value = true;
+        isLogin.value = true;
       }
     });
     const displayPassword = ref(showEyeIcon.yes);
@@ -35,7 +35,7 @@ export default defineComponent({
     };
 
     return {
-      login,
+      isLogin,
       props,
       password,
       placeholderPassword,

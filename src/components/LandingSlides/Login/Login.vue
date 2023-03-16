@@ -26,8 +26,15 @@
     <div class="form-btn-container justify-between">
       <div class="flex items-center">
         <div class="flex justify-self-start">
+          <button
+            v-if="isLogin"
+            @click.prevent="handleLogout"
+            class="btn btn-default btn--danger"
+          >
+            LOG OUT
+          </button>
           <span
-            v-if="!login"
+            v-if="!isLogin"
             @click.prevent="enterSignup"
             class="font-bold text-sky-600 cursor-pointer"
             >SIGN UP HERE!
@@ -35,24 +42,22 @@
         </div>
       </div>
       <div class="flex">
-        <button @click.prevent="cancelLogin" class="btn btn-default text-black">
+        <button
+          v-if="!isLogin"
+          @click.prevent="cancelLogin"
+          class="btn btn-default text-black"
+        >
           <span>CANCEL</span>
         </button>
+
         <button
-          v-if="login"
-          @click.prevent="handleLogout"
-          class="btn btn-default btn--danger"
-        >
-          LOG OUT
-        </button>
-        <button
-          v-if="!login"
+          v-if="!isLogin"
           type="button"
-          :disabled="loaded"
+          :disabled="isLogin"
           @click.prevent="handleLogin"
           :class="{
-            'btn btn-default btn--success': !loaded,
-            'btn btn-default btn--inactive': loaded,
+            'btn btn-default btn--success': !isLogin,
+            'btn btn-default btn--inactive': isLogin,
           }"
         >
           LOGIN

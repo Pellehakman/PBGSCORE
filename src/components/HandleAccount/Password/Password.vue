@@ -19,7 +19,7 @@
     </div>
 
     <input
-      :disabled="login"
+      :disabled="isLogin"
       v-model="password"
       :type="displayPassword"
       name="password"

@@ -1,5 +1,5 @@
 import $seasons from "@/services/seasons/seasons";
-import $lifetime from "@/services/statistics/alltime";
+import $lifetime from "@/services/statistics/lifetime";
 import type { seasonStats } from "@/models/models";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { defineComponent, onMounted, ref } from "vue";

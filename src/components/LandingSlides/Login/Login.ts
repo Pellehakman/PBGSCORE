@@ -13,12 +13,11 @@ export default defineComponent({
     const auth = getAuth();
     const loading = ref(false);
     const fireError = ref<string | undefined>("");
-    const loaded = ref(false);
-    const login = ref(false);
+
+    const isLogin = ref(false);
     onAuthStateChanged(auth, async (user) => {
       if (user?.displayName) {
-        loaded.value = true;
-        login.value = true;
+        isLogin.value = true;
       }
     });
 
@@ -28,8 +27,6 @@ export default defineComponent({
       await $fireAccount.LoginSubmit(password.value, email.value);
       loading.value = false;
       fireError.value = $fireAccount.Error;
-      if (loaded.value === true) {
-      }
 
       // cancelLogin();
     };
@@ -64,8 +61,7 @@ export default defineComponent({
       handleEmail,
       handlePassword,
       loading,
-      login,
-      loaded,
+      isLogin,
       fireError,
     };
   },

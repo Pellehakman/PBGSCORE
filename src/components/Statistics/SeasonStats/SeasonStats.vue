@@ -18,7 +18,7 @@
     </header>
     <div class="p-2">
       <h3>SEASON 18</h3>
-      <ul class="grid grid-cols-2">
+      <ul class="flex flex-col">
         <li class="flex justify-between">
           <span>Kills</span
           ><span class="font-bold"> {{ seasonData?.kills }}</span>

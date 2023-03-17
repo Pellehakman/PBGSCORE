@@ -1,6 +1,6 @@
 import Account from "@/views/Account/Account.vue";
 import Home from "@/views/Home/Home.vue";
-import Landing from "@/views/Landing/Landing.vue";
+// import Landing from "@/views/Landing/Landing.vue";
 import Statistics from "@/views/Statistics/Statistics.vue";
 import Teams from "@/views/Teams/Teams.vue";
 import { getAuth } from "firebase/auth";
@@ -13,15 +13,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
 
   routes: [
-    {
-      path: "/",
-      redirect: "/home",
-    },
-    {
-      path: "/landing",
-      name: "landing",
-      component: Landing,
-    },
+    // {
+    //   path: "/landing",
+    //   name: "landing",
+    //   component: Landing,
+    // },
     {
       path: "/home",
       name: "home",

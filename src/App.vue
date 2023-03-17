@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // import { defineComponent } from "vue";
 import { RouterView } from "vue-router";
-// import MenuBar from "./components/MenuBar/MenuBar.vue";
+import MenuBar from "./components/MenuBar/MenuBar.vue";
 // defineComponent({
 //   methods: {
 //     getTheme() {
@@ -23,7 +23,7 @@ import { RouterView } from "vue-router";
 
 <template>
   <!-- <div class="flex flex-col justify-between"> -->
-
+  <MenuBar />
   <RouterView />
 
   <!-- </div> -->

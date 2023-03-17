@@ -9,7 +9,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "statistics-view",
   components: {
-    MenuBar,
+    // MenuBar,
     AppFooter,
     SeasonStats,
     OptionBar,

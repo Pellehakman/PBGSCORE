@@ -10,10 +10,10 @@ export default defineComponent({
   name: "account-view",
   components: {
     AccountInformation,
-    MenuBar,
+
     AppFooter,
     Signup,
-    Login,
+   
   },
 
   setup() {

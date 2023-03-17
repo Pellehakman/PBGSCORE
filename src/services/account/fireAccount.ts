@@ -8,6 +8,7 @@ import {
   signInAnonymously,
 } from "firebase/auth";
 import router from "@/router";
+import { nanoid } from "nanoid";
 import { setDoc, doc, getFirestore, updateDoc } from "firebase/firestore";
 const db = getFirestore();
 const auth: any = getAuth();
@@ -16,6 +17,16 @@ class FireAccount {
 
   get Error() {
     return this.error;
+  }
+
+  async Guest(fetchPlayer: string) {
+    await setDoc(doc(db, "users", auth.currentUser.uid), {
+      uid: auth.currentUser.uid,
+      pubgid: fetchPlayer,
+      pubgname: fetchPlayer,
+      teams: {},
+      favourites: {},
+    });
   }
 
   async RegisterSubmit(email: string, password: string, $apiAccount: any) {

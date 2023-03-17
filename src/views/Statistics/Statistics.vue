@@ -1,12 +1,12 @@
 <script lang="ts" src="./Statistics.ts"></script>
 
 <template>
-  <MenuBar />
+  <!-- <MenuBar /> -->
   <main class="width-max statistics-container">
     <h1 class="heading-styling heading-bebas-sm">STATISTICS PAGE</h1>
-    <div class="padding-container">
+    <div class="padding-container lg-max:flex-col-reverse">
       <aside
-        class="w-1/2 sm-max:w-full flex flex-col sm-max:flex-col-reverse sm-max:p-0"
+        class="lg-max:w-full w-1/3 sm-max:w-full flex flex-col sm-max:flex-col-reverse sm-max:p-0"
       >
         <SeasonStats />
         <Suspense>
@@ -30,7 +30,6 @@
 .statistics-container {
   @apply bg-neutral-400 bg-opacity-50 mb-10 flex flex-col;
 }
-
 
 .padding-container {
   @apply /* --------------------- */

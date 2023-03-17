@@ -1,7 +1,7 @@
 <script lang="ts" src="./Account.ts"></script>
 
 <template>
-  <MenuBar />
+  <!-- <MenuBar /> -->
   <section class="width-max mb-10 ">
     <h2 class="heading-styling heading-bebas-sm">ACCOUNT SETTINGS</h2>
     <div class="flex">

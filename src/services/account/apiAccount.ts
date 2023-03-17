@@ -1,4 +1,5 @@
 import type { playerModel } from "@/models/models";
+import $fireAccount from "./fireAccount";
 
 class ApiAccount {
   fetchPlayer: playerModel | undefined;
@@ -11,7 +12,7 @@ class ApiAccount {
     return this.error;
   }
 
-  async GetPlayer(playerName: string) {
+  async GetPlayer(playerName: string, isGuest: boolean) {
     const player = `players?filter[playerNames]=${playerName}`;
     const player_url = `${player}`;
 
@@ -35,6 +36,11 @@ class ApiAccount {
       .catch((err) => {
         console.log(err);
       });
+    if (isGuest === true) {
+      $fireAccount.LoginGuest(this.fetchPlayer);
+
+      console.log("lets make a guest");
+    }
   }
 }
 

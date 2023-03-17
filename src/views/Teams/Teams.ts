@@ -4,7 +4,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "teams-view",
-  components: { MenuBar },
+  components: {  },
 
   setup() {
     return {};

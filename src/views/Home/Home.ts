@@ -5,10 +5,9 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "home-view",
-  components: { MenuBar, GoPro, AppFooter  },
+  components: { GoPro, AppFooter },
 
   setup() {
-    
     return {};
   },
 });

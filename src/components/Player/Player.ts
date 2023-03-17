@@ -1,9 +1,7 @@
-import Player from "@/components/Player/Player.vue";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: "PlayerStats",
-  components: { Player },
+  name: "Player",
   setup() {
     document.addEventListener("mousedown", function (event: any) {
       if (!event.target.closest("#playerSearchDropdown")) {
@@ -14,6 +12,9 @@ export default defineComponent({
     const handlePlayerDropdown = () => {
       playerDropdown.value = !playerDropdown.value;
     };
-    return { handlePlayerDropdown, playerDropdown };
+
+    const playerSearch = ref("");
+
+    return { handlePlayerDropdown, playerDropdown, playerSearch };
   },
 });

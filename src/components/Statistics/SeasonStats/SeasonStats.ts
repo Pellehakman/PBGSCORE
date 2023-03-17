@@ -1,8 +1,7 @@
 import $seasons from "@/services/seasons/seasons";
-import $lifetime from "@/services/statistics/lifetime";
 import type { seasonStats } from "@/models/models";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "SeasonStats",
@@ -18,6 +17,7 @@ export default defineComponent({
 
     const getPlayerNameFromAuth = () => {
       onAuthStateChanged(auth, async (user) => {
+        console.log(user);
         if (user === null) {
           playerName.value = "NO PLAYER";
         } else {
@@ -38,7 +38,7 @@ export default defineComponent({
       if (update.value === true) {
         await $seasons.GetSeasonsStats(ign_id);
       }
-      if (localStorage.getItem("_user_season_stats_normal")) {
+      if (sessionStorage.getItem("_user_season_stats_normal")) {
         // console.log("no req");
       } else {
         await $seasons.GetSeasonsStats(ign_id);
@@ -52,11 +52,11 @@ export default defineComponent({
       if (!auth.currentUser) {
         seasonStats.value = "please enter user to see matches";
       }
-      if (localStorage.getItem("_user_season_stats_normal")) {
-        normal.value = localStorage.getItem("_user_season_stats_normal");
+      if (sessionStorage.getItem("_user_season_stats_normal")) {
+        normal.value = sessionStorage.getItem("_user_season_stats_normal");
       }
-      if (localStorage.getItem("_user_season_stats_ranked")) {
-        ranked.value = localStorage.getItem("_user_season_stats_ranked");
+      if (sessionStorage.getItem("_user_season_stats_ranked")) {
+        ranked.value = sessionStorage.getItem("_user_season_stats_ranked");
       } else {
         normal.value = await $seasons.normal;
         ranked.value = await $seasons.normal;

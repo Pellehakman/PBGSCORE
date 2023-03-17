@@ -38,7 +38,7 @@ export default defineComponent({
 
   // methods: {
   //   toggleTheme() {
-  //     const activeTheme = localStorage.getItem("user-theme");
+  //     const activeTheme = sessionStorage.getItem("user-theme");
   //     if (activeTheme === "light-theme") {
   //       this.setTheme("dark-theme");
   //     } else {
@@ -47,11 +47,11 @@ export default defineComponent({
   //   },
 
   //   getTheme() {
-  //     return localStorage.getItem("user-theme");
+  //     return sessionStorage.getItem("user-theme");
   //   },
 
   //   setTheme(theme) {
-  //     localStorage.setItem("user-theme", theme);
+  //     sessionStorage.setItem("user-theme", theme);
   //     this.userTheme = theme;
   //     document.documentElement.className = theme;
   //   },

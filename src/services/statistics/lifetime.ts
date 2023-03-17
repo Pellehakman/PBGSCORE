@@ -4,7 +4,7 @@ import type { Options } from "@/models/Options";
 class Lifetime {
   state: any;
   async GetLifetime(form: Options) {
-    // if (localStorage.getItem("_user_lifetime")) {
+    // if (sessionStorage.getItem("_user_lifetime")) {
     //   console.log("NO API REQUEST MADE");
     // } else if (auth.currentUser) {
     // console.log("API REQUEST MADE");
@@ -20,7 +20,7 @@ class Lifetime {
       .then((response) => response.json())
       .then(async (response) => {
         this.state = await response;
-        // localStorage.setItem("_user_lifetime", JSON.stringify(response));
+        // sessionStorage.setItem("_user_lifetime", JSON.stringify(response));
         console.log(this.state);
       });
     // }

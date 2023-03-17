@@ -14,7 +14,7 @@ export default defineComponent({
     const getPlayerNameFromAuth = () => {
       onAuthStateChanged(auth, async (user) => {
         const ign: any = user?.photoURL;
-        handleMatches(ign);
+        await handleMatches(ign);
       });
     };
 
@@ -28,8 +28,8 @@ export default defineComponent({
       if (!auth.currentUser) {
         matchlistError.value = "please enter user to see matches";
       }
-      if (localStorage.getItem("_matches")) {
-        matchlist.value = localStorage.getItem("_matches");
+      if (sessionStorage.getItem("_matches")) {
+        matchlist.value = sessionStorage.getItem("_matches");
         matchlistError.value = "";
       } else {
         matchlist.value = $matchlist.state;

@@ -15,31 +15,25 @@ export default defineComponent({
     const signInError = ref("");
 
     const handleSignup = async () => {
-      if ($apiAccount.fetchPlayer === undefined) {
-        signInError.value = "Please search for player";
-      } else {
-        console.log("sjote");
-      }
-      fireError.value = "";
-      pubgError.value = "";
-      loading.value = true;
-      if ($apiAccount.fetchPlayer === undefined) {
-        signInError.value = "Please search for player";
-      } else if (email.value.length <= 0) {
-        signInError.value = "Please enter email";
-      } else if (password.value.length <= 0) {
-        signInError.value = "Please enter password";
-      } else {
-        await $fireAccount.RegisterSubmit(
-          email.value,
-          password.value,
-          $apiAccount
-        );
-      }
-      if ($fireAccount.Error) {
-        fireError.value = $fireAccount.Error;
-      }
-      loading.value = false;
+      // fireError.value = "";
+      // pubgError.value = "";
+      // loading.value = true;
+      // if (email.value.length <= 0) {
+      //   signInError.value = "Please enter email";
+      // } else if (password.value.length <= 0) {
+      //   signInError.value = "Please enter password";
+      // } else {
+      console.log($apiAccount);
+      await $fireAccount.RegisterSubmit(
+        email.value,
+        password.value,
+        $apiAccount
+      );
+      // }
+      // if ($fireAccount.Error) {
+      //   fireError.value = $fireAccount.Error;
+      // }
+      // loading.value = false;
     };
 
     const pubgError = ref("");

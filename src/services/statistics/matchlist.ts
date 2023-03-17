@@ -4,7 +4,7 @@ class Matchlist {
   state: any;
   async GetMatchlist(ign: string) {
     const auth = getAuth();
-    if (localStorage.getItem("_matches")) {
+    if (sessionStorage.getItem("_matches")) {
       console.log("NO API REQUEST MADE");
     } else if (auth.currentUser) {
       console.log("API REQUEST MADE");
@@ -21,7 +21,7 @@ class Matchlist {
         .then(async (response) => {
           this.state = await response;
 
-          localStorage.setItem(
+          sessionStorage.setItem(
             "_matches",
             JSON.stringify(response.data[0].relationships.matches.data)
           );

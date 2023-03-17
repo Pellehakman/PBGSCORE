@@ -27,14 +27,12 @@ export default defineComponent({
       await $fireAccount.LoginSubmit(password.value, email.value);
       loading.value = false;
       fireError.value = $fireAccount.Error;
-
-      // cancelLogin();
     };
 
     const handleLogout = async () => {
       await auth.signOut();
       location.reload();
-      window.localStorage.clear();
+      window.sessionStorage.clear();
     };
     const email = ref("");
     const handleEmail = (fromEmail: string) => {

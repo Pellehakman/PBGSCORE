@@ -5,7 +5,7 @@ import { RouterView } from "vue-router";
 // defineComponent({
 //   methods: {
 //     getTheme() {
-//       return localStorage.getItem("user-theme");
+//       return sessionStorage.getItem("user-theme");
 //     },
 //     getMediaPreference() {
 //       const hasDarkPreference = window.matchMedia(

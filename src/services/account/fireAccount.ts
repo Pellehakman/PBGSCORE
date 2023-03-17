@@ -23,12 +23,12 @@ class FireAccount {
       .then((userCredential) => {
         console.log(userCredential.user);
       })
-      .then(() => {
-        updateProfile(auth.currentUser, {
+      .then(async () => {
+        await updateProfile(auth.currentUser, {
           displayName: $apiAccount.FetchPlayer.data[0].id,
           photoURL: $apiAccount.FetchPlayer.data[0].attributes.name,
         });
-        setDoc(doc(db, "users", auth.currentUser.uid), {
+        await setDoc(doc(db, "users", auth.currentUser.uid), {
           uid: auth.currentUser.uid,
           pubgid: $apiAccount.FetchPlayer.data[0].id,
           pubgname: $apiAccount.FetchPlayer.data[0].attributes.name,

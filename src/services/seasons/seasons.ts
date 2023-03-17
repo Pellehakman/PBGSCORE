@@ -3,7 +3,7 @@ class Seasons {
   ranked: any;
   async GetSeasonsStats(ign_id: string) {
     // const auth = getAuth();
-    // if (localStorage.getItem("_user_season_stats_normal")) {
+    // if (sessionStorage.getItem("_user_season_stats_normal")) {
     //   console.log("NO API REQUEST MADE");
     // } else if (auth.currentUser) {
 
@@ -26,7 +26,7 @@ class Seasons {
         console.log("NORMAL GAME MODE FETCH");
         this.normal = await response.data.attributes.gameModeStats;
 
-        localStorage.setItem(
+        sessionStorage.setItem(
           "_user_season_stats_normal",
           JSON.stringify(this.normal)
         );
@@ -49,7 +49,7 @@ class Seasons {
       .then(async (response) => {
         console.log("RANKED GAME MODE FETCH");
         this.ranked = await response.data.attributes.rankedGameModeStats;
-        localStorage.setItem(
+        sessionStorage.setItem(
           "_user_season_stats_ranked",
           JSON.stringify(this.ranked)
         );

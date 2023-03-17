@@ -15,6 +15,13 @@ export default defineComponent({
         popup.value = false;
       }
     });
+
+    document.addEventListener("mousedown", function (event: any) {
+      if (!event.target.closest("#account-popup")) {
+        dropdownParent.value = false;
+      }
+    });
+
     const toggleMenu = ref(false);
     const handleMenu = () => {
       toggleMenu.value = !toggleMenu.value;

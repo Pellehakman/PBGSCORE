@@ -1,4 +1,4 @@
-<script lang="ts" src="./PlayerStats"></script>
+<script lang="ts" src="./PlayerCard"></script>
 
 <template>
   <div class="stats-container">
@@ -20,7 +20,7 @@
         <font-awesome-icon
           v-if="!playerDropdown"
           class="pr-4 icon-pen flex"
-          icon="fa-solid fa-pen"
+          icon="fa-thin fa-pen"
         />
       </div>
 

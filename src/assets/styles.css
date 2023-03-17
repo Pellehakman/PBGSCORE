@@ -39,7 +39,7 @@ html {
   @apply flex justify-center items-center
 }
 .heading-styling {
-  @apply py-2 px-4 bg-slate-800 flex items-center;
+  @apply py-2 px-4 bg-slate-900 flex items-center;
 }
   .heading-bebas-xl{
     @apply  /* --------------------- */
@@ -110,7 +110,10 @@ html {
     @apply bg-success-500 hover:bg-success-600 active:bg-success-700
   }
   .icon-sm{
-    @apply  text-black h-4 w-4 cursor-pointer
+    @apply  text-black h-4 w-5 cursor-pointer
+  }
+  .icon-pen{
+    @apply text-black h-3 w-3 cursor-pointer
   }
   .icon-md{
     @apply  h-6 w-6 cursor-pointer
@@ -162,6 +165,9 @@ html {
 }
 .input-icon{
   @apply px-8 h-full absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center
+}
+.input-icon-sm{
+  @apply px-2 h-full absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center
 }
 /* STANDARD INPUT STYLING END */
 

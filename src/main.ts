@@ -29,6 +29,7 @@ import {
   faMagnifyingGlass,
   faXmark,
   faRotateRight,
+  faPen,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -47,7 +48,8 @@ library.add(
   faUserGear,
   faMagnifyingGlass,
   faXmark,
-  faRotateRight
+  faRotateRight,
+  faPen
 );
 // initializeApp(firebaseConfig);
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);

@@ -1,4 +1,4 @@
-//"https://api.pubg.com/shards/steam/seasons/lifetime/gameMode/duo/players?filter[playerIds]=account.c0e530e9b7244b358def282782f893af%2Caccount.82bad0072f31455d8d9f8d834da2f2f3&filter[gamepad]=true"
+//npm"https://api.pubg.com/shards/steam/seasons/lifetime/gameMode/duo/players?filter[playerIds]=account.c0e530e9b7244b358def282782f893af%2Caccount.82bad0072f31455d8d9f8d834da2f2f3&filter[gamepad]=true"
 import type { Options } from "@/models/Options";
 
 class Lifetime {

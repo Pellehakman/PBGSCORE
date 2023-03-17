@@ -28,7 +28,7 @@
 
 <style>
 .statistics-container {
-  @apply bg-neutral-50 bg-opacity-50 mb-10 flex flex-col;
+  @apply bg-neutral-400 bg-opacity-50 mb-10 flex flex-col;
 }
 
 

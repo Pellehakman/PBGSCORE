@@ -33,10 +33,11 @@
               <span class="menu-heading">TEAMS</span>
             </Router-link>
           </div>
-          <div class="menu-dropdown-container">
+
+          <div id="account-popup" class="menu-dropdown-container">
             <button
               @click="handleDropdownParent"
-              class="menu-item menu-item-size justify-center sm-max:justify-start"
+              class="menu-item menu-item-size justify-center sm-max:justify-start overflow-hidden z-50"
             >
               <span class="menu-heading">ACCOUNT</span>
               <figure
@@ -44,42 +45,43 @@
                 class="absolute bottom-0.5 right-0.5 w-2 h-2 triangle"
               ></figure>
             </button>
+            <Transition name="dropdownTransition">
+              <div class="menu-dropdown-content" v-if="dropdownParent">
+                <div class="flex flex-col w-full">
+                  <button
+                    @click="handlePopup"
+                    class="menu-dropdown-item justify-between"
+                    to="#"
+                  >
+                    <div>
+                      <font-awesome-icon
+                        class="pr-4"
+                        icon="fa-solid fa-right-from-bracket"
+                      />
+                      <span class="font-bold">LOGIN</span>
+                    </div>
+                  </button>
+                </div>
 
-            <div class="menu-dropdown-content" v-if="dropdownParent">
-              <div class="flex flex-col w-full">
+                <Router-link class="menu-dropdown-item" to="/account">
+                  <font-awesome-icon
+                    class="pr-4 icon-sm text-white"
+                    icon="fa-solid fa-user-gear"
+                  />
+                  <span class="font-bold">ACCOUNT</span>
+                </Router-link>
                 <button
-                  @click="handlePopup"
-                  class="menu-dropdown-item justify-between"
-                  to="#"
+                  @click="handleLogout"
+                  class="menu-dropdown-item btn--danger font-bold"
                 >
-                  <div>
-                    <font-awesome-icon
-                      class="pr-4"
-                      icon="fa-solid fa-right-from-bracket"
-                    />
-                    <span class="font-bold">LOGIN</span>
-                  </div>
+                  <font-awesome-icon
+                    class="pl-4 rotate-180 icon-sm text-white"
+                    icon="fa-solid fa-right-from-bracket"
+                  />
+                  LOGOUT
                 </button>
               </div>
-
-              <Router-link class="menu-dropdown-item" to="/account">
-                <font-awesome-icon
-                  class="pr-4 icon-sm text-white"
-                  icon="fa-solid fa-user-gear"
-                />
-                <span class="font-bold">ACCOUNT</span>
-              </Router-link>
-              <button
-                @click="handleLogout"
-                class="menu-dropdown-item btn--danger font-bold"
-              >
-                <font-awesome-icon
-                  class="pl-4 rotate-180 icon-sm text-white"
-                  icon="fa-solid fa-right-from-bracket"
-                />
-                LOGOUT
-              </button>
-            </div>
+            </Transition>
           </div>
         </div>
       </nav>
@@ -99,6 +101,17 @@
 
 <style>
 /* HEADER START */
+.dropdownTransition-leave-to,
+.dropdownTransition-enter-from {
+  transform: translateY(-100%);
+
+  opacity: 0;
+}
+
+.dropdownTransition-enter-active,
+.dropdownTransition-leave-active {
+  transition: all 0.1s ease-in-out;
+}
 .header-container {
   @apply /* --------------------- */
   /* full */ px-4 mb-10 w-full shadow-sm
@@ -163,7 +176,7 @@
   @apply relative sm-max:w-full;
 }
 .menu-dropdown-content {
-  @apply flex flex-col text-white items-start absolute transition-all dropdownParent-animation bg-menuPrimary w-full drop-shadow-xl;
+  @apply flex flex-col text-white items-start absolute transition-all  bg-menuPrimary w-full drop-shadow-xl;
 }
 .menu-dropdown-item {
   @apply /* --------------------- */
